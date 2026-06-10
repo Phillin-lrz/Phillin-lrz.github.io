@@ -377,6 +377,41 @@ h3 {
   padding-bottom: 4rem;
 }
 
+.friend-showcase {
+  padding-bottom: 4rem;
+}
+
+.friend-profile {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.9fr) minmax(0, 1.25fr);
+  gap: clamp(1.2rem, 4vw, 2.5rem);
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 4vw, 2rem);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.friend-photo {
+  width: min(100%, 22rem);
+  aspect-ratio: 1;
+  border: 1px solid rgba(102, 227, 255, 0.35);
+  border-radius: var(--radius);
+  object-fit: cover;
+  box-shadow: 0 24px 70px rgba(102, 227, 255, 0.14);
+}
+
+.friend-copy h2 {
+  font-size: clamp(2.2rem, 6vw, 4.8rem);
+}
+
+.friend-copy p:last-child {
+  color: #dce4ee;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+}
+
 .friend-card {
   display: flex;
   min-height: 8.5rem;
@@ -519,6 +554,7 @@ pre code {
   .article-layout,
   .guide-grid,
   .friend-grid,
+  .friend-profile,
   .intro-grid {
     grid-template-columns: 1fr;
   }
