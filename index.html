@@ -3,35 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phil Lin的Bar | Particle 风格博客</title>
-    <meta name="description" content="一个 Particle 风格的个人博客首页。">
+    <title>Phil Lin的Bar | 烛光鸡尾酒博客</title>
+    <meta name="description" content="一个有鸡尾酒、暗色吧台和碎碎念的个人空间。">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">S</span>
+        <span class="brand-mark">B</span>
         <span>Phil Lin的Bar</span>
       </a>
       <nav class="nav-links" aria-label="主导航">
         <a href="index.html" aria-current="page">首页</a>
         <a href="posts.html">文章</a>
+        <a href="reviews.html">酒评</a>
+        <a href="gallery.html">摄影作品</a>
         <a href="friends.html">友链</a>
         <a href="about.html">关于我</a>
       </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="切换粒子效果" title="切换粒子效果">✦</button>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换烛光微粒" title="切换烛光微粒">✦</button>
     </header>
 
     <main>
       <section class="particle-hero">
         <div class="profile-card">
-          <div class="avatar">S</div>
-          <p class="eyebrow">Phil Lin · DSunne · Fruit Fly</p>
+          <div class="avatar">B</div>
+          <p class="eyebrow">Martini · Negroni · Margarita · Sazerac</p>
           <h1>Phil Lin的Bar</h1>
           <p class="hero-lede">一个20岁医学生的碎碎念。</p>
+          <div class="cocktail-signatures" aria-label="鸡尾酒图形意象">
+            <span class="glass-glyph martini-glyph">
+              <span></span>
+              <strong>Martini</strong>
+            </span>
+            <span class="glass-glyph rocks-glyph">
+              <span></span>
+              <strong>Old Fashioned</strong>
+            </span>
+            <span class="glass-glyph coupe-glyph">
+              <span></span>
+              <strong>Whisky Sour</strong>
+            </span>
+            <span class="glass-glyph highball-glyph">
+              <span></span>
+              <strong>Paloma</strong>
+            </span>
+          </div>
           <div class="hero-actions">
             <a class="button primary" href="posts.html">进入文章</a>
-            <a class="button secondary" href="about.html">关于我</a>
+            <a class="button secondary" href="reviews.html">翻开酒单</a>
           </div>
         </div>
       </section>
@@ -40,18 +60,31 @@
         <article>
           <span class="mini-label">Logs</span>
           <h2>实验日志</h2>
-          <p>记录一些可公开/不可公开的实验室日常</p>
+          <p>像调酒记录一样，留下实验室日常的比例、温度和余味。</p>
         </article>
         <article>
           <span class="mini-label">Thoughts</span>
           <h2>一些思绪</h2>
-          <p>此处放置一些对于个人、学习和生活态度的想法</p>
+          <p>在吧台边慢慢写下个人、学习和生活态度的想法。</p>
         </article>
         <article>
           <span class="mini-label">Likes</span>
           <h2>种草安利</h2>
-          <p>可能会放一些喜欢的音乐、影视作品</p>
+          <p>可能会放一些喜欢的音乐、影视作品，和某杯酒的搭配。</p>
         </article>
+      </section>
+
+      <section class="section feature-grid" aria-label="酒评与摄影作品">
+        <a class="feature-card cocktail-card" href="reviews.html">
+          <span class="mini-label">Tasting Notes</span>
+          <h2>酒评</h2>
+          <p>Martini、Negroni、Sazerac、Paloma，暂时还在酝酿。</p>
+        </a>
+        <a class="feature-card camera-card" href="gallery.html">
+          <span class="mini-label">Gallery</span>
+          <h2>摄影作品</h2>
+          <p>一些光影、街角和杯壁反光，亟待创作。</p>
+        </a>
       </section>
 
       <section class="section split-section">
