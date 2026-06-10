@@ -189,3 +189,255 @@ window.addEventListener("pointerleave", () => {
 
 resizeCanvas();
 draw();
+
+const WRITER_SESSION_KEY = "bar-writer-authenticated";
+const WRITER_PASSWORD = "ChunkingExpress940714:";
+
+function allPosts() {
+  const builtInPosts = window.BAR_POSTS || [];
+  return [...builtInPosts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function postUrl(post) {
+  return post.url || `article.html?id=${encodeURIComponent(post.id)}`;
+}
+
+function postCard(post, heading = "h2") {
+  const title = escapeHtml(post.title);
+  const summary = escapeHtml(post.summary || "尚未填写简介。");
+  const tag = escapeHtml(post.tag);
+  const date = escapeHtml(post.publishedAt);
+  return `
+    <a class="post-card" href="${postUrl(post)}">
+      <span class="post-date">发布时间：${date} · ${tag}</span>
+      <${heading}>${title}</${heading}>
+      <p>${summary}</p>
+      <span class="read-more">阅读全文</span>
+    </a>
+  `;
+}
+
+function renderRecentPosts() {
+  document.querySelectorAll("[data-recent-posts]").forEach((container) => {
+    const posts = allPosts().slice(0, 3);
+    container.innerHTML = posts.length
+      ? posts.map((post) => postCard(post, "h3")).join("")
+      : '<article class="post-card"><span class="post-date">尚无文章</span><h3>亟待创作</h3><p>新的文字还在吧台后面准备。</p></article>';
+  });
+}
+
+function renderPostList(tag = "all") {
+  const container = document.querySelector("[data-post-list]");
+  if (!container) return;
+  const posts = tag === "all" ? allPosts() : allPosts().filter((post) => post.tag === tag);
+  container.innerHTML = posts.length
+    ? posts.map((post, index) => postCard({ ...post }, index === 0 ? "h2" : "h3")).join("")
+    : '<article class="post-card"><span class="post-date">亟待创作</span><h2>这个标签还没有文章</h2><p>新的内容会在发布后出现在这里。</p></article>';
+}
+
+function initPostFilters() {
+  const filters = document.querySelector("[data-post-filters]");
+  if (!filters) return;
+  renderPostList();
+  filters.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-filter-tag]");
+    if (!button) return;
+    filters.querySelectorAll("[data-filter-tag]").forEach((item) => item.classList.remove("is-active"));
+    button.classList.add("is-active");
+    renderPostList(button.dataset.filterTag);
+  });
+}
+
+function renderTagPages() {
+  document.querySelectorAll("[data-tag-posts]").forEach((container) => {
+    const tag = container.dataset.tagPosts;
+    const posts = allPosts().filter((post) => post.tag === tag);
+    container.innerHTML = posts.length
+      ? posts.map((post, index) => postCard(post, index === 0 ? "h2" : "h3")).join("")
+      : `<article class="post-card"><span class="post-date">${escapeHtml(tag)}</span><h2>亟待创作</h2><p>这个分类还在等待第一篇文章。</p></article>`;
+  });
+}
+
+function renderArticlePage() {
+  const page = document.querySelector("[data-article-page]");
+  if (!page) return;
+  const id = new URLSearchParams(window.location.search).get("id");
+  const post = allPosts().find((item) => item.id === id);
+  const title = page.querySelector("[data-article-title]");
+  const tag = page.querySelector("[data-article-tag]");
+  const meta = page.querySelector("[data-article-meta]");
+  const content = page.querySelector("[data-article-content]");
+  const tagRow = page.querySelector("[data-article-tag-row]");
+
+  if (!post) {
+    title.textContent = "文章没有找到";
+    tag.textContent = "Not Found";
+    meta.textContent = "发布时间：未知";
+    content.innerHTML = "<p>这篇文章还没有写入 assets/content.js，或者对应的文章 id 已经变更。</p>";
+    tagRow.innerHTML = "<span>未知</span>";
+    return;
+  }
+
+  document.title = `${post.title} | Phil Lin的Bar`;
+  title.textContent = post.title;
+  tag.textContent = post.tag;
+  meta.textContent = `发布时间：${post.publishedAt} · 标签：${post.tag}`;
+  content.innerHTML = post.content || `<p>${escapeHtml(post.summary || "")}</p>`;
+  tagRow.innerHTML = `<span>${escapeHtml(post.tag)}</span>`;
+}
+
+function summarizeContent(html) {
+  const temp = document.createElement("div");
+  temp.innerHTML = html;
+  const text = temp.textContent.trim();
+  return text.length > 72 ? `${text.slice(0, 72)}...` : text || "尚未填写简介。";
+}
+
+function slugifyTitle(title) {
+  const basic = title.trim().toLowerCase().replace(/[^a-z0-9\u4e00-\u9fa5]+/g, "-").replace(/^-|-$/g, "");
+  return `${basic || "post"}-${Date.now().toString(36)}`;
+}
+
+function escapeTemplateLiteral(value) {
+  return String(value)
+    .replaceAll("\\", "\\\\")
+    .replaceAll("`", "\\`")
+    .replaceAll("${", "\\${");
+}
+
+function buildContentJsEntry(post) {
+  return `{
+    id: ${JSON.stringify(post.id)},
+    title: ${JSON.stringify(post.title)},
+    tag: ${JSON.stringify(post.tag)},
+    publishedAt: ${JSON.stringify(post.publishedAt)},
+    summary: ${JSON.stringify(post.summary)},
+    url: ${JSON.stringify(post.url)},
+    content: \`${escapeTemplateLiteral(post.content)}\`,
+  },`;
+}
+
+function downloadTextFile(filename, text) {
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+function initAuthForm() {
+  const form = document.querySelector("[data-auth-form]");
+  if (!form) return;
+  const message = form.querySelector("[data-auth-message]");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const password = new FormData(form).get("password");
+    if (password === WRITER_PASSWORD) {
+      sessionStorage.setItem(WRITER_SESSION_KEY, "true");
+      window.location.href = "editor.html";
+      return;
+    }
+    message.textContent = "密码不正确。";
+  });
+}
+
+function setDefaultPublishTime(form) {
+  const input = form.elements.publishedAt;
+  const now = new Date();
+  now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+  input.value = now.toISOString().slice(0, 16);
+}
+
+function initEditor() {
+  const page = document.querySelector("[data-editor-page]");
+  if (!page) return;
+  if (sessionStorage.getItem(WRITER_SESSION_KEY) !== "true") {
+    window.location.href = "write.html";
+    return;
+  }
+
+  const form = page.querySelector("[data-editor-form]");
+  const editor = page.querySelector("[data-rich-editor]");
+  const message = page.querySelector("[data-editor-message]");
+  setDefaultPublishTime(form);
+
+  page.querySelectorAll("[data-command]").forEach((button) => {
+    button.addEventListener("click", () => {
+      editor.focus();
+      document.execCommand(button.dataset.command, false, null);
+    });
+  });
+
+  page.querySelector("[data-font-name]").addEventListener("change", (event) => {
+    editor.focus();
+    document.execCommand("fontName", false, event.target.value);
+  });
+
+  page.querySelector("[data-font-size]").addEventListener("change", (event) => {
+    editor.focus();
+    document.execCommand("fontSize", false, event.target.value);
+  });
+
+  page.querySelector("[data-image-input]").addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      editor.focus();
+      document.execCommand("insertImage", false, reader.result);
+    };
+    reader.readAsDataURL(file);
+    event.target.value = "";
+  });
+
+  function collectPost() {
+    const data = new FormData(form);
+    const title = String(data.get("title") || "").trim();
+    const publishValue = String(data.get("publishedAt") || "");
+    const content = editor.innerHTML.trim();
+    if (!title || !publishValue || !content) {
+      message.textContent = "标题、发布时间和内容都需要填写。";
+      return null;
+    }
+    const id = slugifyTitle(title);
+    return {
+      id,
+      title,
+      tag: String(data.get("tag")),
+      publishedAt: publishValue.slice(0, 10),
+      summary: summarizeContent(content),
+      url: `article.html?id=${id}`,
+      content,
+    };
+  }
+
+  page.querySelector("[data-publish-now]").addEventListener("click", () => {
+    const post = collectPost();
+    if (!post) return;
+    const code = buildContentJsEntry(post);
+    downloadTextFile(`${post.id}.txt`, code);
+    message.textContent = "已下载 txt。把里面的对象复制到 assets/content.js 的 BAR_POSTS 数组里即可上线。";
+  });
+}
+
+renderRecentPosts();
+initPostFilters();
+renderTagPages();
+renderArticlePage();
+initAuthForm();
+initEditor();

@@ -1,0 +1,93 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>撰写文章 | Phil Lin的Bar</title>
+    <link rel="stylesheet" href="assets/styles.css?v=bar-export-20260610">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">B</span><span>Phil Lin的Bar</span></a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="posts.html">文章</a>
+        <a href="reviews.html">酒评</a>
+        <a href="gallery.html">摄影作品</a>
+        <a href="friends.html">友链</a>
+        <a href="about.html">关于我</a>
+      </nav>
+      <a class="write-link" href="write.html" aria-current="page">撰写</a>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换烛光微粒" title="切换烛光微粒">✦</button>
+    </header>
+
+    <main class="page editor-page" data-editor-page>
+      <section class="page-heading">
+        <p class="eyebrow">Draft</p>
+        <h1>撰写文章</h1>
+        <p>填写完成后点击发布，会下载一份可直接复制进 assets/content.js 的 txt 文件。</p>
+      </section>
+
+      <form class="editor-form" data-editor-form>
+        <div class="form-grid">
+          <label>
+            <span>标题</span>
+            <input name="title" type="text" required>
+          </label>
+          <label>
+            <span>发布时间</span>
+            <input name="publishedAt" type="datetime-local" required>
+          </label>
+          <label>
+            <span>标签</span>
+            <select name="tag" required>
+              <option value="实验日志">实验日志</option>
+              <option value="一些思绪">一些思绪</option>
+              <option value="种草安利">种草安利</option>
+            </select>
+          </label>
+        </div>
+
+        <section class="writing-surface">
+          <div class="editor-toolbar" aria-label="编辑工具">
+            <button type="button" data-command="bold">B</button>
+            <button type="button" data-command="italic">I</button>
+            <button type="button" data-command="underline">U</button>
+            <button type="button" data-command="justifyLeft">左</button>
+            <button type="button" data-command="justifyCenter">中</button>
+            <select data-font-name aria-label="字体">
+              <option value="Microsoft YaHei">雅黑</option>
+              <option value="SimSun">宋体</option>
+              <option value="KaiTi">楷体</option>
+              <option value="Georgia">Georgia</option>
+            </select>
+            <select data-font-size aria-label="字号">
+              <option value="3">正文</option>
+              <option value="4">稍大</option>
+              <option value="5">标题</option>
+              <option value="6">大标题</option>
+            </select>
+            <label class="image-insert">
+              图片
+              <input data-image-input type="file" accept="image/*">
+            </label>
+          </div>
+          <div class="rich-editor" data-rich-editor contenteditable="true" aria-label="内容"></div>
+        </section>
+
+        <div class="editor-actions">
+          <button class="button primary" type="button" data-publish-now>发布</button>
+          <p class="form-message" data-editor-message aria-live="polite"></p>
+        </div>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Phil Lin的Bar</span>
+      <span><a href="posts.html">查看文章</a></span>
+    </footer>
+
+    <script src="assets/content.js?v=bar-export-20260610"></script>
+    <script src="assets/site.js?v=bar-export-20260610"></script>
+  </body>
+</html>

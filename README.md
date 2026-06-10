@@ -16,12 +16,34 @@
 
 ## 发布文章
 
-静态模板方式：
+推荐先修改 `assets/content.js` 里的 `window.BAR_POSTS`。每篇文章需要包含这些字段：
+
+```js
+{
+  id: "unique-post-id",
+  title: "文章标题",
+  tag: "实验日志",
+  publishedAt: "2026-06-10",
+  summary: "文章摘要。",
+  url: "article.html?id=unique-post-id",
+  content: "<p>文章正文。</p>",
+}
+```
+
+标签只能使用这三个之一：
+
+- `实验日志`
+- `一些思绪`
+- `种草安利`
+
+添加后，首页最近文章、文章归档、标签页会自动更新。首页最近文章只展示按发布时间排序的最近三篇。
+
+如果想做成单独 HTML 页面：
 
 1. 复制 `_drafts/article-format-reference.html`
 2. 改成新的文章文件名，例如 `article-my-first-post.html`
-3. 修改文章标题、日期、标签和正文
-4. 在 `posts.html` 里新增文章卡片，并链接到新文章
+3. 修改文章标题、发布时间、标签和正文
+4. 在 `assets/content.js` 中新增对应文章，并把 `url` 指向这个 HTML 文件
 
 Hexo 方式：
 
@@ -35,6 +57,20 @@ hexo server
 ```
 
 文章会出现在 `source/_posts`，用 Markdown 编辑即可。
+
+## 新增酒评
+
+在 `assets/content.js` 里的 `window.BAR_REVIEWS` 中新增条目。当前酒评页面保留了“亟待创作”的展示格式，后续可以把每个酒评扩展成独立页面。
+
+## 新增摄影作品
+
+在 `gallery.html` 的 `gallery-grid` 中复制一个 `photo-tile` 模块，修改标题和状态即可。如果要展示真实照片，把模块内容改成图片和文字说明，并把图片放入 `assets` 文件夹。
+
+## 撰写入口
+
+右上角 `撰写` 会进入验证页，密码为 `ChunkingExpress940714:`。通过后可以在浏览器中撰写文章、插入图片、设置字体字号。
+
+点击 `发布` 后，撰写器会把文章转换成一段可直接复制进 `assets/content.js` 的代码，并以 `.txt` 格式下载到电脑。把 txt 里的对象复制进 `window.BAR_POSTS` 数组后，再推送到 GitHub，所有访客就能看到这篇文章。
 
 ## 部署到 GitHub Pages
 

@@ -1,10 +1,10 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>文章 | Phil Lin的Bar</title>
-    <link rel="stylesheet" href="assets/styles.css?v=bar-abstract-20260610">
+    <link rel="stylesheet" href="assets/styles.css?v=bar-export-20260610">
   </head>
   <body>
     <header class="site-header">
@@ -17,6 +17,7 @@
         <a href="friends.html">友链</a>
         <a href="about.html">关于我</a>
       </nav>
+      <a class="write-link" href="write.html">撰写</a>
       <button class="icon-button" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换主题">◐</button>
     </header>
 
@@ -27,26 +28,20 @@
         <p>这里放已经准备好公开的文章。</p>
       </section>
 
-      <section class="toolbar" aria-label="个性化设置">
+      <section class="toolbar" aria-label="文章筛选">
         <div>
-          <strong>阅读外观</strong>
-          <span>这些设置会保存在当前浏览器里。</span>
+          <strong>标签筛选</strong>
+          <span>按实验日志、一些思绪、种草安利浏览。</span>
         </div>
-        <div class="control-row">
-          <button class="chip" data-accent="teal" type="button">青绿</button>
-          <button class="chip" data-accent="coral" type="button">珊瑚</button>
-          <button class="chip" data-accent="gold" type="button">琥珀</button>
+        <div class="control-row" data-post-filters>
+          <button class="chip is-active" data-filter-tag="all" type="button">全部</button>
+          <button class="chip" data-filter-tag="实验日志" type="button">实验日志</button>
+          <button class="chip" data-filter-tag="一些思绪" type="button">一些思绪</button>
+          <button class="chip" data-filter-tag="种草安利" type="button">种草安利</button>
         </div>
       </section>
 
-      <section class="post-list">
-        <a class="post-card featured" href="article-to-be-continue.html">
-          <span class="post-date">一些思绪</span>
-          <h2>To Be Continue</h2>
-          <p>Phil Lin的世界正在构建中。</p>
-          <span class="read-more">阅读全文</span>
-        </a>
-      </section>
+      <section class="post-list" data-post-list></section>
     </main>
 
     <footer class="site-footer">
@@ -54,6 +49,7 @@
       <span><a href="about.html">关于我</a></span>
     </footer>
 
-    <script src="assets/site.js?v=bar-abstract-20260610"></script>
+    <script src="assets/content.js?v=bar-export-20260610"></script>
+    <script src="assets/site.js?v=bar-export-20260610"></script>
   </body>
 </html>

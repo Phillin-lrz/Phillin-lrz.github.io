@@ -1,11 +1,11 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phil Lin的Bar | 烛光鸡尾酒博客</title>
     <meta name="description" content="一个有鸡尾酒、暗色吧台和碎碎念的个人空间。">
-    <link rel="stylesheet" href="assets/styles.css?v=bar-abstract-20260610">
+    <link rel="stylesheet" href="assets/styles.css?v=bar-export-20260610">
   </head>
   <body>
     <header class="site-header">
@@ -21,6 +21,7 @@
         <a href="friends.html">友链</a>
         <a href="about.html">关于我</a>
       </nav>
+      <a class="write-link" href="write.html">撰写</a>
       <button class="icon-button" id="themeToggle" type="button" aria-label="切换烛光微粒" title="切换烛光微粒">✦</button>
     </header>
 
@@ -57,21 +58,21 @@
       </section>
 
       <section class="section intro-grid" aria-label="博客内容">
-        <article>
+        <a class="topic-card" href="tag-lab.html">
           <span class="mini-label">Logs</span>
           <h2>实验日志</h2>
           <p>像调酒记录一样，留下实验室日常的比例、温度和余味。</p>
-        </article>
-        <article>
+        </a>
+        <a class="topic-card" href="tag-thoughts.html">
           <span class="mini-label">Thoughts</span>
           <h2>一些思绪</h2>
           <p>在吧台边慢慢写下个人、学习和生活态度的想法。</p>
-        </article>
-        <article>
+        </a>
+        <a class="topic-card" href="tag-recommendations.html">
           <span class="mini-label">Likes</span>
           <h2>种草安利</h2>
           <p>可能会放一些喜欢的音乐、影视作品，和某杯酒的搭配。</p>
-        </article>
+        </a>
       </section>
 
       <section class="section feature-grid" aria-label="酒评与摄影作品">
@@ -106,13 +107,7 @@
           <p class="eyebrow">文章</p>
           <h2>最近文章</h2>
         </div>
-        <div class="post-list compact">
-          <a class="post-card" href="article-to-be-continue.html">
-            <span class="post-date">一些思绪</span>
-            <h3>To Be Continue</h3>
-            <p>Phil Lin的世界正在构建中。</p>
-          </a>
-        </div>
+        <div class="post-list compact" data-recent-posts></div>
       </section>
     </main>
 
@@ -121,6 +116,7 @@
       <span>I flutter in circle never landing on nothing</span>
     </footer>
 
-    <script src="assets/site.js?v=bar-abstract-20260610"></script>
+    <script src="assets/content.js?v=bar-export-20260610"></script>
+    <script src="assets/site.js?v=bar-export-20260610"></script>
   </body>
 </html>

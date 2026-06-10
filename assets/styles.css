@@ -717,6 +717,181 @@ pre code {
   color: var(--muted);
 }
 
+.write-link {
+  display: inline-flex;
+  min-height: 2.35rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 210, 138, 0.46);
+  border-radius: 999px;
+  padding: 0.42rem 0.88rem;
+  background: rgba(240, 164, 58, 0.12);
+  color: var(--accent-strong);
+  font-size: 0.9rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.write-link:hover,
+.write-link[aria-current="page"] {
+  border-color: rgba(255, 210, 138, 0.8);
+  background: rgba(240, 164, 58, 0.22);
+  color: var(--ink);
+}
+
+.topic-card {
+  min-height: 12rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  background:
+    linear-gradient(145deg, rgba(255, 241, 204, 0.035), rgba(159, 47, 40, 0.055)),
+    var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 210, 138, 0.58);
+  box-shadow: 0 26px 72px rgba(240, 164, 58, 0.14);
+}
+
+.button.secondary {
+  border-color: rgba(255, 210, 138, 0.34);
+  background: rgba(255, 241, 204, 0.06);
+}
+
+.chip.is-active {
+  border-color: rgba(255, 210, 138, 0.82);
+  background: rgba(240, 164, 58, 0.24);
+  color: var(--cream);
+}
+
+.auth-page,
+.editor-page {
+  max-width: 960px;
+}
+
+.auth-panel,
+.editor-form {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 4vw, 1.5rem);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.auth-panel {
+  max-width: 30rem;
+}
+
+.auth-panel label,
+.form-grid label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 2.75rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.6rem 0.72rem;
+  background: rgba(8, 4, 3, 0.72);
+  color: var(--ink);
+  font: inherit;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(13rem, 0.9fr) minmax(10rem, 0.7fr);
+  gap: 1rem;
+}
+
+.writing-surface {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(8, 4, 3, 0.58);
+}
+
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 241, 204, 0.04);
+}
+
+.editor-toolbar button,
+.editor-toolbar select,
+.image-insert {
+  display: inline-flex;
+  min-height: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.35rem 0.65rem;
+  background: rgba(255, 241, 204, 0.07);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+}
+
+.editor-toolbar select {
+  width: auto;
+}
+
+.image-insert {
+  cursor: pointer;
+}
+
+.image-insert input {
+  display: none;
+}
+
+.rich-editor {
+  min-height: 24rem;
+  padding: 1.2rem;
+  outline: none;
+  color: #f4dfbd;
+}
+
+.rich-editor:empty::before {
+  color: rgba(203, 185, 158, 0.7);
+  content: "在这里开始写。";
+}
+
+.rich-editor img {
+  max-width: 100%;
+  margin: 1rem 0;
+  border-radius: var(--radius);
+}
+
+.editor-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.form-message {
+  margin: 0;
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
 @media (max-width: 980px) {
   .site-header {
     align-items: flex-start;
@@ -738,7 +913,8 @@ pre code {
   .cocktail-signatures,
   .intro-grid,
   .feature-grid,
-  .gallery-grid {
+  .gallery-grid,
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
