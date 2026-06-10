@@ -1,4 +1,4 @@
-# 星屿札记博客模板
+# Phil Lin的Bar 博客模板
 
 这是一个可直接发布到 GitHub Pages 的静态个人博客模板，结构参考了“GitHub Pages + Hexo 搭建博客”的常见流程。
 
@@ -9,7 +9,7 @@
 ## 修改网站装饰
 
 - 首页大图：替换 `assets/hero-workspace.png`
-- 站点名称：全局搜索并替换 `星屿札记`
+- 站点名称：全局搜索并替换 `Phil Lin的Bar`
 - 颜色：修改 `assets/styles.css` 里的 `--accent`、`--paper`、`--ink`
 - 导航：修改每个页面顶部的 `nav`
 - 页脚：修改每个页面底部的 `footer`
