@@ -1,15 +1,6 @@
-window.BAR_TAGS = ["实验日志", "一些思绪", "种草安利"];
+window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利"];
 
-window.BAR_POSTS = [
-  {
-    id: "to-be-continue",
-    title: "To Be Continue",
-    tag: "一些思绪",
-    publishedAt: "2026-06-10",
-    summary: "Phil Lin的世界正在构建中。",
-    url: "article-to-be-continue.html",
-  },
-];
+window.BAR_POSTS = [];
 
 window.BAR_REVIEWS = [
   {

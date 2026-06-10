@@ -1,8 +1,31 @@
 # AGENT_CHANGELOG
 
-Last updated: 2026-06-10
+Last updated: 2026-06-11
 
 Important limitation: `git` is not available in the current shell, so this changelog is based on current file state, repository scans, `.git/config`, and JavaScript syntax checks. It is not an authoritative git diff. Re-run `git status` and `git diff` when Git is available.
+
+## 2026-06-11 Tag Rename
+
+User changed the first home topic card to `生活日志` and requested all remaining site references be renamed consistently.
+
+- Updated tag metadata in `assets/content.js`.
+- Updated archive filter copy and filter value in `posts.html`.
+- Updated `tag-lab.html` title, heading, and `data-tag-posts` value.
+- Updated remaining visible copy in `about.html` and README examples.
+- Updated AGENT state files so future recovery treats `生活日志` as the first article tag.
+
+## 2026-06-11 Article Deletion
+
+User requested deletion of the placeholder article named `To Be Continued` / `To Be Continue`.
+
+- Deleted `article-to-be-continue.html`.
+- Cleared `window.BAR_POSTS` in `assets/content.js`, leaving no public article entries.
+- Updated `AGENT_CONTEXT.md`, `AGENT_TODO.md`, and `AGENT_HANDOFF.md` so future recovery does not restore or assume the deleted article.
+- Expected behavior: home recent posts, article archive, and tag pages display their empty states until a new article is added.
+- Verification performed: runtime references were searched in public HTML/assets/README scope; no old article references were found.
+- Verification blocked: `node --check assets/content.js` and `node --check assets/site.js` could not run because `node.exe` returned access denied in the current environment; Node REPL fallback also failed due sandbox setup.
+- Verification still required: JavaScript syntax check and browser visual check.
+- Git status/diff remain unavailable if `git` is still not recognized in the current shell.
 
 ## Verification Performed During Context Sealing
 
@@ -63,9 +86,9 @@ Important limitation: `git` is not available in the current shell, so this chang
 ### `tag-lab.html`
 
 - Type: added
-- Reason: Tag landing page for `实验日志`.
+- Reason: Tag landing page for `生活日志`.
 - Behavior change:
-  - Renders posts matching `data-tag-posts="实验日志"`.
+  - Renders posts matching `data-tag-posts="生活日志"`.
 - Potential risk:
   - Empty state appears if there are no matching posts.
 - Executed verification:
@@ -117,9 +140,9 @@ Important limitation: `git` is not available in the current shell, so this chang
 - Reason: Central metadata index for tags, posts, and review placeholders.
 - Behavior change:
   - Defines `window.BAR_TAGS`.
-  - Defines lightweight `window.BAR_POSTS` with one current article index.
+  - Defines lightweight `window.BAR_POSTS`, currently empty after the placeholder article deletion.
   - Defines `window.BAR_REVIEWS` placeholder metadata.
-  - No longer stores article body `content` for `To Be Continue`.
+  - No longer stores article body `content`; the placeholder article entry was removed.
 - Potential risk:
   - Syntax errors in this file break article rendering across home/archive/tag pages.
   - `BAR_REVIEWS` is not currently used by `reviews.html`.
@@ -177,22 +200,22 @@ Important limitation: `git` is not available in the current shell, so this chang
 
 ### `article-to-be-continue.html`
 
-- Type: added/modified, exact git origin pending confirmation
-- Reason: Current public article page.
+- Type: deleted
+- Reason: User requested deletion of the placeholder article named `To Be Continued` / `To Be Continue`.
 - Behavior change:
-  - Shows `To Be Continue`.
+  - The article is no longer directly accessible as a local file.
   - Metadata includes `发布时间：2026-06-10 · 标签：一些思绪`.
-  - Links back to article archive.
-  - Loads shared CSS/JS with `bar-clean-20260610`.
+  - No metadata entry points to this article from `assets/content.js`.
 - Potential risk:
-  - If removed from `BAR_POSTS`, page may still be directly accessible by URL.
+  - Any external bookmark to `article-to-be-continue.html` will 404 after deployment.
 - Executed verification:
-  - File read directly.
+  - `Test-Path article-to-be-continue.html` returned `False`.
+  - Reference search found no runtime references outside AGENT state documentation.
 - Not executed:
   - Browser visual check.
   - Git diff comparison.
 - Rollback:
-  - Restore/delete according to intended public-article state.
+  - Restore the file from git or backup and add a matching entry back to `assets/content.js`.
 
 ### `article.html`
 

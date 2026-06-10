@@ -1,6 +1,6 @@
 # AGENT_TODO
 
-Last updated: 2026-06-10
+Last updated: 2026-06-11
 
 Use this file before starting phase two or any future multi-file work. Do not rely on chat history as the only source of truth.
 
@@ -14,8 +14,8 @@ Use this file before starting phase two or any future multi-file work. Do not re
 - [x] Confirmed `assets/site.js` no longer contains writer/auth/editor functions.
 - [x] Confirmed `assets/styles.css` no longer contains writer/auth/editor styles.
 - [x] Confirmed `assets/content.js` uses lightweight article index entries.
-- [x] Confirmed current public article index is `to-be-continue`.
-- [x] Confirmed `article-to-be-continue.html` contains the public article body and `发布时间` metadata.
+- [x] Deleted the placeholder public article index `to-be-continue`.
+- [x] Deleted `article-to-be-continue.html`.
 - [x] Confirmed tag archive pages exist:
   - `tag-lab.html`
   - `tag-thoughts.html`
@@ -45,7 +45,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - Generate `article-<article-id>.html`.
   - Add one metadata object to `assets/content.js`.
   - Verify generated article path from `posts.html`.
-- [ ] Add a reusable article HTML template for generated articles, based on `article-to-be-continue.html` or `_drafts/article-format-reference.html`.
+- [ ] Add a reusable article HTML template for generated articles, based on `_drafts/article-format-reference.html`.
 - [ ] Make `reviews.html` render from `window.BAR_REVIEWS` instead of hardcoded placeholder cards.
 - [ ] Add real photography entries to `gallery.html` and decide image folder structure, likely `assets/gallery/`.
 - [ ] Add better empty-state text for tag pages with no articles.
@@ -98,7 +98,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - `index.html`
   - `posts.html`
   - one tag page
-  - `article-to-be-continue.html`
+  - one public article page after a new article is added
   - `friends.html`
 - [ ] If Word conversion is implemented, verify:
   - generated article HTML opens

@@ -22,7 +22,7 @@
 {
   id: "unique-post-id",
   title: "文章标题",
-  tag: "实验日志",
+  tag: "生活日志",
   publishedAt: "2026-06-10",
   summary: "文章摘要。",
   url: "article-my-first-post.html",
@@ -31,7 +31,7 @@
 
 标签只能使用这三个之一：
 
-- `实验日志`
+- `生活日志`
 - `一些思绪`
 - `种草安利`
 

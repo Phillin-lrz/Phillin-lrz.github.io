@@ -1,6 +1,6 @@
 # AGENT_CONTEXT
 
-Last updated: 2026-06-10
+Last updated: 2026-06-11
 
 This file externalizes the verified phase-one project context. Do not treat chat history or auto summaries as authoritative. Reconfirm current state from repository files, command output, and validation results before future development.
 
@@ -16,12 +16,12 @@ Verified from current repository state and request-driven implemented artifacts:
 
 - Rename/site-brand the website as `Phil Lin的Bar`.
 - Replace older guide/admin wording with `关于我`.
-- Keep one public article, `To Be Continue`, and retain one draft/reference article outside public navigation.
+- Remove the placeholder public article `To Be Continue` / `To Be Continued`, and retain one draft/reference article outside public navigation.
 - Add a friend-link page for `StarCried`, including avatar, name, description, and outbound link.
 - Add home friend-link entry.
 - Add `酒评` and `摄影作品` navigation pages.
 - Redesign the site around a cocktail/bar mood using abstract CSS/canvas visuals rather than generated photographic backgrounds.
-- Add article categories/tags: `实验日志`, `一些思绪`, `种草安利`.
+- Add article categories/tags: `生活日志`, `一些思绪`, `种草安利`.
 - Add article archive filtering by tag.
 - Add three tag pages linked from the home topic cards.
 - Make recent home articles render from article metadata and show the newest up to three posts.
@@ -45,21 +45,21 @@ Verified in files:
   - Recent posts container uses `data-recent-posts`.
 
 - `assets/content.js`
-  - `window.BAR_TAGS` has exactly `["实验日志", "一些思绪", "种草安利"]`.
-  - `window.BAR_POSTS` currently contains one article index for `To Be Continue`.
+  - `window.BAR_TAGS` has exactly `["生活日志", "一些思绪", "种草安利"]`.
+  - `window.BAR_POSTS` is currently empty after deleting the placeholder article `To Be Continue`.
   - `window.BAR_REVIEWS` contains placeholder review metadata.
 
 - `posts.html`
-  - Article archive has tag filter buttons for `全部`, `实验日志`, `一些思绪`, `种草安利`.
+  - Article archive has tag filter buttons for `全部`, `生活日志`, `一些思绪`, `种草安利`.
   - Article list is rendered into `data-post-list`.
 
 - Tag pages:
-  - `tag-lab.html` renders posts with `data-tag-posts="实验日志"`.
+  - `tag-lab.html` renders posts with `data-tag-posts="生活日志"`.
   - `tag-thoughts.html` renders posts with `data-tag-posts="一些思绪"`.
   - `tag-recommendations.html` renders posts with `data-tag-posts="种草安利"`.
 
 - Article pages:
-  - `article-to-be-continue.html` is the current public article page.
+  - No public static article page currently exists after deleting `article-to-be-continue.html`.
   - `article.html` is a dynamic fallback/detail renderer for posts that include inline `content` in `content.js`; current recommended pattern is separate static article HTML files, so this dynamic page is retained for compatibility but is not the primary authoring path.
   - `_drafts/article-format-reference.html` is retained as a format/reference draft and is not linked from public page lists.
 
@@ -113,17 +113,16 @@ Static site architecture:
   - tag page rendering
   - dynamic article rendering fallback
 - `assets/content.js` is a lightweight metadata index.
-- Public article bodies should live in separate article HTML files. `assets/content.js` should point to those files via `url`.
+- Public article bodies should live in separate article HTML files. `assets/content.js` should point to those files via `url`. It currently has no public article entries.
 - Article images should be placed under `assets/posts/<article-id>/` when generated from Word or other rich sources.
 
 ## 6. Key Files And Modules
 
 - `index.html`: home page; hero, topic cards, feature cards, friend entry, recent article container.
 - `posts.html`: article archive and filter UI.
-- `tag-lab.html`: tag landing page for `实验日志`.
+- `tag-lab.html`: tag landing page for `生活日志`.
 - `tag-thoughts.html`: tag landing page for `一些思绪`.
 - `tag-recommendations.html`: tag landing page for `种草安利`.
-- `article-to-be-continue.html`: current public static article.
 - `article.html`: dynamic article fallback for metadata-driven inline content.
 - `_drafts/article-format-reference.html`: non-public reference article template.
 - `reviews.html`: cocktail review placeholder page.
@@ -233,6 +232,7 @@ Alternatives not chosen:
 - Browser visual verification could not be completed during final sealing.
 - `assets/cocktail-hero.png` and `assets/hero-workspace.png` exist; current verified pages do not reference them, but they increase repository size.
 - `article.html` renders `post.content` if present, but current recommended metadata-only pattern does not include content. It remains a compatibility fallback.
+- The article archive, recent posts, and tag pages now show empty states until a new public article is added.
 - `reviews.html` currently hardcodes review placeholder cards instead of rendering from `window.BAR_REVIEWS`; `BAR_REVIEWS` is currently metadata documentation/future hook.
 - `data-accent` logic remains in `site.js`, but current visible pages may not use it.
 - Word-to-HTML conversion is not yet implemented; future conversion must preserve images and paths carefully.
