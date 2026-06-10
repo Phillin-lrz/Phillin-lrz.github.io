@@ -4,7 +4,7 @@ Last updated: 2026-06-11
 
 ## 1. One-Sentence Project State
 
-`Phil Lin的Bar` is currently a static GitHub Pages personal site with a dark cocktail-bar visual style, metadata-driven article lists/tags, separate static article-file direction, friend links, review placeholders, gallery placeholders, no public articles, one pending article preview, and no writer/editor feature.
+`Phil Lin的Bar` is currently a static GitHub Pages personal site with a dark cocktail-bar visual style, metadata-driven article lists/tags, separate static article-file direction, one public article, friend links, review placeholders, gallery placeholders, and no writer/editor feature.
 
 ## 2. Phase-One Completion Summary
 
@@ -45,10 +45,9 @@ Follow-up after phase-one sealing:
 - Article architecture:
   - Home/archive/tag pages read summary metadata from `assets/content.js`.
   - Real article bodies should live in separate HTML files, for example `article-my-post.html`.
-  - There are currently no public article entries.
+  - There is currently one public article entry: `article-first-words-on-the-bar.html`.
   - Future article images should go under `assets/posts/<article-id>/`.
 - `article.html` remains as a dynamic compatibility fallback, but static article HTML files are the recommended primary path.
-- `preview-20260611.html` is a review-only preview generated from the user's Word document; it is not linked publicly and should be deleted after the user approves or rejects the preview.
 
 ## 4. Current Git State
 
@@ -76,6 +75,7 @@ Before any future work, run `git status --short` and `git diff --stat` in an env
 - `tag-thoughts.html`: `一些思绪` tag page.
 - `tag-recommendations.html`: `种草安利` tag page.
 - `article.html`: dynamic article fallback.
+- `article-first-words-on-the-bar.html`: first published article, tag `一些思绪`.
 - `_drafts/article-format-reference.html`: retained non-public format/reference draft.
 - `friends.html`: friend links, currently StarCried.
 - `reviews.html`: cocktail review placeholder page.
@@ -90,8 +90,7 @@ Before any future work, run `git status --short` and `git diff --stat` in an env
 
 - Git status/diff are unverified due missing Git command.
 - Browser visual verification was not completed in the final sealed state.
-- Article archive, recent posts, and tag pages now show empty states until a new article is added.
-- `preview-20260611.html` is a temporary review artifact and should not be treated as a published article until `assets/content.js` is updated.
+- Article archive, recent posts, and `一些思绪` tag page depend on `assets/content.js` loading successfully.
 - `assets/cocktail-hero.png` and `assets/hero-workspace.png` appear present but currently unused; do not delete without user approval and reference search.
 - `reviews.html` hardcodes review placeholder cards; `BAR_REVIEWS` is not yet wired to render reviews.
 - `article.html` can confuse future article flow; current preferred flow is separate static article HTML plus index entry.

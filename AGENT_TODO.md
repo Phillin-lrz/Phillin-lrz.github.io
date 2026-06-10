@@ -39,12 +39,12 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 ## 3. Phase-Two Candidate Tasks
 
-- [ ] Publish approved Word article preview:
-  - Confirm whether `preview-20260611.html` is acceptable.
-  - Generate final static article HTML.
-  - Add one metadata object to `assets/content.js` with tag `一些思绪`.
-  - Delete `preview-20260611.html`.
-  - Verify generated article path from `posts.html`.
+- [x] Published approved Word article preview:
+  - Confirmed `preview-20260611.html` was acceptable.
+  - Generated final static article HTML at `article-first-words-on-the-bar.html`.
+  - Added one metadata object to `assets/content.js` with tag `一些思绪`.
+  - Deleted `preview-20260611.html`.
+  - Verified generated article path from metadata.
 - [ ] Implement broader Word-to-article conversion workflow:
   - Extract text and images from a provided `.docx`.
   - Save images to `assets/posts/<article-id>/`.
@@ -64,7 +64,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 - [ ] `git` is not available in current shell; cannot produce authoritative git status or diff.
 - [ ] In-app browser automation has been unreliable/blocked; visual verification cannot be claimed until a browser check succeeds.
-- [ ] One Word document has been converted to `preview-20260611.html`; formal publication is pending user approval.
+- [x] One Word document has been published as `article-first-words-on-the-bar.html`.
 - [ ] No explicit phase-two scope has been approved after first-stage sealing.
 
 ## 5. Needs Human Confirmation
