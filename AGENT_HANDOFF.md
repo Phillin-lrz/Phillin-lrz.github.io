@@ -4,7 +4,7 @@ Last updated: 2026-06-11
 
 ## 1. One-Sentence Project State
 
-`Phil Lin的Bar` is currently a static GitHub Pages personal site with a dark cocktail-bar visual style, metadata-driven article lists/tags, separate static article-file direction, friend links, review placeholders, gallery placeholders, no public articles, and no writer/editor feature.
+`Phil Lin的Bar` is currently a static GitHub Pages personal site with a dark cocktail-bar visual style, metadata-driven article lists/tags, separate static article-file direction, friend links, review placeholders, gallery placeholders, no public articles, one pending article preview, and no writer/editor feature.
 
 ## 2. Phase-One Completion Summary
 
@@ -48,6 +48,7 @@ Follow-up after phase-one sealing:
   - There are currently no public article entries.
   - Future article images should go under `assets/posts/<article-id>/`.
 - `article.html` remains as a dynamic compatibility fallback, but static article HTML files are the recommended primary path.
+- `preview-20260611.html` is a review-only preview generated from the user's Word document; it is not linked publicly and should be deleted after the user approves or rejects the preview.
 
 ## 4. Current Git State
 
@@ -90,6 +91,7 @@ Before any future work, run `git status --short` and `git diff --stat` in an env
 - Git status/diff are unverified due missing Git command.
 - Browser visual verification was not completed in the final sealed state.
 - Article archive, recent posts, and tag pages now show empty states until a new article is added.
+- `preview-20260611.html` is a temporary review artifact and should not be treated as a published article until `assets/content.js` is updated.
 - `assets/cocktail-hero.png` and `assets/hero-workspace.png` appear present but currently unused; do not delete without user approval and reference search.
 - `reviews.html` hardcodes review placeholder cards; `BAR_REVIEWS` is not yet wired to render reviews.
 - `article.html` can confuse future article flow; current preferred flow is separate static article HTML plus index entry.

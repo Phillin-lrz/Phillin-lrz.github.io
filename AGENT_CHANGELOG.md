@@ -2,6 +2,19 @@
 
 Last updated: 2026-06-11
 
+## 2026-06-11 Word Article Preview
+
+User provided `20260611.docx` and requested Codex choose the title and summary, with tag `一些思绪`.
+
+- Read the Word document from the user-provided desktop path after permission was granted.
+- Extracted six text paragraphs and confirmed no embedded media files were present.
+- Generated `preview-20260611.html` as a review-only article preview.
+- Updated the preview layout so the tag line and summary sit directly under the title instead of in the sidebar.
+- Proposed title: `把第一杯文字放上吧台`.
+- Proposed summary: `凌晨实验后写下的网站开篇：关于这个个人空间的来处、栏目、酒、摄影，以及一个不急着被定义的自我介绍。`
+- Did not update `assets/content.js`; the preview is not linked from home, archive, or tag pages.
+- Formal publishing remains pending user approval. When approved, create the final static article HTML, add a `BAR_POSTS` metadata entry, and delete the preview file.
+
 Important limitation: `git` is not available in the current shell, so this changelog is based on current file state, repository scans, `.git/config`, and JavaScript syntax checks. It is not an authoritative git diff. Re-run `git status` and `git diff` when Git is available.
 
 ## 2026-06-11 Tag Rename

@@ -39,7 +39,13 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 ## 3. Phase-Two Candidate Tasks
 
-- [ ] Implement Word-to-article conversion workflow:
+- [ ] Publish approved Word article preview:
+  - Confirm whether `preview-20260611.html` is acceptable.
+  - Generate final static article HTML.
+  - Add one metadata object to `assets/content.js` with tag `一些思绪`.
+  - Delete `preview-20260611.html`.
+  - Verify generated article path from `posts.html`.
+- [ ] Implement broader Word-to-article conversion workflow:
   - Extract text and images from a provided `.docx`.
   - Save images to `assets/posts/<article-id>/`.
   - Generate `article-<article-id>.html`.
@@ -58,7 +64,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 - [ ] `git` is not available in current shell; cannot produce authoritative git status or diff.
 - [ ] In-app browser automation has been unreliable/blocked; visual verification cannot be claimed until a browser check succeeds.
-- [ ] No Word document has been provided yet for conversion.
+- [ ] One Word document has been converted to `preview-20260611.html`; formal publication is pending user approval.
 - [ ] No explicit phase-two scope has been approved after first-stage sealing.
 
 ## 5. Needs Human Confirmation

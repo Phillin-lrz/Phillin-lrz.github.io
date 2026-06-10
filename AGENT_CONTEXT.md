@@ -96,7 +96,7 @@ Verified in files:
 - No custom domain configuration was added.
 - No comment system was added.
 - No real cocktail review content or real photography portfolio content was authored beyond placeholders.
-- No Word document conversion was performed yet.
+- One Word document was converted into a temporary review file, `preview-20260611.html`; no formal public article has been published from it yet.
 
 ## 5. Current Code Architecture Understanding
 
@@ -115,6 +115,7 @@ Static site architecture:
 - `assets/content.js` is a lightweight metadata index.
 - Public article bodies should live in separate article HTML files. `assets/content.js` should point to those files via `url`. It currently has no public article entries.
 - Article images should be placed under `assets/posts/<article-id>/` when generated from Word or other rich sources.
+- `preview-20260611.html` is a temporary review artifact generated from the user's Word document and should be deleted after approval/rejection.
 
 ## 6. Key Files And Modules
 
