@@ -8,7 +8,6 @@ window.BAR_POSTS = [
     publishedAt: "2026-06-10",
     summary: "Phil Lin的世界正在构建中。",
     url: "article-to-be-continue.html",
-    content: "<p>Phil Lin的世界正在构建中</p>",
   },
 ];
 

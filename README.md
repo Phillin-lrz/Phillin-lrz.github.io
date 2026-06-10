@@ -16,7 +16,7 @@
 
 ## 发布文章
 
-推荐先修改 `assets/content.js` 里的 `window.BAR_POSTS`。每篇文章需要包含这些字段：
+推荐使用“文章索引 + 单独文章文件”的结构。`assets/content.js` 里的 `window.BAR_POSTS` 只保存摘要信息，不保存整篇正文。
 
 ```js
 {
@@ -25,8 +25,7 @@
   tag: "实验日志",
   publishedAt: "2026-06-10",
   summary: "文章摘要。",
-  url: "article.html?id=unique-post-id",
-  content: "<p>文章正文。</p>",
+  url: "article-my-first-post.html",
 }
 ```
 
@@ -37,8 +36,6 @@
 - `种草安利`
 
 添加后，首页最近文章、文章归档、标签页会自动更新。首页最近文章只展示按发布时间排序的最近三篇。
-
-如果想做成单独 HTML 页面：
 
 1. 复制 `_drafts/article-format-reference.html`
 2. 改成新的文章文件名，例如 `article-my-first-post.html`
@@ -70,7 +67,9 @@ hexo server
 
 右上角 `撰写` 会进入验证页，密码为 `ChunkingExpress940714:`。通过后可以在浏览器中撰写文章、插入图片、设置字体字号。
 
-点击 `发布` 后，撰写器会把文章转换成一段可直接复制进 `assets/content.js` 的代码，并以 `.txt` 格式下载到电脑。把 txt 里的对象复制进 `window.BAR_POSTS` 数组后，再推送到 GitHub，所有访客就能看到这篇文章。
+点击 `发布` 后，撰写器会把文章转换成一段可复制进 `assets/content.js` 的索引代码，并以 `.txt` 格式下载到电脑。正文较长或带图片时，建议另外生成单独文章 HTML 文件，再把索引代码里的 `url` 指向该文章文件。
+
+如果提供 Word 文档，可以把 Word 里的文字和图片转换成一篇独立文章 HTML：图片放入 `assets/posts/文章名/`，正文写入 `article-文章名.html`，再在 `assets/content.js` 中新增一条摘要索引。
 
 ## 部署到 GitHub Pages
 

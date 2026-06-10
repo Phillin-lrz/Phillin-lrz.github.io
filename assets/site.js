@@ -324,7 +324,6 @@ function buildContentJsEntry(post) {
     publishedAt: ${JSON.stringify(post.publishedAt)},
     summary: ${JSON.stringify(post.summary)},
     url: ${JSON.stringify(post.url)},
-    content: \`${escapeTemplateLiteral(post.content)}\`,
   },`;
 }
 
@@ -421,7 +420,7 @@ function initEditor() {
       tag: String(data.get("tag")),
       publishedAt: publishValue.slice(0, 10),
       summary: summarizeContent(content),
-      url: `article.html?id=${id}`,
+      url: `article-${id}.html`,
       content,
     };
   }
@@ -431,7 +430,7 @@ function initEditor() {
     if (!post) return;
     const code = buildContentJsEntry(post);
     downloadTextFile(`${post.id}.txt`, code);
-    message.textContent = "已下载 txt。把里面的对象复制到 assets/content.js 的 BAR_POSTS 数组里即可上线。";
+    message.textContent = "已下载索引 txt。把它复制到 assets/content.js，并建立对应的文章 HTML 文件即可上线。";
   });
 }
 
