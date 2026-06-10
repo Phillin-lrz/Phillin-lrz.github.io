@@ -38,11 +38,13 @@ hexo server
 
 ## 部署到 GitHub Pages
 
-1. 创建 GitHub 仓库，例如 `username.github.io`
+1. 创建 GitHub 仓库 `Phillin-lrz.github.io`
 2. 上传本目录中的所有文件
 3. 进入仓库 Settings -> Pages
 4. 选择发布分支并保存
-5. 等待部署完成后访问 `https://username.github.io`
+5. 等待部署完成后访问 `https://phillin-lrz.github.io/`
+
+用户名变更后，请确认仓库名和远程地址都使用 `Phillin-lrz.github.io`，这样 GitHub Pages 才会作为个人主页发布。
 
 如果使用 Hexo，可安装部署插件：
 
@@ -55,7 +57,7 @@ npm install hexo-deployer-git --save
 ```yaml
 deploy:
   type: git
-  repo: https://github.com/username/username.github.io.git
+  repo: https://github.com/Phillin-lrz/Phillin-lrz.github.io.git
   branch: main
 ```
 
