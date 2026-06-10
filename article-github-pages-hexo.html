@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>用 GitHub Pages 和 Hexo 搭建自己的博客 | 星屿札记</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html"><span class="brand-mark">S</span><span>星屿札记</span></a>
+      <nav class="nav-links" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="posts.html">文章</a>
+        <a href="guide.html">使用指南</a>
+      </nav>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换主题">◐</button>
+    </header>
+
+    <main class="article-layout">
+      <article class="article">
+        <header class="article-header">
+          <p class="eyebrow">建站笔记</p>
+          <h1>用 GitHub Pages 和 Hexo 搭建自己的博客</h1>
+          <p class="article-meta">发布于 2026-06-10 · 约 5 分钟阅读</p>
+        </header>
+
+        <p>这篇示例文章按照参考资料的思路，保留了最关键的建站路径：先准备本地环境，再用 Hexo 生成博客，最后把静态文件部署到 GitHub Pages。</p>
+
+        <h2>1. 准备工具</h2>
+        <p>安装 Node.js、Git 和一个代码编辑器。确认命令行可以使用 <code>node</code>、<code>npm</code> 和 <code>git</code> 后，再安装 Hexo。</p>
+        <pre><code>npm install -g hexo-cli
+hexo init my-blog
+cd my-blog
+npm install</code></pre>
+
+        <h2>2. 本地预览</h2>
+        <p>在博客目录中启动预览服务，打开浏览器查看默认主题。如果能看到页面，就说明基础环境已经走通。</p>
+        <pre><code>hexo clean
+hexo generate
+hexo server</code></pre>
+
+        <h2>3. 发布第一篇文章</h2>
+        <p>Hexo 的文章通常保存在 <code>source/_posts</code>。你可以用命令生成草稿，再用 Markdown 写正文。</p>
+        <pre><code>hexo new "我的第一篇博客"</code></pre>
+
+        <h2>4. 部署到 GitHub Pages</h2>
+        <p>创建名为 <code>用户名.github.io</code> 的仓库，安装部署插件，并在 Hexo 配置文件中填写仓库地址。</p>
+        <pre><code>npm install hexo-deployer-git --save</code></pre>
+        <p>然后在 <code>_config.yml</code> 中配置：</p>
+        <pre><code>deploy:
+  type: git
+  repo: https://github.com/用户名/用户名.github.io.git
+  branch: main</code></pre>
+        <p>最后执行部署命令：</p>
+        <pre><code>hexo clean
+hexo deploy</code></pre>
+
+        <h2>5. 下一步</h2>
+        <p>完成上线后，可以继续配置主题、头像、社交链接、评论系统、统计工具和自定义域名。先让写作流程稳定下来，再慢慢打磨视觉效果，会更容易坚持。</p>
+      </article>
+
+      <aside class="article-aside">
+        <div class="aside-block">
+          <h2>文章标签</h2>
+          <div class="tag-row">
+            <span>GitHub Pages</span>
+            <span>Hexo</span>
+            <span>博客</span>
+          </div>
+        </div>
+        <div class="aside-block">
+          <h2>推荐操作</h2>
+          <a class="button primary full" href="guide.html">查看完整使用指南</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 星屿札记</span>
+      <span><a href="posts.html">返回归档</a></span>
+    </footer>
+
+    <script src="assets/site.js"></script>
+  </body>
+</html>
