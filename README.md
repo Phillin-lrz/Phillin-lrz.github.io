@@ -18,7 +18,7 @@
 
 静态模板方式：
 
-1. 复制 `article-github-pages-hexo.html`
+1. 复制 `_drafts/article-format-reference.html`
 2. 改成新的文章文件名，例如 `article-my-first-post.html`
 3. 修改文章标题、日期、标签和正文
 4. 在 `posts.html` 里新增文章卡片，并链接到新文章
