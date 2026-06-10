@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>星屿札记 | 个人博客</title>
-    <meta name="description" content="一个适合 GitHub Pages 和 Hexo 风格内容发布的个人博客模板。">
+    <title>星屿札记 | Particle 风格博客</title>
+    <meta name="description" content="一个 Particle 风格的个人博客首页。">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
@@ -18,53 +18,51 @@
         <a href="posts.html">文章</a>
         <a href="guide.html">使用指南</a>
       </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="切换明暗主题" title="切换主题">◐</button>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="切换粒子效果" title="切换粒子效果">✦</button>
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">GitHub Pages + Hexo 风格博客</p>
-          <h1>把日常学习、项目记录和灵感，整理成自己的公开主页。</h1>
-          <p class="hero-lede">这是一个可直接发布的静态博客网站。你可以先用它做个人主页，也可以把结构迁移到 Hexo，继续用 Markdown 写文章。</p>
+      <section class="particle-hero">
+        <div class="profile-card">
+          <div class="avatar">S</div>
+          <p class="eyebrow">GitHub Pages · Hexo · Notes</p>
+          <h1>星屿札记</h1>
+          <p class="hero-lede">记录学习、项目、工具配置和生活里的长期思考。</p>
           <div class="hero-actions">
-            <a class="button primary" href="posts.html">阅读文章</a>
-            <a class="button secondary" href="guide.html">查看使用方法</a>
+            <a class="button primary" href="posts.html">进入文章</a>
+            <a class="button secondary" href="guide.html">管理网站</a>
           </div>
         </div>
-        <figure class="hero-media">
-          <img src="assets/hero-workspace.png" alt="一张写作与编程工作台插画">
-        </figure>
       </section>
 
-      <section class="section intro-grid" aria-label="博客亮点">
+      <section class="section intro-grid" aria-label="博客内容">
         <article>
-          <span class="mini-label">写作</span>
-          <h2>Markdown 友好</h2>
-          <p>标题、代码块、引用、标签和归档都能自然迁移到 Hexo 的文章体系。</p>
+          <span class="mini-label">Code</span>
+          <h2>技术笔记</h2>
+          <p>记录建站、工具、代码和项目复盘。</p>
         </article>
         <article>
-          <span class="mini-label">发布</span>
-          <h2>适合 GitHub Pages</h2>
-          <p>纯静态页面，无需后端。放到仓库并启用 Pages 后即可访问。</p>
+          <span class="mini-label">Write</span>
+          <h2>长期写作</h2>
+          <p>把碎片想法整理成可以回看的文章。</p>
         </article>
         <article>
-          <span class="mini-label">个性</span>
-          <h2>主题可定制</h2>
-          <p>颜色、头像、站名、导航、文章封面和简介都集中在少量文件中。</p>
+          <span class="mini-label">Life</span>
+          <h2>生活观察</h2>
+          <p>保留一些不急着得出结论的日常感受。</p>
         </article>
       </section>
 
       <section class="section split-section">
         <div>
-          <p class="eyebrow">Recent Notes</p>
+          <p class="eyebrow">Recent Posts</p>
           <h2>最近文章</h2>
         </div>
         <div class="post-list compact">
           <a class="post-card" href="article-github-pages-hexo.html">
             <span class="post-date">2026-06-10</span>
             <h3>用 GitHub Pages 和 Hexo 搭建自己的博客</h3>
-            <p>从准备环境、创建仓库、安装 Hexo 到发布上线，一次走通完整流程。</p>
+            <p>从环境准备、创建仓库、安装 Hexo 到部署上线，一次走通完整流程。</p>
           </a>
           <a class="post-card" href="posts.html">
             <span class="post-date">写作计划</span>
@@ -77,7 +75,7 @@
 
     <footer class="site-footer">
       <span>© 2026 星屿札记</span>
-      <span>Built for GitHub Pages</span>
+      <span>Particle style for GitHub Pages</span>
     </footer>
 
     <script src="assets/site.js"></script>
