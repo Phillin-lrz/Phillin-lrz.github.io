@@ -370,6 +370,61 @@ h3 {
   padding-bottom: 4rem;
 }
 
+.friend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-bottom: 4rem;
+}
+
+.friend-card {
+  display: flex;
+  min-height: 8.5rem;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.15rem;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.friend-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(102, 227, 255, 0.58);
+  box-shadow: 0 24px 70px rgba(102, 227, 255, 0.12);
+}
+
+.friend-avatar {
+  display: grid;
+  flex: 0 0 4rem;
+  width: 4rem;
+  height: 4rem;
+  place-items: center;
+  border: 1px solid rgba(102, 227, 255, 0.55);
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 227, 255, 0.2), rgba(255, 122, 217, 0.18));
+  color: var(--ink);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.friend-info {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.friend-info strong {
+  font-size: 1.08rem;
+}
+
+.friend-info span {
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
 .guide-card ol {
   margin: 0;
   padding-left: 1.25rem;
@@ -463,6 +518,7 @@ pre code {
   .split-section,
   .article-layout,
   .guide-grid,
+  .friend-grid,
   .intro-grid {
     grid-template-columns: 1fr;
   }
