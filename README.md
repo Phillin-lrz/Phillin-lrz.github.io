@@ -63,11 +63,7 @@ hexo server
 
 在 `gallery.html` 的 `gallery-grid` 中复制一个 `photo-tile` 模块，修改标题和状态即可。如果要展示真实照片，把模块内容改成图片和文字说明，并把图片放入 `assets` 文件夹。
 
-## 撰写入口
-
-右上角 `撰写` 会进入验证页，密码为 `ChunkingExpress940714:`。通过后可以在浏览器中撰写文章、插入图片、设置字体字号。
-
-点击 `发布` 后，撰写器会把文章转换成一段可复制进 `assets/content.js` 的索引代码，并以 `.txt` 格式下载到电脑。正文较长或带图片时，建议另外生成单独文章 HTML 文件，再把索引代码里的 `url` 指向该文章文件。
+## 从 Word 转文章
 
 如果提供 Word 文档，可以把 Word 里的文字和图片转换成一篇独立文章 HTML：图片放入 `assets/posts/文章名/`，正文写入 `article-文章名.html`，再在 `assets/content.js` 中新增一条摘要索引。
 
