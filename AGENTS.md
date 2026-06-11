@@ -71,6 +71,28 @@ Codex must not:
 - claim verification unless the relevant command was actually run or the relevant output was inspected
 - start a new phase before the handoff and context files are current
 
+### Project-level verification preference
+
+For this project, skip visual verification by default. Do not open browser visual checks unless the user explicitly asks for them later or a higher-priority instruction makes them mandatory.
+
+When visual verification is skipped, Codex must:
+
+- say that visual verification was skipped by project preference
+- rely on file-level checks, reference searches, syntax checks when available, and static reasoning
+- never claim that layout or screenshots were visually verified
+- record any remaining visual risk when the change affects the frontend
+
+If a future instruction conflicts with this preference, Codex must mention the conflict clearly instead of silently ignoring either instruction.
+
+### Project-level command verification policy
+
+For this project, keep attempting Git and JavaScript syntax checks when relevant:
+
+- Keep `git status --short`, `git diff --stat`, and `git diff -- .` as project recovery/diff checks.
+- Keep `node --check assets/site.js`, `node --check assets/content.js`, and `node --check assets/gripes.js` as JavaScript syntax checks when those files are relevant.
+- If `git` or `node` is unavailable, record the exact limitation and continue with file-level checks.
+- Do not use Node REPL as a routine fallback for blocked `node --check` or browser verification. Use Node REPL only if the user explicitly requests deeper runtime debugging or a higher-priority instruction requires it.
+
 ### Completion requirement
 
 Before reporting a task as complete, Codex must ensure that any relevant project state has been reflected in the durable state files and must report:

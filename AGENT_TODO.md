@@ -22,6 +22,9 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - `tag-recommendations.html`
 - [x] Confirmed `posts.html` has tag filter buttons for all three tags.
 - [x] Confirmed `friends.html` contains StarCried and CrescentYves friend cards and avatars.
+- [x] Added right-side `吐槽` rail rendering from static `window.BAR_GRIPES` data.
+- [x] Published first gripe entry with second-level timestamp.
+- [x] Split gripe data into `assets/gripes.js` so `assets/content.js` stays focused on article/review metadata.
 - [x] Confirmed `reviews.html` and `gallery.html` exist with placeholder content.
 - [x] Confirmed `.git/config` remote URL is `https://github.com/Phillin-lrz/Phillin-lrz.github.io.git`.
 - [x] Confirmed JavaScript syntax for `assets/site.js` and `assets/content.js` in the final check.
@@ -30,8 +33,10 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 - [ ] Run `git status --short` once Git is available; current environment cannot find `git`.
 - [ ] Run `git diff --stat` and `git diff -- .` once Git is available; current environment cannot find `git`.
-- [ ] Open `index.html`, `posts.html`, `tag-thoughts.html`, `friends.html`, `reviews.html`, and `gallery.html` in a browser and visually verify layout.
-- [ ] Verify the canvas background does not obscure content on mobile and desktop.
+- [ ] Keep attempting relevant `node --check` commands when JavaScript files change; if Node is unavailable, record the limitation.
+- [ ] Do not use Node REPL as a routine fallback for blocked `node --check` or browser verification.
+- [ ] Visual verification is skipped by current project preference unless the user explicitly asks for it later or a higher-priority instruction requires it.
+- [ ] If visual verification is skipped after frontend changes, report residual visual risk instead of claiming browser/layout verification.
 - [ ] Verify `assets/cocktail-hero.png` and `assets/hero-workspace.png` are truly unused before deleting or keeping intentionally.
 - [ ] Decide whether `article.html` should remain as compatibility fallback or be removed after static article pages are fully adopted.
 - [ ] Decide whether `BAR_REVIEWS` should render `reviews.html` dynamically or remain a future data hook.
@@ -53,6 +58,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - Verify generated article path from `posts.html`.
 - [ ] Add a reusable article HTML template for generated articles, based on `_drafts/article-format-reference.html`.
 - [ ] Make `reviews.html` render from `window.BAR_REVIEWS` instead of hardcoded placeholder cards.
+- [ ] If gripe count grows large, revisit scheme 3 or 4 for the gripe rail: paginated static files or JSON on-demand loading.
 - [ ] Add real photography entries to `gallery.html` and decide image folder structure, likely `assets/gallery/`.
 - [ ] Add better empty-state text for tag pages with no articles.
 - [ ] Add a small documentation section showing how to manually add a new static article.
@@ -90,6 +96,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
 - [ ] Run JavaScript syntax checks:
   - `node --check assets/site.js`
   - `node --check assets/content.js`
+  - `node --check assets/gripes.js`
 - [ ] Search for accidental writer resurrection:
   - `write.html`
   - `editor.html`
@@ -100,7 +107,8 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - `撰写`
 - [ ] Search for stale cache query strings before finalizing:
   - old values such as `bar-export-20260610` or earlier.
-- [ ] Browser-check at least:
+- [ ] Skip browser visual verification by project preference unless the user explicitly asks for it later or a higher-priority instruction requires it.
+- [ ] If browser visual verification is requested or required, browser-check at least:
   - `index.html`
   - `posts.html`
   - one tag page
@@ -122,4 +130,5 @@ Use this file before starting phase two or any future multi-file work. Do not re
    - `git diff --stat`
    - `node --check assets/site.js`
    - `node --check assets/content.js`
+   - `node --check assets/gripes.js`
 4. Ask the user to confirm the exact phase-two objective before changing code.

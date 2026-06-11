@@ -2,6 +2,59 @@
 
 Last updated: 2026-06-11
 
+## 2026-06-11 Command Validation Policy
+
+User reviewed repeated command failures and decided the project should keep Git checks and `node --check`, skip browser visual verification by default, and stop using Node REPL as a routine fallback.
+
+- Keep attempting `git status --short`, `git diff --stat`, and `git diff -- .` for recovery and diff awareness.
+- Keep attempting `node --check` for relevant JavaScript files, including `assets/site.js`, `assets/content.js`, and `assets/gripes.js`.
+- Continue skipping browser visual verification by project preference unless explicitly requested or required by higher-priority instructions.
+- Do not attempt Node REPL fallback as a routine substitute for blocked `node --check` or blocked browser verification.
+- If Git or Node commands fail, record the exact limitation and rely on file-level checks.
+
+## 2026-06-11 Project Preferences Localized
+
+User asked whether global-related settings could be written into this project's durable AGENT files, and requested that they be transferred if effective.
+
+- Added a project-level preference to `AGENTS.md`: skip visual verification by default unless the user explicitly asks later or a higher-priority instruction requires it.
+- Added the same preference to `AGENT_CONTEXT.md`, including the requirement to report skipped visual verification and residual visual risk.
+- Updated `AGENT_TODO.md` validation steps so browser visual checks are conditional instead of default.
+- Preserved the gripe scale-up reminder in project state: if `assets/gripes.js` becomes too heavy, remind the user about scheme 3 or scheme 4.
+- Clarified that project files can achieve this effect for this repository because startup recovery requires reading `AGENTS.md` and the AGENT state files before non-trivial work.
+- Limitation: this affects this repository's project workflow; it does not erase any separate global memory note that may also exist.
+
+## 2026-06-11 Gripe Data Split
+
+User chose scheme 2 for gripe rail scaling and asked to remember scheme 3/4 for future upgrades.
+
+- Moved `window.BAR_GRIPES` out of `assets/content.js`.
+- Added `assets/gripes.js` as the dedicated static gripe data file.
+- Updated all HTML pages to load `gripes.js` between `content.js` and `site.js`.
+- Kept the existing rendering behavior: only the current visible page of gripes is rendered into the DOM.
+- Documented scheme 3 and scheme 4 as future upgrade paths if the gripe count makes `assets/gripes.js` too large.
+- Scheme 3: split static gripe data into paginated files and load the needed page.
+- Scheme 4: move gripe data into JSON and fetch it on demand.
+- Added an ad-hoc memory note so future work can remind the user of this discussion.
+- Verification performed: confirmed `BAR_GRIPES` now lives in `assets/gripes.js` and every HTML page loads `content.js`, `gripes.js`, then `site.js`.
+- Verification blocked: `node --check` could not run because `node.exe` returned access denied; `git status` could not run because `git` is not recognized.
+- Visual verification skipped per user global preference.
+
+## 2026-06-11 Gripe Rail Added
+
+User requested a right-side `吐槽` column on every page with forum-like pagination and a first gripe entry.
+
+- Added `window.BAR_GRIPES` to `assets/content.js`.
+- Published first gripe: `做实验永远都要留出实验时间10%-50%的计划时间余量，不然就会完蛋。`
+- Recorded mood as `烦恼`, emoji as `😫`, and timestamp as `2026-06-11 12:40:15`.
+- Updated `assets/site.js` to inject a `吐槽` rail on pages that load `assets/content.js`.
+- The rail calculates a per-page display count from page height and paginates additional entries with previous/next controls.
+- Updated `assets/styles.css` to reserve desktop right-side space and provide responsive layout on narrow screens.
+- Updated `_drafts/article-format-reference.html` to load `../assets/content.js` so the rail can render there too.
+- Updated README and AGENT state files with the static data-pool behavior.
+- Limitation: this is a static GitHub Pages data pool, not a real server backend or user-submitted database.
+- Verification performed: searched for `BAR_GRIPES`, gripe rail selectors, the first gripe text, and confirmed every HTML page loads `content.js` plus `site.js`.
+- Verification blocked: `node --check` could not run because `node.exe` returned access denied, and browser visual verification could not run because the browser runtime was blocked by the current sandbox.
+
 ## 2026-06-11 Friend Link Added
 
 User requested a new friend link for CrescentYves.

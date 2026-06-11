@@ -719,6 +719,111 @@ pre code {
   color: var(--muted);
 }
 
+.gripe-rail {
+  z-index: 8;
+  display: grid;
+  gap: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem;
+  background:
+    linear-gradient(145deg, rgba(255, 241, 204, 0.04), rgba(159, 47, 40, 0.06)),
+    rgba(12, 7, 5, 0.86);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
+
+.gripe-header,
+.gripe-topline,
+.gripe-pager {
+  display: flex;
+  align-items: center;
+}
+
+.gripe-header {
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 0.75rem;
+}
+
+.gripe-header h2 {
+  margin-bottom: 0;
+  font-size: 1.15rem;
+}
+
+.gripe-header > span {
+  display: grid;
+  min-width: 2rem;
+  min-height: 2rem;
+  place-items: center;
+  border: 1px solid rgba(255, 210, 138, 0.36);
+  border-radius: 50%;
+  color: var(--accent-strong);
+  font-weight: 900;
+}
+
+.gripe-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.gripe-item {
+  border: 1px solid rgba(255, 214, 153, 0.12);
+  border-radius: var(--radius);
+  padding: 0.85rem;
+  background: rgba(255, 241, 204, 0.045);
+}
+
+.gripe-topline {
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
+  color: var(--accent-strong);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.gripe-emoji {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.gripe-item p {
+  margin-bottom: 0.65rem;
+  color: #f4dfbd;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.gripe-item time {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.gripe-pager {
+  justify-content: space-between;
+  gap: 0.55rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.75rem;
+}
+
+.gripe-pager .chip {
+  min-height: 2.2rem;
+  padding: 0.42rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+.gripe-pager .chip:disabled {
+  cursor: not-allowed;
+  opacity: 0.42;
+}
+
+.gripe-pager span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
 .topic-card {
   min-height: 12rem;
   border: 1px solid var(--line);
@@ -758,6 +863,29 @@ pre code {
   .nav-links {
     width: 100%;
     flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 1180px) {
+  body {
+    padding-right: 18rem;
+  }
+
+  .gripe-rail {
+    position: fixed;
+    top: 5.25rem;
+    right: 1rem;
+    bottom: 1rem;
+    width: 16rem;
+    align-content: start;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 1179px) {
+  .gripe-rail {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 2rem auto;
   }
 }
 

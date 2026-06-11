@@ -59,6 +59,21 @@ hexo server
 
 在 `assets/content.js` 里的 `window.BAR_REVIEWS` 中新增条目。当前酒评页面保留了“亟待创作”的展示格式，后续可以把每个酒评扩展成独立页面。
 
+## 新增吐槽
+
+吐槽栏由 `assets/site.js` 自动显示在每个页面右侧，数据保存在独立的 `assets/gripes.js` 的 `window.BAR_GRIPES` 中。每条吐槽包含短句、心情、emoji 和精确到秒的发布时间。
+
+```js
+{
+  text: "很短的一句话。",
+  mood: "烦恼",
+  emoji: "😫",
+  publishedAt: "2026-06-11 12:40:15",
+}
+```
+
+这是静态 GitHub Pages 方案里的数据池，不是服务端数据库。新增更多吐槽后，右侧栏目会按页面高度自动决定每页显示条数，剩余吐槽可以通过栏目底部的分页按钮查看。吐槽数量继续增大时，可以再升级为分页静态文件或 JSON 按需加载。
+
 ## 新增摄影作品
 
 在 `gallery.html` 的 `gallery-grid` 中复制一个 `photo-tile` 模块，修改标题和状态即可。如果要展示真实照片，把模块内容改成图片和文字说明，并把图片放入 `assets` 文件夹。

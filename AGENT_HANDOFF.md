@@ -32,6 +32,10 @@ Follow-up after phase-one sealing:
 
 - Deleted the placeholder article `To Be Continue` / `To Be Continued`.
 - Cleared `window.BAR_POSTS` in `assets/content.js`.
+- Added a right-side `吐槽` rail rendered from `window.BAR_GRIPES`.
+- Published the first gripe with mood `烦恼`, emoji `😫`, and timestamp `2026-06-11 12:40:15`.
+
+- Project-level preference localized from user request: skip visual verification by default unless the user explicitly asks later or a higher-priority instruction requires it.
 
 ## 3. Current Code State
 
@@ -42,6 +46,19 @@ Follow-up after phase-one sealing:
   - `assets/site.js`
 - Shared styling:
   - `assets/styles.css`
+- Gripe rail:
+  - `assets/gripes.js` stores static `window.BAR_GRIPES` entries.
+  - `assets/site.js` injects the rail and handles page-size calculation and pagination.
+  - `assets/styles.css` positions the rail on the right for desktop and makes it responsive on narrower screens.
+  - Current scale strategy is scheme 2: keep gripe data separate from `assets/content.js` and render only the current page.
+  - If gripe count grows enough to make `assets/gripes.js` heavy, remind the user about scheme 3 or 4: paginated static files or JSON on-demand loading.
+- Verification preference:
+  - Skip browser visual verification by default for this project.
+  - Use file-level checks, reference searches, syntax checks when available, and static reasoning.
+  - Report residual visual risk when skipping visual checks after frontend changes.
+  - Never claim visual verification unless it was actually performed.
+  - Keep attempting Git checks and `node --check` syntax checks when relevant.
+  - Do not use Node REPL as a routine fallback for blocked `node --check` or browser verification.
 - Article architecture:
   - Home/archive/tag pages read summary metadata from `assets/content.js`.
   - Real article bodies should live in separate HTML files, for example `article-my-post.html`.
@@ -82,6 +99,7 @@ Before any future work, run `git status --short` and `git diff --stat` in an env
 - `gallery.html`: gallery placeholder page.
 - `about.html`: about page.
 - `assets/content.js`: tags, article metadata, review metadata.
+- `assets/gripes.js`: static gripe data.
 - `assets/site.js`: canvas interaction and post rendering.
 - `assets/styles.css`: shared visual system.
 - `assets/posts/`: intended future article image folders.
@@ -145,6 +163,7 @@ Read these before editing code:
 4. Run:
    - `node --check assets/site.js`
    - `node --check assets/content.js`
+   - `node --check assets/gripes.js`
 5. Search for writer feature leftovers:
    - `write.html`
    - `editor.html`
@@ -153,7 +172,7 @@ Read these before editing code:
    - `data-editor`
    - `WRITER`
    - `撰写`
-6. Browser-check local pages if browser tooling is available:
+6. Skip browser visual verification by project preference unless the user explicitly asks later or a higher-priority instruction requires it. If requested or required, browser-check local pages:
    - `index.html`
    - `posts.html`
    - one tag page

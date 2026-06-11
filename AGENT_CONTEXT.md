@@ -4,6 +4,30 @@ Last updated: 2026-06-11
 
 This file externalizes the verified phase-one project context. Do not treat chat history or auto summaries as authoritative. Reconfirm current state from repository files, command output, and validation results before future development.
 
+## 2026-06-11 Project-Level Agent Preferences
+
+- Skip visual verification by default for this project.
+- Do not open browser visual checks unless the user explicitly asks later or a higher-priority instruction requires them.
+- When frontend work is completed, report that visual verification was skipped by project preference and list residual visual risk if relevant.
+- Use file-level checks, reference searches, syntax checks when available, and static reasoning instead.
+- Never claim layout, screenshot, or browser visual verification unless it was actually performed.
+- If future instructions conflict with this preference, state the conflict clearly.
+- Keep Git checks and `node --check` syntax checks as project-level validation attempts when relevant.
+- If Git or Node remains unavailable, record the exact limitation and continue with file-level checks.
+- Do not use Node REPL as a routine fallback for blocked `node --check` or browser verification; reserve it for explicit runtime debugging requests or higher-priority requirements.
+
+## 2026-06-11 Gripe Rail State
+
+- The site now has a right-side `吐槽` rail rendered by `assets/site.js` on pages that load `assets/content.js`.
+- Static gripe entries are stored in `window.BAR_GRIPES` inside `assets/gripes.js`; this is the GitHub Pages-compatible data pool, not a server database.
+- Each gripe entry contains `text`, `mood`, `emoji`, and `publishedAt` with second-level precision.
+- The first gripe is published with mood `烦恼`, emoji `😫`, and timestamp `2026-06-11 12:40:15`.
+- The rail calculates a per-page display count from page height and uses previous/next pagination for additional gripes.
+- Desktop layout reserves right-side space for the rail; narrow screens show it as a normal responsive block.
+- Scheme 2 is the active implementation: gripe data is split out of `assets/content.js` into `assets/gripes.js`, while the DOM still renders only the current visible page of gripes.
+- If gripe volume grows large enough for `assets/gripes.js` to become heavy, revisit scheme 3 or scheme 4: paginated static gripe files or JSON on-demand loading.
+- Future reminder: when gripe count grows enough to create load or maintenance pressure, remind the user that scheme 3 and scheme 4 were discussed on 2026-06-11.
+
 ## 1. Current Project Goal
 
 Build and maintain a static personal GitHub Pages website for `Phil Lin的Bar`, with a dark cocktail-bar visual language, article browsing, tags, friend links, cocktail review placeholder content, and gallery placeholder content.
@@ -134,6 +158,7 @@ Static site architecture:
 - `friends.html`: StarCried friend-link page.
 - `about.html`: about page.
 - `assets/content.js`: article tag/review metadata.
+- `assets/gripes.js`: static gripe-column data.
 - `assets/site.js`: canvas interaction and post rendering logic.
 - `assets/styles.css`: shared CSS, dark bar visual language.
 - `assets/starcried-avatar.png`: StarCried avatar.
@@ -249,7 +274,8 @@ Alternatives not chosen:
 - `content.js` should remain a lightweight article index only.
 - Public article bodies should be separate HTML files.
 - `article.html` is compatibility/fallback, not the primary article-authoring path.
-- Browser and git verification were limited by environment, so future work should re-run them when tools are available.
+- Git and JavaScript syntax verification were limited by environment, so future work should re-run them when tools are available.
+- Browser visual verification is skipped by project preference unless explicitly requested or required by a higher-priority instruction.
 - The GitHub remote in `.git/config` is already updated to `Phillin-lrz`.
 - `assets/cocktail-hero.png` is present but should be treated as unused unless verified otherwise.
 

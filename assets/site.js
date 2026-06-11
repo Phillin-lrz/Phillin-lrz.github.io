@@ -294,7 +294,89 @@ function renderArticlePage() {
   tagRow.innerHTML = `<span>${escapeHtml(post.tag)}</span>`;
 }
 
+function allGripes() {
+  const gripes = window.BAR_GRIPES || [];
+  return [...gripes].sort(
+    (a, b) => new Date(b.publishedAt.replace(" ", "T")).getTime() - new Date(a.publishedAt.replace(" ", "T")).getTime(),
+  );
+}
+
+function gripePageSize() {
+  const pageHeight = Math.max(document.documentElement.scrollHeight, window.innerHeight);
+  if (window.innerWidth < 1180) return 2;
+  return Math.max(1, Math.min(8, Math.floor((pageHeight - 180) / 180)));
+}
+
+function gripeItem(item) {
+  return `
+    <article class="gripe-item">
+      <div class="gripe-topline">
+        <span class="gripe-emoji" aria-label="${escapeHtml(item.mood)}">${escapeHtml(item.emoji)}</span>
+        <span>${escapeHtml(item.mood)}</span>
+      </div>
+      <p>${escapeHtml(item.text)}</p>
+      <time datetime="${escapeHtml(item.publishedAt)}">${escapeHtml(item.publishedAt)}</time>
+    </article>
+  `;
+}
+
+function renderGripeRail() {
+  const gripes = allGripes();
+  if (!gripes.length || document.querySelector("[data-gripe-rail]")) return;
+
+  const rail = document.createElement("aside");
+  rail.className = "gripe-rail";
+  rail.setAttribute("data-gripe-rail", "");
+  rail.setAttribute("aria-label", "吐槽");
+  document.body.append(rail);
+
+  let page = 0;
+
+  function update() {
+    const size = gripePageSize();
+    const totalPages = Math.max(1, Math.ceil(gripes.length / size));
+    page = Math.min(page, totalPages - 1);
+    const start = page * size;
+    const visible = gripes.slice(start, start + size);
+
+    rail.innerHTML = `
+      <div class="gripe-header">
+        <div>
+          <p class="mini-label">Gripes</p>
+          <h2>吐槽</h2>
+        </div>
+        <span>${gripes.length}</span>
+      </div>
+      <div class="gripe-list">
+        ${visible.map(gripeItem).join("")}
+      </div>
+      <div class="gripe-pager" aria-label="吐槽分页">
+        <button class="chip" data-gripe-prev type="button" ${page === 0 ? "disabled" : ""}>上一页</button>
+        <span>${page + 1} / ${totalPages}</span>
+        <button class="chip" data-gripe-next type="button" ${page >= totalPages - 1 ? "disabled" : ""}>下一页</button>
+      </div>
+    `;
+  }
+
+  rail.addEventListener("click", (event) => {
+    const previous = event.target.closest("[data-gripe-prev]");
+    const next = event.target.closest("[data-gripe-next]");
+    if (previous) {
+      page = Math.max(0, page - 1);
+      update();
+    }
+    if (next) {
+      page += 1;
+      update();
+    }
+  });
+
+  window.addEventListener("resize", update);
+  update();
+}
+
 renderRecentPosts();
 initPostFilters();
 renderTagPages();
 renderArticlePage();
+renderGripeRail();
