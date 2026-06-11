@@ -19,7 +19,7 @@ Phase one is sealed. Verified first-stage work includes:
   - `tag-recommendations.html`
 - Lightweight article metadata in `assets/content.js`.
 - Placeholder public article `article-to-be-continue.html` deleted at user request.
-- Friend page for StarCried.
+- Friend page for StarCried and CrescentYves.
 - Placeholder `酒评` and `摄影作品` pages.
 - Removed writer/validation/editor pages and related code.
 - Added context sealing files:
@@ -77,7 +77,7 @@ Before any future work, run `git status --short` and `git diff --stat` in an env
 - `article.html`: dynamic article fallback.
 - `article-first-words-on-the-bar.html`: first published article, tag `一些思绪`.
 - `_drafts/article-format-reference.html`: retained non-public format/reference draft.
-- `friends.html`: friend links, currently StarCried.
+- `friends.html`: friend links, currently StarCried and CrescentYves.
 - `reviews.html`: cocktail review placeholder page.
 - `gallery.html`: gallery placeholder page.
 - `about.html`: about page.

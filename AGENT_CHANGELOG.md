@@ -2,6 +2,18 @@
 
 Last updated: 2026-06-11
 
+## 2026-06-11 Friend Link Added
+
+User requested a new friend link for CrescentYves.
+
+- Added CrescentYves to `friends.html`.
+- Copied the provided avatar image to `assets/crescentyves-avatar.jpg`.
+- Linked the card to `https://crescentyves.me/`.
+- Added spacing to `.friend-showcase` so multiple friend cards are separated.
+- Updated AGENT context and handoff files with the new friend-link state.
+- Verification performed: confirmed the copied avatar file exists and searched for CrescentYves references.
+- Verification blocked: browser visual verification could not run because the browser runtime was blocked by the current sandbox.
+
 ## 2026-06-11 Word Article Published
 
 User provided `20260611.docx` and requested Codex choose the title and summary, with tag `一些思绪`.

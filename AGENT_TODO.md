@@ -21,7 +21,7 @@ Use this file before starting phase two or any future multi-file work. Do not re
   - `tag-thoughts.html`
   - `tag-recommendations.html`
 - [x] Confirmed `posts.html` has tag filter buttons for all three tags.
-- [x] Confirmed `friends.html` contains StarCried friend card and avatar.
+- [x] Confirmed `friends.html` contains StarCried and CrescentYves friend cards and avatars.
 - [x] Confirmed `reviews.html` and `gallery.html` exist with placeholder content.
 - [x] Confirmed `.git/config` remote URL is `https://github.com/Phillin-lrz/Phillin-lrz.github.io.git`.
 - [x] Confirmed JavaScript syntax for `assets/site.js` and `assets/content.js` in the final check.

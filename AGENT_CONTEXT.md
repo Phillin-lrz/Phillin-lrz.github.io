@@ -67,6 +67,9 @@ Verified in files:
   - `friends.html` contains a StarCried friend card.
   - StarCried outbound URL is `https://starcried.github.io/`.
   - Avatar file is `assets/starcried-avatar.png`.
+  - `friends.html` contains a CrescentYves friend card.
+  - CrescentYves outbound URL is `https://crescentyves.me/`.
+  - Avatar file is `assets/crescentyves-avatar.jpg`.
 
 - Pages added or retained:
   - `reviews.html` shows cocktail-review placeholder cards.
@@ -134,6 +137,7 @@ Static site architecture:
 - `assets/site.js`: canvas interaction and post rendering logic.
 - `assets/styles.css`: shared CSS, dark bar visual language.
 - `assets/starcried-avatar.png`: StarCried avatar.
+- `assets/crescentyves-avatar.jpg`: CrescentYves avatar.
 - `assets/posts/.gitkeep`: placeholder for future article image directories.
 - `README.md`: human maintenance notes.
 
