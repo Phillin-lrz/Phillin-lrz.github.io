@@ -24,6 +24,7 @@ User requested a broad visual redesign while preserving the cocktail-bar concept
 - Visual bugfix: user reported abstract graphics were misaligned on subpages, especially five unexplained vertical lines in the upper-left area. The cause was the recipe-tick pseudo-element shared by `.drink-heading::before` and `.article-header::before`. Restricted that tick decoration to `.menu-board .menu-intro::after` only, and disabled it on subpage/article headings.
 - Visual bugfix: user reported every subpage drink icon was misaligned. The cause was the subpage `.drink-portrait` rule shrinking the internal `.drink-glyph > span` box while the glyph pseudo-elements still used full-size rem geometry. Changed subpage drink icons to keep the full glyph box and scale it uniformly with `transform: scale(0.62)`.
 - Subpage drink badge sizing: user asked for the drink icon and text beside it to be larger and better fit the badge box. Increased `.drink-portrait` gap, padding, min-height, font size, icon frame, and glyph scale from `0.62` to `0.72`.
+- Online layout mismatch fix: after upload, user reported the deployed site differed greatly from local. The likely cause was stale GitHub Pages/browser cached assets because all pages still referenced `bar-clean-20260610`. Updated HTML asset query strings to `bar-menu-20260612-fix1` for `assets/styles.css`, `assets/content.js`, `assets/gripes.js`, and `assets/site.js`.
 
 ## 2026-06-12 Gripe Added
 

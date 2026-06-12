@@ -252,6 +252,9 @@ Alternatives not chosen:
 - Leave old query string.
 - Introduce build-hash tooling.
 
+Current cache-busting query string:
+- As of 2026-06-12 online-layout mismatch fix, public HTML pages use `bar-menu-20260612-fix1` for `assets/styles.css`, `assets/content.js`, `assets/gripes.js`, and `assets/site.js`.
+
 ## 8. Current Constraints
 
 - Static GitHub Pages only.

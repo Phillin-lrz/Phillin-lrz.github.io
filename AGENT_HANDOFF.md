@@ -66,6 +66,7 @@ Follow-up after phase-one sealing:
 - Current abstract visual system:
   - CSS-only drink glyphs, dot fields, line grids, polygon overlays, and a menu-board home layout.
   - `assets/site.js` adds a pointer-following bar cursor and drink-name hover labels for menu items.
+- Current cache-busting query string is `bar-menu-20260612-fix1`; it was updated after deployed GitHub Pages layout differed from local, likely due stale cached CSS/JS.
 - Gripe rail:
   - `assets/gripes.js` stores static `window.BAR_GRIPES` entries; it currently contains two entries.
   - `assets/site.js` injects the rail and handles page-size calculation and pagination.
