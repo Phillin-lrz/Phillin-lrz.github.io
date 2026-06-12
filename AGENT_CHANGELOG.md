@@ -1,6 +1,16 @@
 # AGENT_CHANGELOG
 
-Last updated: 2026-06-11
+Last updated: 2026-06-12
+
+## 2026-06-12 Gripe Added
+
+User provided a gripe text and mood `无语`.
+
+- Added a second `window.BAR_GRIPES` entry to `assets/gripes.js`.
+- Published gripe: `最近一直在感觉自己很忙和自己很闲之间来回跳跃。`
+- Recorded mood as `无语`, emoji as `😶`, and timestamp as `2026-06-12 12:29:58`.
+- Updated `AGENT_CONTEXT.md` and `AGENT_HANDOFF.md` so future recovery sees the current gripe count and latest entry.
+- Visual verification skipped by project preference.
 
 ## 2026-06-11 Command Validation Policy
 

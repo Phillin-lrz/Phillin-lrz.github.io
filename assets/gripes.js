@@ -5,4 +5,10 @@ window.BAR_GRIPES = [
     emoji: "😫",
     publishedAt: "2026-06-11 12:40:15",
   },
+  {
+    text: "最近一直在感觉自己很忙和自己很闲之间来回跳跃。",
+    mood: "无语",
+    emoji: "😶",
+    publishedAt: "2026-06-12 12:29:58",
+  },
 ];

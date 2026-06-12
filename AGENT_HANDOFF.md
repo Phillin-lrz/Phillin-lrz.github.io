@@ -1,6 +1,6 @@
 # AGENT_HANDOFF
 
-Last updated: 2026-06-11
+Last updated: 2026-06-12
 
 ## 1. One-Sentence Project State
 
@@ -34,6 +34,7 @@ Follow-up after phase-one sealing:
 - Cleared `window.BAR_POSTS` in `assets/content.js`.
 - Added a right-side `吐槽` rail rendered from `window.BAR_GRIPES`.
 - Published the first gripe with mood `烦恼`, emoji `😫`, and timestamp `2026-06-11 12:40:15`.
+- Published the second gripe with mood `无语`, emoji `😶`, and timestamp `2026-06-12 12:29:58`.
 
 - Project-level preference localized from user request: skip visual verification by default unless the user explicitly asks later or a higher-priority instruction requires it.
 
@@ -47,7 +48,7 @@ Follow-up after phase-one sealing:
 - Shared styling:
   - `assets/styles.css`
 - Gripe rail:
-  - `assets/gripes.js` stores static `window.BAR_GRIPES` entries.
+  - `assets/gripes.js` stores static `window.BAR_GRIPES` entries; it currently contains two entries.
   - `assets/site.js` injects the rail and handles page-size calculation and pagination.
   - `assets/styles.css` positions the rail on the right for desktop and makes it responsive on narrower screens.
   - Current scale strategy is scheme 2: keep gripe data separate from `assets/content.js` and render only the current page.
