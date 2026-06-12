@@ -8,6 +8,8 @@ Last updated: 2026-06-12
 
 ## 2. Phase-One Completion Summary
 
+2026-06-12 visual redesign update: the site now uses an abstract bar-menu concept. The home page is a menu board, each destination is paired with a cocktail, and secondary pages present a drink identity badge. Friend-link information and avatars must remain unchanged unless the user explicitly asks.
+
 Phase one is sealed. Verified first-stage work includes:
 
 - Site branding/navigation around `Phil Lin的Bar`.
@@ -37,6 +39,20 @@ Follow-up after phase-one sealing:
 - Published the second gripe with mood `无语`, emoji `😶`, and timestamp `2026-06-12 12:29:58`.
 
 - Project-level preference localized from user request: skip visual verification by default unless the user explicitly asks later or a higher-priority instruction requires it.
+- Abstract redesign follow-up:
+  - Home menu pairings are `Paper Plane · 文章`, `Highball · 生活日志`, `Old Fashioned · 一些思绪`, `Paloma · 种草安利`, `Negroni · 酒评`, `French 75 · 摄影作品`, `Tom Collins · 友链`, and `Martini · 关于我`.
+  - Article pages use `Coupe · Article`.
+  - Keep `assets/starcried-avatar.png` and `assets/crescentyves-avatar.jpg` for friend links.
+  - User cancelled screenshot generation and will review by opening local `.html` files directly.
+  - Follow-up homepage refinement removed the orphaned final tile by making the menu a strict 4-by-2 grid and grouping Friends/recent-posts in a `home-followup` section.
+  - User later clarified Friends/recent-posts should not get a special new layout; that area was restored to the original `split-section` structure. Keep the strict 4-by-2 menu and expanded abstract alcohol motifs.
+  - Latest refinement adds a `menu-emblem` beside the home title and more recognizable drink-glyph details: liquid, ice, bubbles, garnish, citrus/olive, foam, and stirring-spoon cues.
+  - Generated badge image lives at `assets/bar-badge.png`; it replaces the old text `B` brand mark and is also used beside the home heading.
+  - Latest title/glyph refinement replaced the oversized home heading badge with a smaller `menu-kicker`, and changed Paper Plane from a loose plane icon into a coupe cocktail with folded-paper garnish.
+  - Background decision: use A+E, meaning dark menu-paper texture plus restrained cocktail-blueprint linework. Temporary D/E preview files were deleted.
+  - Visual bugfix: the five vertical lines on subpage headings came from sharing the homepage recipe-tick strip with `.drink-heading::before` and `.article-header::before`; keep that strip homepage-only.
+  - Visual bugfix: subpage drink icons should use full glyph geometry scaled uniformly in `.drink-portrait`; do not shrink the internal glyph span dimensions directly.
+  - Current subpage drink badge is intentionally larger: `.drink-portrait` font size `0.95rem`, icon frame `4.55rem`, glyph scale `0.72`.
 
 ## 3. Current Code State
 
@@ -47,6 +63,9 @@ Follow-up after phase-one sealing:
   - `assets/site.js`
 - Shared styling:
   - `assets/styles.css`
+- Current abstract visual system:
+  - CSS-only drink glyphs, dot fields, line grids, polygon overlays, and a menu-board home layout.
+  - `assets/site.js` adds a pointer-following bar cursor and drink-name hover labels for menu items.
 - Gripe rail:
   - `assets/gripes.js` stores static `window.BAR_GRIPES` entries; it currently contains two entries.
   - `assets/site.js` injects the rail and handles page-size calculation and pagination.

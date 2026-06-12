@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="回到首页">
-        <span class="brand-mark">B</span>
+        <img class="brand-mark brand-badge" src="assets/bar-badge.png" alt="">
         <span>Phil Lin的Bar</span>
       </a>
       <nav class="nav-links" aria-label="主导航">
@@ -25,66 +25,80 @@
     </header>
 
     <main>
-      <section class="particle-hero">
-        <div class="profile-card">
-          <div class="avatar">B</div>
-          <p class="eyebrow">Cocktails · Thoughts · Music · Chunking Express</p>
-          <h1>Phil Lin的Bar</h1>
-          <p class="hero-lede">一个20岁医学生的碎碎念。</p>
-          <div class="cocktail-signatures" aria-label="鸡尾酒图形意象">
-            <span class="glass-glyph martini-glyph">
-              <span></span>
-              <strong>Martini</strong>
-            </span>
-            <span class="glass-glyph rocks-glyph">
-              <span></span>
-              <strong>Old Fashioned</strong>
-            </span>
-            <span class="glass-glyph coupe-glyph">
-              <span></span>
-              <strong>Whisky Sour</strong>
-            </span>
-            <span class="glass-glyph highball-glyph">
-              <span></span>
-              <strong>Paloma</strong>
-            </span>
+      <section class="menu-hero" aria-label="Phil Lin的Bar 菜单">
+        <div class="menu-board">
+          <div class="menu-intro">
+            <div class="menu-kicker" aria-hidden="true">
+              <img class="menu-mini-badge" src="assets/bar-badge.png" alt="">
+              <span>Bar Menu</span>
+              <span>2026</span>
+            </div>
+            <div class="menu-title">
+              <p class="eyebrow">Cocktails · Thoughts · Music · Chunking Express</p>
+              <h1>Phil Lin的Bar</h1>
+            </div>
+            <p class="hero-lede">一个20岁医学生的碎碎念。</p>
           </div>
-          <div class="hero-actions">
-            <a class="button primary" href="posts.html">进入文章</a>
-            <a class="button secondary" href="about.html">关于我</a>
+          <div class="bar-shelf" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="menu-grid" aria-label="吧台菜单">
+            <a class="menu-drink" href="posts.html" data-drink="Paper Plane">
+              <span class="drink-glyph paper-plane-glyph"><span></span></span>
+              <span class="drink-name">Paper Plane</span>
+              <strong>文章</strong>
+              <p>这里放已经准备好公开的文章。</p>
+            </a>
+            <a class="menu-drink" href="tag-lab.html" data-drink="Highball">
+              <span class="drink-glyph highball-glyph"><span></span></span>
+              <span class="drink-name">Highball</span>
+              <strong>生活日志</strong>
+              <p>像调酒记录一样，留下日常的比例、温度和余味。</p>
+            </a>
+            <a class="menu-drink" href="tag-thoughts.html" data-drink="Old Fashioned">
+              <span class="drink-glyph rocks-glyph"><span></span></span>
+              <span class="drink-name">Old Fashioned</span>
+              <strong>一些思绪</strong>
+              <p>在吧台边慢慢写下个人、学习和生活态度的想法。</p>
+            </a>
+            <a class="menu-drink" href="tag-recommendations.html" data-drink="Paloma">
+              <span class="drink-glyph paloma-glyph"><span></span></span>
+              <span class="drink-name">Paloma</span>
+              <strong>种草安利</strong>
+              <p>可能会放一些喜欢的音乐、影视作品，和某杯酒的搭配。</p>
+            </a>
+            <a class="menu-drink" href="reviews.html" data-drink="Negroni">
+              <span class="drink-glyph negroni-glyph"><span></span></span>
+              <span class="drink-name">Negroni</span>
+              <strong>酒评</strong>
+              <p>Martini、Negroni、Sazerac、Paloma，暂时还在酝酿。</p>
+            </a>
+            <a class="menu-drink" href="gallery.html" data-drink="French 75">
+              <span class="drink-glyph coupe-glyph"><span></span></span>
+              <span class="drink-name">French 75</span>
+              <strong>摄影作品</strong>
+              <p>一些光影、街角和杯壁反光，亟待创作。</p>
+            </a>
+            <a class="menu-drink" href="friends.html" data-drink="Tom Collins">
+              <span class="drink-glyph collins-glyph"><span></span></span>
+              <span class="drink-name">Tom Collins</span>
+              <strong>友链</strong>
+              <p>这里收集朋友们的网站、博客和个人主页。</p>
+            </a>
+            <a class="menu-drink" href="about.html" data-drink="Martini">
+              <span class="drink-glyph martini-glyph"><span></span></span>
+              <span class="drink-name">Martini</span>
+              <strong>关于我</strong>
+              <p>这里是 Phil Lin 的个人空间，记录学习、实验、写作和生活里的碎碎念。</p>
+            </a>
           </div>
         </div>
-      </section>
-
-      <section class="section intro-grid" aria-label="博客内容">
-        <a class="topic-card" href="tag-lab.html">
-          <span class="mini-label">Logs</span>
-          <h2>生活日志</h2>
-          <p>像调酒记录一样，留下日常的比例、温度和余味。</p>
-        </a>
-        <a class="topic-card" href="tag-thoughts.html">
-          <span class="mini-label">Thoughts</span>
-          <h2>一些思绪</h2>
-          <p>在吧台边慢慢写下个人、学习和生活态度的想法。</p>
-        </a>
-        <a class="topic-card" href="tag-recommendations.html">
-          <span class="mini-label">Likes</span>
-          <h2>种草安利</h2>
-          <p>可能会放一些喜欢的音乐、影视作品，和某杯酒的搭配。</p>
-        </a>
-      </section>
-
-      <section class="section feature-grid" aria-label="酒评与摄影作品">
-        <a class="feature-card cocktail-card" href="reviews.html">
-          <span class="mini-label">Tasting Notes</span>
-          <h2>酒评</h2>
-          <p>Martini、Negroni、Sazerac、Paloma，暂时还在酝酿。</p>
-        </a>
-        <a class="feature-card camera-card" href="gallery.html">
-          <span class="mini-label">Gallery</span>
-          <h2>摄影作品</h2>
-          <p>一些光影、街角和杯壁反光，亟待创作。</p>
-        </a>
       </section>
 
       <section class="section split-section">

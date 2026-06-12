@@ -44,6 +44,13 @@ Use this file before starting phase two or any future multi-file work. Do not re
 
 ## 3. Phase-Two Candidate Tasks
 
+- [x] Implement broad abstract cocktail-bar visual redesign:
+  - Home page becomes a bar-menu style board.
+  - Secondary pages present as different drink identities.
+  - Mouse interaction includes a bar cursor and menu drink hover labels.
+  - Existing copy mostly preserved.
+  - Friend-link avatars restored unchanged per user clarification.
+  - Screenshots not generated because user chose direct `.html` review.
 - [x] Published approved Word article preview:
   - Confirmed `preview-20260611.html` was acceptable.
   - Generated final static article HTML at `article-first-words-on-the-bar.html`.

@@ -26,6 +26,11 @@ canvas.id = "particleCanvas";
 canvas.setAttribute("aria-hidden", "true");
 document.body.prepend(canvas);
 
+const cursor = document.createElement("div");
+cursor.className = "bar-cursor";
+cursor.setAttribute("aria-hidden", "true");
+document.body.append(cursor);
+
 const ctx = canvas.getContext("2d");
 const pointer = { x: 0, y: 0, active: false };
 let barNodes = [];
@@ -181,10 +186,27 @@ window.addEventListener("pointermove", (event) => {
   pointer.x = event.clientX;
   pointer.y = event.clientY;
   pointer.active = true;
+  cursor.style.transform = `translate(${event.clientX}px, ${event.clientY}px)`;
 });
 
 window.addEventListener("pointerleave", () => {
   pointer.active = false;
+  cursor.dataset.hidden = "true";
+});
+
+window.addEventListener("pointerenter", () => {
+  cursor.dataset.hidden = "false";
+});
+
+document.querySelectorAll("[data-drink]").forEach((item) => {
+  item.addEventListener("pointerenter", () => {
+    cursor.dataset.drink = item.dataset.drink || "";
+    cursor.dataset.active = "true";
+  });
+  item.addEventListener("pointerleave", () => {
+    cursor.dataset.drink = "";
+    cursor.dataset.active = "false";
+  });
 });
 
 resizeCanvas();

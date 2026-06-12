@@ -30,6 +30,26 @@ This file externalizes the verified phase-one project context. Do not treat chat
 - If gripe volume grows large enough for `assets/gripes.js` to become heavy, revisit scheme 3 or scheme 4: paginated static gripe files or JSON on-demand loading.
 - Future reminder: when gripe count grows enough to create load or maintenance pressure, remind the user that scheme 3 and scheme 4 were discussed on 2026-06-11.
 
+## 2026-06-12 Abstract Bar Menu Redesign State
+
+- The home page is now a bar-menu style board instead of the previous centered hero/card layout.
+- Each home menu item pairs a cocktail with a page: `Paper Plane · 文章`, `Highball · 生活日志`, `Old Fashioned · 一些思绪`, `Paloma · 种草安利`, `Negroni · 酒评`, `French 75 · 摄影作品`, `Tom Collins · 友链`, and `Martini · 关于我`.
+- Secondary pages now use a `drink-page` / `drink-heading` pattern with a drink identity badge.
+- Article pages use `Coupe · Article`.
+- `assets/styles.css` now contains the abstract menu-board visual layer, CSS-only drink glyphs, dot fields, line grids, polygon overlays, and updated card styling.
+- `assets/site.js` now creates a pointer-following `.bar-cursor`; menu hover states show the drink name.
+- Friend-link names, descriptions, URLs, and avatar images must remain unchanged unless the user explicitly asks. The current friend avatars are still `assets/starcried-avatar.png` and `assets/crescentyves-avatar.jpg`.
+- User explicitly cancelled screenshot generation for this redesign and will inspect local `.html` files directly.
+- Follow-up homepage refinement removed the orphaned final menu tile by making the menu a strict 4-by-2 grid. The menu header now has an abstract CSS bar shelf, and the Friends/recent-posts modules are grouped in a two-column `home-followup` layout.
+- User later clarified that Friends/recent-posts should not get a special new layout. They were restored to the original `split-section` structure. Keep the strict 4-by-2 menu and abstract bar shelf. The global CSS now adds broader abstract alcohol motifs: base-spirit bottle shadows, wine/coupe forms, and craft-beer foam/tap-like accents.
+- Latest home graphic refinement: `index.html` now has a `menu-emblem` to the left of the `Phil Lin的Bar` heading. `assets/styles.css` uses that emblem plus stronger glyph details so the visuals read more clearly as cocktail/bar elements instead of pure abstraction.
+- Site badge image exists at `assets/bar-badge.png`. It is a generated abstract cocktail/bar badge combining cocktail glass, spirit/wine/craft-beer cues, and constellation/menu motifs. It is referenced by the top-left brand mark across public pages and by the home heading emblem.
+- Latest title/glyph refinement replaced the large home heading badge with a smaller `menu-kicker` lockup. Do not restore the oversized heading badge unless requested. `Paper Plane` now uses a coupe/glass shape with a folded-paper garnish cue instead of a standalone paper-plane icon.
+- Background direction is now A+E: dark menu-paper texture plus restrained cocktail-blueprint linework. The temporary preview files for D and E were deleted after the user chose A+E.
+- Subpage visual bugfix: do not apply the recipe-tick strip to `.drink-heading::before` or `.article-header::before`; it created five unexplained vertical lines on subpages. That decoration should remain homepage-only via `.menu-board .menu-intro::after`.
+- Subpage drink icon bugfix: `.drink-portrait .drink-glyph > span` must keep the full `5.2rem` glyph geometry and use `transform: scale(0.62)`; shrinking the internal box directly causes pseudo-element drink graphics to drift out of alignment.
+- Current subpage drink badge sizing uses `.drink-portrait` min-height `5.4rem`, font size `0.95rem`, `.drink-glyph` `4.55rem`, and full glyph geometry scaled with `transform: scale(0.72)`.
+
 ## 1. Current Project Goal
 
 Build and maintain a static personal GitHub Pages website for `Phil Lin的Bar`, with a dark cocktail-bar visual language, article browsing, tags, friend links, cocktail review placeholder content, and gallery placeholder content.

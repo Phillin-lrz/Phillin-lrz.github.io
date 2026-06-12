@@ -2,6 +2,29 @@
 
 Last updated: 2026-06-12
 
+## 2026-06-12 Abstract Bar Menu Redesign
+
+User requested a broad visual redesign while preserving the cocktail-bar concept, avoiding realistic images/scenes where possible, and making the home page feel like a bar menu where each menu item is a drink leading to a page.
+
+- Rebuilt `index.html` hero area as a menu board with drink/page pairings: `Paper Plane · 文章`, `Highball · 生活日志`, `Old Fashioned · 一些思绪`, `Paloma · 种草安利`, `Negroni · 酒评`, `French 75 · 摄影作品`, `Tom Collins · 友链`, and `Martini · 关于我`.
+- Added drink identity badges to secondary pages and article pages.
+- Added abstract CSS drink glyphs, dot fields, line grids, polygon overlays, and menu-card styling in `assets/styles.css`.
+- Added a lightweight pointer-following bar cursor in `assets/site.js`; hovering menu drinks shows the drink name.
+- Kept existing page copy mostly unchanged, except for necessary drink/page labels.
+- Initially replaced friend avatars with abstract marks, then restored the original avatar images after user clarified that all friend-link information and avatars must remain unchanged.
+- User changed the preview requirement: do not generate screenshots; they will open `.html` files directly for review.
+- Verification performed: `node --check assets/site.js`, `node --check assets/content.js`, `node --check assets/gripes.js`, `git status --short`, `git diff --stat`, `git diff -- .`, and `Select-String` confirming the only `<img>` tags are the two friend-link avatars in `friends.html`.
+- Visual browser screenshots were not generated because the user explicitly cancelled screenshot generation and chose direct HTML review.
+- Follow-up refinement: user disliked the orphaned `Martini · 关于我` tile and requested less blank space. The home menu is now a strict 4-by-2 grid, `menu-drink-large` was removed, a CSS-only abstract bar shelf was added near the menu header, and the Friends/recent-posts blocks were combined into a two-column `home-followup` section.
+- Later correction: user clarified that the Friends/recent-posts area did not need layout changes. Restored that area to the original `split-section` structure, kept the strict 4-by-2 home menu, and expanded the abstract alcohol motifs across the site with CSS-only base-spirit bottle shadows, wine/coupe forms, and craft-beer foam/tap-like accents.
+- Additional refinement: user felt some graphics were too abstract and the left side of the home `Phil Lin的Bar` title felt empty. Added a CSS-only `menu-emblem` beside the title with a coupe-like glass, stirring spoon, citrus/olive accents, and strengthened drink glyphs with more recognizable liquid, ice, bubbles, garnish, and foam details.
+- Badge asset generation: user asked Codex to generate a site badge image. Generated an abstract cocktail/bar badge and copied it to `assets/bar-badge.png`. Replaced the text `B` brand mark across public pages with this image and used the same badge beside the home heading.
+- Latest title/glyph refinement: user felt the Paper Plane graphic was too casual and the large home title badge looked unsophisticated. Replaced the large home heading badge with a smaller `menu-kicker` lockup using the generated badge, menu label, and year. Reworked `.paper-plane-glyph` to read as a coupe-style cocktail with an abstract folded-paper garnish instead of a loose paper-airplane icon.
+- Background decision: user rejected the standalone D/E preview pages and chose the earlier recommended A+E direction. Deleted `previews/background-d-star-cellar.html` and `previews/background-e-menu-paper.html`. Updated the formal `assets/styles.css` background to combine dark menu-paper texture, subtle foil border, and restrained cocktail-blueprint lines/nodes.
+- Visual bugfix: user reported abstract graphics were misaligned on subpages, especially five unexplained vertical lines in the upper-left area. The cause was the recipe-tick pseudo-element shared by `.drink-heading::before` and `.article-header::before`. Restricted that tick decoration to `.menu-board .menu-intro::after` only, and disabled it on subpage/article headings.
+- Visual bugfix: user reported every subpage drink icon was misaligned. The cause was the subpage `.drink-portrait` rule shrinking the internal `.drink-glyph > span` box while the glyph pseudo-elements still used full-size rem geometry. Changed subpage drink icons to keep the full glyph box and scale it uniformly with `transform: scale(0.62)`.
+- Subpage drink badge sizing: user asked for the drink icon and text beside it to be larger and better fit the badge box. Increased `.drink-portrait` gap, padding, min-height, font size, icon frame, and glyph scale from `0.62` to `0.72`.
+
 ## 2026-06-12 Gripe Added
 
 User provided a gripe text and mood `无语`.
