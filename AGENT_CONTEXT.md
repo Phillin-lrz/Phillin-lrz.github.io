@@ -1,6 +1,6 @@
 # AGENT_CONTEXT
 
-Last updated: 2026-06-12
+Last updated: 2026-06-13
 
 This file externalizes the verified phase-one project context. Do not treat chat history or auto summaries as authoritative. Reconfirm current state from repository files, command output, and validation results before future development.
 
@@ -21,9 +21,10 @@ This file externalizes the verified phase-one project context. Do not treat chat
 - The site now has a right-side `吐槽` rail rendered by `assets/site.js` on pages that load `assets/content.js`.
 - Static gripe entries are stored in `window.BAR_GRIPES` inside `assets/gripes.js`; this is the GitHub Pages-compatible data pool, not a server database.
 - Each gripe entry contains `text`, `mood`, `emoji`, and `publishedAt` with second-level precision.
-- `assets/gripes.js` currently contains two gripe entries.
+- `assets/gripes.js` currently contains three gripe entries.
 - The first gripe is published with mood `烦恼`, emoji `😫`, and timestamp `2026-06-11 12:40:15`.
 - The second gripe is published with mood `无语`, emoji `😶`, and timestamp `2026-06-12 12:29:58`.
+- The third gripe is published with mood `迷幻`, emoji `😵‍💫`, and timestamp `2026-06-13 23:05:56`.
 - The rail calculates a per-page display count from page height and uses previous/next pagination for additional gripes.
 - Desktop layout reserves right-side space for the rail; narrow screens show it as a normal responsive block.
 - Scheme 2 is the active implementation: gripe data is split out of `assets/content.js` into `assets/gripes.js`, while the DOM still renders only the current visible page of gripes.

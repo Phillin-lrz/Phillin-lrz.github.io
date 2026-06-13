@@ -1,6 +1,16 @@
 # AGENT_CHANGELOG
 
-Last updated: 2026-06-12
+Last updated: 2026-06-13
+
+## 2026-06-13 Gripe Added
+
+User provided a gripe text and mood `迷幻`.
+
+- Added a third `window.BAR_GRIPES` entry to `assets/gripes.js`.
+- Published gripe: `其实本来这两天都有文章更新的，但是PUBG太好玩了。`
+- Recorded mood as `迷幻`, emoji as `😵‍💫`, and timestamp as `2026-06-13 23:05:56`.
+- Updated `AGENT_CONTEXT.md` and `AGENT_HANDOFF.md` so future recovery sees the current gripe count and latest entry.
+- Visual verification skipped by project preference.
 
 ## 2026-06-12 Abstract Bar Menu Redesign
 

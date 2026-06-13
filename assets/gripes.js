@@ -11,4 +11,10 @@ window.BAR_GRIPES = [
     emoji: "😶",
     publishedAt: "2026-06-12 12:29:58",
   },
+  {
+    text: "其实本来这两天都有文章更新的，但是PUBG太好玩了。",
+    mood: "迷幻",
+    emoji: "😵‍💫",
+    publishedAt: "2026-06-13 23:05:56",
+  },
 ];
