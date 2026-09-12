@@ -347,6 +347,15 @@ window.BAR_POSTS = [
 
 window.BAR_NOTES = [
   {
+    id: "upstairs",
+    title: "Upstairs",
+    tag: "吧台札记",
+    publishedAt: "2026-09-12",
+    mood: "楼下",
+    summary: "一则从《重庆森林》写到《堕落天使》的吧台札记：在一段六百二十八天的关系结束后，重新理解靠近、失去、模糊的“以后”，以及那辆只送到楼下的车。",
+    url: "note-upstairs.html",
+  },
+  {
     id: "none-of-the-above",
     title: "None of the Above",
     tag: "吧台札记",

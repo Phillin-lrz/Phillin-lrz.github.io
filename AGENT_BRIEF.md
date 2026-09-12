@@ -1,6 +1,6 @@
 # AGENT_BRIEF
 
-Last updated: 2026-09-02
+Last updated: 2026-09-12
 
 This is the lightweight startup file for Codex work in this repository. Read this file first, then read only the operation file and source files required by the task type.
 
@@ -43,7 +43,7 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 ## Current State To Remember
 
 - Asset cache versions are scoped by resource. Shared CSS, badge, and site logic retain `bar-art-20260824-ten-pm`; gripe data uses `bar-gripe-20260902-five-hour-reset`. Update only the asset that changed.
-- `assets/content.js` uses `bar-content-20260902-none-of-the-above` only on its eight real consumer pages: `article.html`, `index.html`, `notes.html`, `posts.html`, `reviews.html`, and the three tag pages.
+- `assets/content.js` uses `bar-content-20260912-upstairs` only on its eight real consumer pages: `article.html`, `index.html`, `notes.html`, `posts.html`, `reviews.html`, and the three tag pages.
 - `assets/gallery.js` uses `bar-gallery-20260828-ash-zoom-inn` on `gallery.html`.
 - `BAR_PLACES` exists and powers the `reviews.html` / private-place map flow.
 - Sober Company-Ash, Making Gelato, Q Taro, Zoom inN, and DEMO have place/visit structures.

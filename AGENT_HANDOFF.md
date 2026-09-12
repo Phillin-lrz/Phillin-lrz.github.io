@@ -17,7 +17,7 @@ Use this file only for unfinished-work continuity, dirty-worktree recovery, or c
 - Cache versions are asset-scoped; do not refresh every asset when only one changes.
 - Shared CSS, badge, and `assets/site.js` retain `bar-art-20260824-ten-pm`.
 - `assets/gripes.js` uses `bar-gripe-20260902-five-hour-reset` on all 122 current HTML consumers.
-- `assets/content.js` uses `bar-content-20260902-none-of-the-above` on exactly eight consumer pages:
+- `assets/content.js` uses `bar-content-20260912-upstairs` on exactly eight consumer pages:
   - `article.html`
   - `index.html`
   - `notes.html`

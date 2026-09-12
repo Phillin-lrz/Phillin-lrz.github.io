@@ -1,5 +1,7 @@
 # AGENT_CHANGELOG
 
+- 2026-09-12：从 `Fallen Angel.docx` 本地发布题为 `Upstairs` 的吧台札记，新增独立页面与 `BAR_NOTES` 元数据，并刷新八个 `assets/content.js` 消费页的缓存版本。
+
 - 2026-09-02：新增一条关于为 5h 额度提前完整重置的吐槽，刷新全部 122 个 `assets/gripes.js` HTML 消费页缓存版本，并同步当前缓存状态。
 
 - 2026-09-02：从 `None of the Above.docx` 本地发布同名吧台札记，新增独立页面与 `BAR_NOTES` 元数据，并刷新八个 `assets/content.js` 消费页的缓存版本。
