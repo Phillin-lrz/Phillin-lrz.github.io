@@ -348,7 +348,7 @@ window.BAR_POSTS = [
 window.BAR_NOTES = [
   {
     id: "upstairs",
-    title: "Upstairs",
+    title: "Fallen Angel",
     tag: "吧台札记",
     publishedAt: "2026-09-12",
     mood: "楼下",
