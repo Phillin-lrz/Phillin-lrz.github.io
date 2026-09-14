@@ -2,6 +2,47 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "undercurrent-20260914",
+    title: "Undercurrent",
+    tag: "一些思绪",
+    publishedAt: "2026-09-14",
+    mood: "暗流",
+    summary: "关系结束以后，水面已经停了，下面没有。一则关于爱、厌倦、积怨、愧疚与舍不得同时存在的札记。",
+    url: "note-undercurrent.html",
+    pairId: "undercurrent-vacancy-20260914",
+    pairSide: "A",
+    pairNumber: "01",
+    pairUrl: "paired-undercurrent-vacancy.html",
+    pairDeck: "关系结束以后，水面已经停了，下面没有。",
+    pairSubtitle: "Two notes from the same night.",
+    pairSummary: "一组写于同一晚上的双联札记：从一段六百二十八天关系结束后的暗流，写到第一次尝试让一个长期被亲密关系占据的位置暂时空下来。",
+  },
+  {
+    id: "vacancy-20260914",
+    title: "Vacancy",
+    tag: "一些思绪",
+    publishedAt: "2026-09-14",
+    mood: "空位",
+    summary: "一则关于空位的札记：当一个固定的亲密对象不再存在，第一次试着分辨喜欢、孤独、依赖，以及自己真正需要的东西。",
+    url: "note-vacancy.html",
+    pairId: "undercurrent-vacancy-20260914",
+    pairSide: "B",
+    pairNumber: "01",
+    pairUrl: "paired-undercurrent-vacancy.html",
+    pairDeck: "第一次没有那么急着把空出来的位置交给谁。",
+    pairSubtitle: "Two notes from the same night.",
+    pairSummary: "一组写于同一晚上的双联札记：从一段六百二十八天关系结束后的暗流，写到第一次尝试让一个长期被亲密关系占据的位置暂时空下来。",
+  },
+  {
+    id: "upstairs",
+    title: "Fallen Angel",
+    tag: "一些思绪",
+    publishedAt: "2026-09-12",
+    mood: "楼下",
+    summary: "一篇从《重庆森林》写到《堕落天使》的思绪：在一段六百二十八天的关系结束后，重新理解靠近、失去、模糊的“以后”，以及那辆只送到楼下的车。",
+    url: "note-upstairs.html",
+  },
+  {
     id: "zoominn-20260828",
     title: "Zoom inN #02：依旧快乐老家的五杯酒",
     tag: "种草安利",
@@ -346,15 +387,6 @@ window.BAR_POSTS = [
 ];
 
 window.BAR_NOTES = [
-  {
-    id: "upstairs",
-    title: "Fallen Angel",
-    tag: "吧台札记",
-    publishedAt: "2026-09-12",
-    mood: "楼下",
-    summary: "一则从《重庆森林》写到《堕落天使》的吧台札记：在一段六百二十八天的关系结束后，重新理解靠近、失去、模糊的“以后”，以及那辆只送到楼下的车。",
-    url: "note-upstairs.html",
-  },
   {
     id: "none-of-the-above",
     title: "None of the Above",

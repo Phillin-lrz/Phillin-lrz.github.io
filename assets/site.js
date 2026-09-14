@@ -291,7 +291,7 @@ function normalizedNotes() {
 
 function allPosts() {
   const builtInPosts = window.BAR_POSTS || [];
-  return [...builtInPosts, ...normalizedNotes()].sort(
+  return collapsePairedNotes([...builtInPosts, ...normalizedNotes()]).sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
@@ -310,6 +310,7 @@ function postUrl(post) {
 }
 
 function postCard(post, heading = "h2") {
+  if (post.kind === "paired-note") return pairedNoteCard(post, heading);
   const title = escapeHtml(post.title);
   const summary = escapeHtml(post.summary || "尚未填写简介。");
   const tag = escapeHtml(post.tag);
@@ -328,7 +329,7 @@ function postCard(post, heading = "h2") {
 }
 
 function allNotes() {
-  return normalizedNotes().sort(
+  return collapsePairedNotes(normalizedNotes()).sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
 }
@@ -338,6 +339,7 @@ function noteUrl(note) {
 }
 
 function noteCard(note, heading = "h2") {
+  if (note.kind === "paired-note") return pairedNoteCard(note, heading);
   const title = escapeHtml(note.title);
   const summary = escapeHtml(note.summary || "这条札记还没有写简介。");
   const date = escapeHtml(note.publishedAt);
@@ -349,6 +351,69 @@ function noteCard(note, heading = "h2") {
       <p>${summary}</p>
       <span class="read-more">读这条札记</span>
     </a>
+  `;
+}
+
+function collapsePairedNotes(items) {
+  const pairs = new Map();
+
+  items.forEach((item) => {
+    if (!item.pairId) return;
+    const pair = pairs.get(item.pairId) || [];
+    pair.push(item);
+    pairs.set(item.pairId, pair);
+  });
+
+  const emitted = new Set();
+  return items.flatMap((item) => {
+    if (!item.pairId) return [item];
+    if (emitted.has(item.pairId)) return [];
+    emitted.add(item.pairId);
+
+    const sides = (pairs.get(item.pairId) || [item]).sort((a, b) =>
+      String(a.pairSide).localeCompare(String(b.pairSide)),
+    );
+    return [{
+      id: item.pairId,
+      kind: "paired-note",
+      tag: item.tag || NOTE_TAG,
+      publishedAt: item.publishedAt,
+      title: sides.map((side) => side.title).join(" / "),
+      summary: item.pairSummary || item.summary,
+      pairNumber: item.pairNumber || "01",
+      pairSubtitle: item.pairSubtitle || "Two notes from the same night.",
+      pairUrl: item.pairUrl,
+      sides,
+    }];
+  });
+}
+
+function pairedNoteCard(pair, heading = "h2") {
+  const pairUrl = escapeHtml(pair.pairUrl || "notes.html");
+  const number = escapeHtml(pair.pairNumber || "01");
+  const date = escapeHtml(pair.publishedAt);
+  const subtitle = escapeHtml(pair.pairSubtitle || "Two notes from the same night.");
+  const sides = pair.sides.map((side) => `
+    <div class="paired-card-side paired-card-side-${escapeHtml(String(side.pairSide).toLowerCase())}">
+      <span>SIDE ${escapeHtml(side.pairSide)}</span>
+      <${heading}>${escapeHtml(side.title)}</${heading}>
+      <p>${escapeHtml(side.pairDeck || side.summary || "")}</p>
+    </div>
+  `).join("");
+  const sideLinks = pair.sides.map((side) =>
+    `<a href="${escapeHtml(noteUrl(side))}">Read Side ${escapeHtml(side.pairSide)} separately</a>`,
+  ).join("");
+
+  return `
+    <article class="post-card paired-note-card">
+      <a class="paired-card-cover" href="${pairUrl}" aria-label="阅读 Paired Notes ${number}：${escapeHtml(pair.title)}"></a>
+      <div class="paired-card-heading">
+        <span class="post-date">PAIRED NOTES ${number} · ${date}</span>
+        <span>${subtitle}</span>
+      </div>
+      <div class="paired-card-sides">${sides}</div>
+      <nav class="paired-card-links" aria-label="双联篇独立阅读入口">${sideLinks}</nav>
+    </article>
   `;
 }
 

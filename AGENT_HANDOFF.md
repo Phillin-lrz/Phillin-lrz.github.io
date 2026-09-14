@@ -1,6 +1,6 @@
 # AGENT_HANDOFF
 
-Last updated: 2026-09-01
+Last updated: 2026-09-14
 
 Use this file only for unfinished-work continuity, dirty-worktree recovery, or compacted/uncertain sessions. Completed history belongs in `AGENT_CHANGELOG.md` and `AGENT_CHANGELOG_ARCHIVE.md`.
 
@@ -15,9 +15,9 @@ Use this file only for unfinished-work continuity, dirty-worktree recovery, or c
 ## Current Cache Policy
 
 - Cache versions are asset-scoped; do not refresh every asset when only one changes.
-- Shared CSS, badge, and `assets/site.js` retain `bar-art-20260824-ten-pm`.
+- Shared CSS and `assets/site.js` use `bar-art-20260914-paired-notes`; the badge retains `bar-art-20260824-ten-pm`.
 - `assets/gripes.js` uses `bar-gripe-20260902-five-hour-reset` on all 122 current HTML consumers.
-- `assets/content.js` uses `bar-content-20260912-upstairs` on exactly eight consumer pages:
+- `assets/content.js` uses `bar-content-20260914-paired-thoughts` on exactly eight consumer pages:
   - `article.html`
   - `index.html`
   - `notes.html`
@@ -27,6 +27,7 @@ Use this file only for unfinished-work continuity, dirty-worktree recovery, or c
   - `tag-recommendations.html`
   - `tag-thoughts.html`
 - Static article, note, place, gallery, playlist, gripe-detail, and gallery-detail pages do not need `assets/content.js` unless a documented `BAR_*` rendering hook is added.
+- Paired notes use two `BAR_POSTS` records tagged `一些思绪`, with shared `pairId`, `pairSide`, and `pairUrl` fields; list renderers collapse them into one paired card while the individual URLs remain shareable.
 - `assets/gripes.js` remains global because `assets/site.js` may inject the gripe rail on any public page.
 
 ## Current Verification Policy

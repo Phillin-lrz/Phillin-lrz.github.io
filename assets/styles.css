@@ -5446,3 +5446,418 @@ body::after {
     display: none !important;
   }
 }
+
+/* 2026-09-14 paired notes: one work, two independently shareable sides. */
+.paired-note-card {
+  isolation: isolate;
+  border-left: 4px solid rgba(111, 36, 32, 0.9);
+  padding: clamp(1.15rem, 2.6vw, 1.6rem);
+  background:
+    linear-gradient(90deg, rgba(111, 36, 32, 0.12), transparent 34%, rgba(184, 137, 71, 0.055)),
+    repeating-linear-gradient(0deg, rgba(234, 215, 181, 0.018) 0 1px, transparent 1px 13px),
+    rgba(13, 8, 5, 0.9);
+}
+
+.paired-note-card::before {
+  background: linear-gradient(115deg, transparent 0 49.8%, rgba(184, 137, 71, 0.13) 50%, transparent 50.2% 100%);
+}
+
+.paired-card-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border: 0;
+}
+
+.paired-card-cover:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: -0.35rem;
+}
+
+.paired-card-heading,
+.paired-card-sides,
+.paired-card-links {
+  position: relative;
+  z-index: 0;
+}
+
+.paired-card-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.1rem;
+}
+
+.paired-card-heading > span:last-child {
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  font-style: italic;
+}
+
+.paired-card-sides {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(184, 137, 71, 0.2);
+  border-bottom: 1px solid rgba(184, 137, 71, 0.16);
+}
+
+.paired-card-side {
+  min-width: 0;
+  padding: clamp(1rem, 2.4vw, 1.4rem) 0;
+}
+
+.paired-card-side + .paired-card-side {
+  border-left: 1px solid rgba(184, 137, 71, 0.16);
+  padding-left: clamp(1rem, 2.4vw, 1.4rem);
+}
+
+.paired-card-side:first-child {
+  padding-right: clamp(1rem, 2.4vw, 1.4rem);
+}
+
+.paired-card-side > span {
+  color: rgba(210, 173, 113, 0.8);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.post-list .paired-card-side h2,
+.post-list .paired-card-side h3 {
+  margin: 0.25rem 0 0.7rem;
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  letter-spacing: 0.015em;
+}
+
+.paired-card-side p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.paired-card-side-b {
+  background: linear-gradient(90deg, transparent, rgba(234, 215, 181, 0.025));
+}
+
+.paired-card-links {
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  padding-top: 0.9rem;
+  color: var(--accent-strong);
+  font-size: 0.78rem;
+}
+
+.paired-card-links a {
+  border-bottom: 1px solid rgba(210, 173, 113, 0.28);
+}
+
+.paired-notes-body .gripe-rail {
+  display: none;
+}
+
+@media (min-width: 1180px) {
+  body.paired-notes-body {
+    padding-right: 0;
+  }
+}
+
+.paired-notes-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.paired-cover {
+  min-height: calc(100svh - 4.5rem);
+  display: grid;
+  align-content: center;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+}
+
+.paired-cover-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.paired-cover-kicker {
+  margin: 0 0 0.65rem;
+  color: var(--accent-strong);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.paired-cover-date {
+  margin: 0 0 clamp(2rem, 7vw, 4.5rem);
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+}
+
+.paired-cover-sides {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(184, 137, 71, 0.22);
+  border-bottom: 1px solid rgba(184, 137, 71, 0.16);
+}
+
+.paired-cover-side {
+  min-width: 0;
+  padding: clamp(1.8rem, 5vw, 3.5rem) clamp(1rem, 4vw, 2.5rem) clamp(2rem, 5vw, 3.5rem) 0;
+}
+
+.paired-cover-side + .paired-cover-side {
+  border-left: 1px solid rgba(184, 137, 71, 0.16);
+  padding-right: 0;
+  padding-left: clamp(1rem, 4vw, 2.5rem);
+}
+
+.paired-side-label,
+.paired-identity {
+  color: rgba(210, 173, 113, 0.82);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.paired-cover-side h2,
+.paired-reading h2 {
+  margin: 0.28rem 0 0.9rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 500;
+  letter-spacing: 0.015em;
+}
+
+.paired-cover-side h2 {
+  font-size: clamp(2.5rem, 6.4vw, 5.5rem);
+  line-height: 0.98;
+}
+
+.paired-cover-side p {
+  max-width: 27rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.92rem, 1.4vw, 1.03rem);
+}
+
+.paired-cover-subtitle {
+  margin: clamp(1.6rem, 4vw, 2.5rem) 0 0;
+  color: var(--muted);
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+}
+
+.paired-cover-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.paired-reading {
+  position: relative;
+  scroll-margin-top: 5.5rem;
+  padding: clamp(4rem, 10vw, 8rem) 0;
+  overflow: hidden;
+}
+
+.paired-reading-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 47rem);
+  margin: 0 auto;
+}
+
+.paired-reading h2 {
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  line-height: 1;
+}
+
+.paired-reading .paired-reading-meta {
+  margin: 0 0 2.3rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+}
+
+.paired-reading-side-a::before {
+  position: absolute;
+  inset: 4rem -14vw 2rem;
+  content: "";
+  background:
+    repeating-linear-gradient(0deg, transparent 0 17px, rgba(111, 36, 32, 0.045) 18px, transparent 19px 37px),
+    linear-gradient(90deg, transparent, rgba(111, 36, 32, 0.075) 22%, rgba(184, 137, 71, 0.02) 63%, transparent);
+  mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 86%, transparent);
+  pointer-events: none;
+}
+
+.paired-reading-side-a .article p {
+  margin-bottom: 1.12rem;
+  line-height: 1.82;
+}
+
+.paired-reading-side-a .article hr.article-break {
+  margin-block: 1.8rem;
+}
+
+.pair-transition {
+  min-height: 56vh;
+  display: grid;
+  place-items: center;
+  color: rgba(210, 173, 113, 0.62);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.32em;
+}
+
+.pair-transition span {
+  padding-left: 0.32em;
+}
+
+.paired-reading-side-b {
+  padding-top: clamp(5rem, 12vw, 10rem);
+}
+
+.paired-reading-side-b .paired-reading-inner {
+  width: min(100%, 49rem);
+}
+
+.paired-reading-side-b .article p {
+  margin-bottom: 1.58rem;
+  line-height: 1.9;
+}
+
+.paired-reading-side-b .article hr.article-break {
+  width: clamp(4rem, 15%, 6.5rem);
+  margin-block: 2.5rem;
+  opacity: 0.72;
+}
+
+.paired-end-nav,
+.paired-article-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+}
+
+.paired-end-nav {
+  width: min(100%, 49rem);
+  margin: 0 auto;
+  border-top: 1px solid rgba(184, 137, 71, 0.16);
+  padding: 2rem 0 clamp(4rem, 9vw, 7rem);
+}
+
+.paired-end-nav a,
+.paired-article-nav a {
+  color: var(--accent-strong);
+  font-size: 0.88rem;
+}
+
+.paired-identity {
+  margin: 0 0 0.55rem;
+}
+
+.paired-article-nav {
+  margin-top: 1.6rem;
+}
+
+.paired-article-nav a {
+  border-bottom: 1px solid rgba(210, 173, 113, 0.3);
+}
+
+@media (max-width: 720px) {
+  .paired-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .paired-card-sides,
+  .paired-cover-sides {
+    grid-template-columns: 1fr;
+  }
+
+  .paired-card-side + .paired-card-side,
+  .paired-cover-side + .paired-cover-side {
+    border-top: 1px solid rgba(184, 137, 71, 0.16);
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .paired-card-side:first-child,
+  .paired-cover-side {
+    padding-right: 0;
+  }
+
+  .paired-card-side-b {
+    background: linear-gradient(180deg, transparent, rgba(234, 215, 181, 0.025));
+  }
+
+  .paired-notes-shell {
+    width: min(100% - 1.25rem, 1120px);
+  }
+
+  .paired-cover {
+    min-height: auto;
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .paired-cover-date {
+    margin-bottom: 2rem;
+  }
+
+  .paired-cover-side h2,
+  .paired-reading h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .paired-cover-side h2 {
+    font-size: clamp(2.45rem, 14vw, 4rem);
+  }
+
+  .paired-reading {
+    padding: 3.5rem 0;
+  }
+
+  .paired-reading .paired-reading-meta {
+    margin-bottom: 1.7rem;
+  }
+
+  .paired-reading-side-a::before {
+    display: none;
+  }
+
+  .pair-transition {
+    min-height: 34vh;
+  }
+
+  .paired-reading-side-b {
+    padding-top: 4rem;
+  }
+
+  .paired-reading-side-b .article p {
+    margin-bottom: 1.4rem;
+  }
+
+  .paired-reading-side-b .article hr.article-break {
+    margin-block: 2.1rem;
+  }
+
+  .paired-end-nav,
+  .paired-article-nav,
+  .paired-cover-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .paired-cover-actions .button {
+    width: 100%;
+  }
+}
