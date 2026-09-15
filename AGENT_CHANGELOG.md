@@ -1,5 +1,9 @@
 # AGENT_CHANGELOG
 
+## 2026-09-15
+
+- Published the local article `2046` from `2046-20260915.docx` as `article-2046-20260915.html`, added it to `assets/content.js`, and refreshed only the eight content-data cache references to `bar-content-20260915-2046`.
+
 - 2026-09-14 分类更正：按用户确认，将 `Undercurrent` / `Vacancy` 双联篇及 `Fallen Angel` 从 `吧台札记` 调整为 `一些思绪`；三条记录迁入 `BAR_POSTS`，同步修正独立页标签、返回入口和内容数据缓存版本，正文保持不变。
 
 - 2026-09-14：从两份 DOCX 本地新增首组 `PAIRED NOTES 01`（Side A `Undercurrent` / Side B `Vacancy`），生成双联篇主页面与两张独立札记页；扩展 `BAR_NOTES` 配对元数据和首页/札记/文章列表组合卡渲染，加入密到疏的纯 CSS 阅读结构与移动端适配，并分别刷新共享 CSS/站点逻辑和八个内容数据消费者的缓存版本。正文以 188/187 个文本段落及 91/97 个语义分隔符逐项核对；按项目偏好未做浏览器视觉验证。回滚时删除三张新页面和两条札记数据，移除 paired 渲染/CSS，恢复前一版缓存键及本条状态记录。

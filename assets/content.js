@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "2046-20260915",
+    title: "2046",
+    tag: "一些思绪",
+    publishedAt: "2026-09-15",
+    summary: "一篇看完《2046》后写下的思绪：电影把嫉妒、舍不得、等待和回头拍得太漂亮，也让人看见离开不是结束；从2046出来以后，还要带着那些东西继续坐上开往2047的车。",
+    url: "article-2046-20260915.html",
+  },
+  {
     id: "undercurrent-20260914",
     title: "Undercurrent",
     tag: "一些思绪",
