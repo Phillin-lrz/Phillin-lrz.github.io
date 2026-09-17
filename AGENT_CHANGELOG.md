@@ -1,5 +1,9 @@
 # AGENT_CHANGELOG
 
+## 2026-09-17
+
+- Published local Paired Notes 02 from `只爱陌生人-SIDE A-260917.docx` and `Room Tone-SIDE B-260917.docx`: `note-only-love-strangers.html`, `note-room-tone.html`, and `paired-only-love-strangers-room-tone.html`. Added two paired `一些思绪` records and refreshed only the eight content-data cache references; synchronized the brief's cache-version fact. Source comparisons passed for Side A (263 paragraphs / 144 separators) and Side B (226 / 146) in both reading modes; syntax, pair-card grouping, existing-data preservation, links, and cache checks passed. Visual verification skipped by project preference, so long-page layout remains unverified. Rollback: remove the three new pages and two metadata records, restore the prior content cache references and brief version. No commit, push, new dependencies, or rendering/CSS changes.
+
 ## 2026-09-15
 
 - Published the local article `2046` from `2046-20260915.docx` as `article-2046-20260915.html`, added it to `assets/content.js`, and refreshed only the eight content-data cache references to `bar-content-20260915-2046`.
