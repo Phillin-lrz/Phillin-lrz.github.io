@@ -322,3 +322,10 @@ Rollback:
 2026-08-21 update: Re-extracted latest `117.docx` and updated `article-117-20260821.html` to 291 body paragraphs, updated the `assets/content.js` summary, refreshed HTML asset query strings to `bar-art-20260821-117-v2`, and skipped visual verification by project preference.
 
 2026-08-21 update: Restored 19 Word separator lines in `article-117-20260821.html` as semantic `<hr class="article-break">` elements, added stable `.article-break` styling in `assets/styles.css`, refreshed HTML asset query strings to `bar-art-20260821-117-v3`, and skipped visual verification by project preference.
+
+## 2026-09-17 — Add Nash Hong Dreamland friend link
+
+- Added Nash Hong Dreamland to `friends.html`, with description `for everything reachable.` and URL `https://naalh4.github.io/`.
+- Copied the user-provided image to `assets/nash-hong-dreamland-avatar.jpg`; reused the existing friend-card styles.
+- Local-only change. File/reference checks and `git diff --check` passed; browser visual verification skipped by project preference. Long-title wrapping remains visually unverified.
+- Rollback: remove the added card and avatar asset. Project instruction files were not changed.
