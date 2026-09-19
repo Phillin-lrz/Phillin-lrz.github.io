@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "in-the-mood-for-love-20260919",
+    title: "花样年华",
+    tag: "一些思绪",
+    publishedAt: "2026-09-19",
+    summary: "一篇从《花样年华》写到那些没有明确开始、也没有正式结束的靠近：知道答案以后，把这一段写下来，然后让《2047》的车继续往前开。",
+    url: "article-in-the-mood-for-love-20260919.html",
+  },
+  {
     id: "only-love-strangers-20260917",
     title: "只爱陌生人",
     tag: "一些思绪",

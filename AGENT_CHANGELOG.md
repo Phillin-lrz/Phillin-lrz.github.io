@@ -1,5 +1,9 @@
 # AGENT_CHANGELOG
 
+## 2026-09-19
+
+- Published the local `一些思绪` article `花样年华` from `花样年华-20260919.docx` as `article-in-the-mood-for-love-20260919.html`, added its `BAR_POSTS` record, refreshed only the eight content-data cache references, and synchronized the brief's cache-version fact. Source comparison passed for 209 paragraphs and 24 separators; template shell, asset references, syntax, existing-data preservation, links, cache scope, and whitespace checks passed. Visual verification was skipped by project preference, so long-page layout remains unverified. Rollback: remove the article page and metadata record, then restore the prior eight content cache references and brief version. No commit, push, new dependencies, or CSS/rendering changes.
+
 ## 2026-09-17
 
 - Published local Paired Notes 02 from `只爱陌生人-SIDE A-260917.docx` and `Room Tone-SIDE B-260917.docx`: `note-only-love-strangers.html`, `note-room-tone.html`, and `paired-only-love-strangers-room-tone.html`. Added two paired `一些思绪` records and refreshed only the eight content-data cache references; synchronized the brief's cache-version fact. Source comparisons passed for Side A (263 paragraphs / 144 separators) and Side B (226 / 146) in both reading modes; syntax, pair-card grouping, existing-data preservation, links, and cache checks passed. Visual verification skipped by project preference, so long-page layout remains unverified. Rollback: remove the three new pages and two metadata records, restore the prior content cache references and brief version. No commit, push, new dependencies, or rendering/CSS changes.
