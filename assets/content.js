@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "letters-20260923",
+    title: "Letters.",
+    tag: "一些思绪",
+    publishedAt: "2026-09-23",
+    summary: "一篇从椎名林檎版《Letters》写到家庭、学习与未来的思绪：信件会在距离中失真，分歧也不必消失；很多声音可以同时存在，时间会替一封回信慢慢长出重量。",
+    url: "article-letters-20260923.html",
+  },
+  {
     id: "in-the-mood-for-love-20260919",
     title: "花样年华",
     tag: "一些思绪",

@@ -1,5 +1,9 @@
 # AGENT_CHANGELOG
 
+## 2026-09-23 - Published Letters
+
+- Added `article-letters-20260923.html` from `Letters-20260923.docx` under `一些思绪`, registered it in `assets/content.js`, refreshed the content cache key on the eight consumer pages, and updated `AGENT_BRIEF.md`.
+
 ## 2026-09-19
 
 - Published the local `一些思绪` article `花样年华` from `花样年华-20260919.docx` as `article-in-the-mood-for-love-20260919.html`, added its `BAR_POSTS` record, refreshed only the eight content-data cache references, and synchronized the brief's cache-version fact. Source comparison passed for 209 paragraphs and 24 separators; template shell, asset references, syntax, existing-data preservation, links, cache scope, and whitespace checks passed. Visual verification was skipped by project preference, so long-page layout remains unverified. Rollback: remove the article page and metadata record, then restore the prior eight content cache references and brief version. No commit, push, new dependencies, or CSS/rendering changes.

@@ -43,7 +43,7 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 ## Current State To Remember
 
 - Asset cache versions are scoped by resource. Shared CSS and site logic use `bar-art-20260914-paired-notes`; the badge retains `bar-art-20260824-ten-pm`; gripe data uses `bar-gripe-20260902-five-hour-reset`. Update only the asset that changed.
-- `assets/content.js` uses `bar-content-20260919-in-the-mood-for-love` only on its eight real consumer pages: `article.html`, `index.html`, `notes.html`, `posts.html`, `reviews.html`, and the three tag pages.
+- `assets/content.js` uses `bar-content-20260923-letters` only on its eight real consumer pages: `article.html`, `index.html`, `notes.html`, `posts.html`, `reviews.html`, and the three tag pages.
 - `Undercurrent` / `Vacancy` is the first paired-note item: two `BAR_POSTS` records tagged `一些思绪` collapse into one list card through shared `pairId` metadata while retaining separate URLs and the static paired reading page `paired-undercurrent-vacancy.html`.
 - `assets/gallery.js` uses `bar-gallery-20260828-ash-zoom-inn` on `gallery.html`.
 - `BAR_PLACES` exists and powers the `reviews.html` / private-place map flow.
