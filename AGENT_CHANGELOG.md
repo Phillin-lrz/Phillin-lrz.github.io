@@ -1,5 +1,16 @@
 # AGENT_CHANGELOG
 
+## 2026-10-08 - Linked prior note in 归去来兮
+
+- Linked the inline title `《只爱陌生人》` in `article-guiqulaixi-20261008.html` to `note-only-love-strangers.html`, after confirming the earlier note discusses 陶渊明、王羲之 and the two classical texts. Preserved visible body text and paragraph order.
+- Verified the local target, the single inline link and `git diff --check`. Browser visual verification skipped by project preference; link appearance remains unreviewed visually. Local-only; no Git writes or remote operations.
+
+## 2026-10-08 - Published 归去来兮
+
+- Added `article-guiqulaixi-20261008.html` from `归去来兮-20261008.docx` under `一些思绪`, dated 2026-10-08. Preserved the source title and all 113 body paragraphs in order; omitted the final empty paragraph.
+- Registered the article in `assets/content.js`, refreshed only its eight consumer-page cache keys to `bar-content-20261008-guiqulaixi`, and synchronized `AGENT_BRIEF.md`. No shared CSS or rendering logic changes.
+- Verified exact source-to-HTML comparison (0 mismatches), unique article id, all eight cache consumers, balanced HTML tags, 15 local references (0 missing), `node --check assets/content.js`, and `git diff --check`. Browser visual verification skipped by project preference; article layout remains unreviewed visually. Local-only; no stage, commit, push, or remote checks.
+
 ## 2026-09-23 - Published Letters
 
 - Added `article-letters-20260923.html` from `Letters-20260923.docx` under `一些思绪`, registered it in `assets/content.js`, refreshed the content cache key on the eight consumer pages, and updated `AGENT_BRIEF.md`.

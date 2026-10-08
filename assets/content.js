@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "guiqulaixi-20261008",
+    title: "归去来兮",
+    tag: "一些思绪",
+    publishedAt: "2026-10-08",
+    summary: "一篇从忙碌却充实的一天写到《归去来兮辞》的思绪：经历九月的混乱以后，重新把时间和精力放回自己的生活，也重新找回学习、科研和写字的兴致。",
+    url: "article-guiqulaixi-20261008.html",
+  },
+  {
     id: "letters-20260923",
     title: "Letters.",
     tag: "一些思绪",
