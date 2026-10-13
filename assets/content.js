@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "days-of-being-wild-20261013",
+    title: "Days of Being Wild",
+    tag: "一些思绪",
+    publishedAt: "2026-10-13",
+    summary: "一篇从《阿飞正传》写到自由与责任的思绪：羡慕旭仔不需要解释的生活，也知道自己仍会回来；偶尔想逃一天，只因为喜欢，并没有什么不好。",
+    url: "article-days-of-being-wild-20261013.html",
+  },
+  {
     id: "guiqulaixi-20261008",
     title: "归去来兮",
     tag: "一些思绪",

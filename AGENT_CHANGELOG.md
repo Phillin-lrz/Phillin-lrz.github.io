@@ -348,3 +348,10 @@ Rollback:
 - Copied the user-provided image to `assets/nash-hong-dreamland-avatar.jpg`; reused the existing friend-card styles.
 - Local-only change. File/reference checks and `git diff --check` passed; browser visual verification skipped by project preference. Long-title wrapping remains visually unverified.
 - Rollback: remove the added card and avatar asset. Project instruction files were not changed.
+
+## 2026-10-13 — Days of Being Wild local article
+
+- Added `article-days-of-being-wild-20261013.html` from the supplied DOCX, classified as `一些思绪`; replaced the source title `想逃一天` with the requested `Days of Being Wild`. Preserved all 153 body paragraphs and 10 internal separators; ignored the final empty paragraph. Source DOCX left unchanged.
+- Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261013-days-of-being-wild`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
+- Verification: exact source-to-HTML paragraph comparison passed with zero mismatches; all local page references exist; `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; rendering and layout remain unverified.
+- Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` was unchanged.
