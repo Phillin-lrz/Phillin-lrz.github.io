@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "fireworks-20261016",
+    title: "烟花",
+    tag: "一些思绪",
+    publishedAt: "2026-10-16",
+    summary: "一篇从窦靖童《烟花》的鼓点和尾奏写到成长的思绪：慢慢把注意力放回自己，理解家人的关心，也不再急着让生活里的每件事都有答案。",
+    url: "article-fireworks-20261016.html",
+  },
+  {
     id: "days-of-being-wild-20261013",
     title: "Days of Being Wild",
     tag: "一些思绪",

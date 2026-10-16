@@ -355,3 +355,10 @@ Rollback:
 - Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261013-days-of-being-wild`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
 - Verification: exact source-to-HTML paragraph comparison passed with zero mismatches; all local page references exist; `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; rendering and layout remain unverified.
 - Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` was unchanged.
+
+## 2026-10-16 — 烟花 local article
+
+- Added `article-fireworks-20261016.html` from the supplied DOCX as `烟花`, classified as `一些思绪`, dated 2026-10-16. Preserved the ordered 72 body paragraphs and five internal separators; used the source title as the page title and omitted the final empty paragraph. The source DOCX is unchanged.
+- Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261016-fireworks`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
+- Verification: exact source-to-HTML paragraph/separator comparison passed with zero mismatches; local references exist; title/date/category and eight cache references checked. `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; layout remains unverified.
+- Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` was unchanged.
