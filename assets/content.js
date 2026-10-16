@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "ashes-of-time-20261016",
+    title: "Ashes of Time",
+    tag: "一些思绪",
+    publishedAt: "2026-10-16",
+    summary: "一篇看完《东邪西毒》后的思绪：从画面与人物写到记忆、过去和现在，承认曾经发生的一切，也慢慢回到自己的生活。",
+    url: "article-ashes-of-time-20261016.html",
+  },
+  {
     id: "fireworks-20261016",
     title: "烟花",
     tag: "一些思绪",

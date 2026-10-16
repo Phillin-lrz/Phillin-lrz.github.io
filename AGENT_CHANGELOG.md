@@ -362,3 +362,10 @@ Rollback:
 - Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261016-fireworks`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
 - Verification: exact source-to-HTML paragraph/separator comparison passed with zero mismatches; local references exist; title/date/category and eight cache references checked. `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; layout remains unverified.
 - Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` was unchanged.
+
+## 2026-10-16 — Ashes of Time local article
+
+- Added `article-ashes-of-time-20261016.html` from the supplied DOCX, retaining the title `Ashes of Time`, classified as `一些思绪`, dated 2026-10-16. Preserved all 184 body paragraphs and 15 internal separators in order; source DOCX unchanged.
+- Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261016-ashes-of-time`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
+- Verification: exact source-to-HTML paragraph/separator comparison passed with zero mismatches; local links, title/date/category and all eight cache references checked. `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; layout remains unverified.
+- Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` unchanged.
