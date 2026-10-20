@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "laojia-20261020",
+    title: "老家",
+    tag: "一些思绪",
+    publishedAt: "2026-10-20",
+    summary: "一篇从最近的疲惫写到老家淮南的思绪：想念高考结束后的暑假、老家的那些人，也想念一碗牛肉汤和一个烧饼。",
+    url: "article-laojia-20261020.html",
+  },
+  {
     id: "ashes-of-time-20261016",
     title: "Ashes of Time",
     tag: "一些思绪",
