@@ -147,3 +147,7 @@ Before reporting a task as complete, Codex must ensure that any relevant project
 - how it was verified
 - what risks remain
 - how to roll back the instruction-file change if needed
+
+## 杯底注释写作规则
+
+杯底注释是从全文中提炼的独立思想或情感评注。它可以比正文更加鲜明、主观和浓烈，也可以概括全文，但不得机械摘录正文末句、套用通用金句、强行制造文学效果或虚构作者的感情。所有新文章与注释修订均需遵守 `AGENT_OP_CONTENT_PUBLISH.md` 中的详细写作规范。

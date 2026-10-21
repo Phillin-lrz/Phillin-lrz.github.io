@@ -1,6 +1,6 @@
 # AGENT_BRIEF
 
-Last updated: 2026-10-20
+Last updated: 2026-10-21
 
 This is the lightweight startup file for Codex work in this repository. Read this file first, then read only the operation file and source files required by the task type.
 
@@ -19,6 +19,8 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 - Place records use stable `place-*.html` archive pages plus independent visit/article pages.
 
 ## Current Operating Rules
+
+- 杯底注释长期规范：所有新文章与注释修订必须读取并遵守 `AGENT_OP_CONTENT_PUBLISH.md` 的「Cup-bottom Endnotes / 杯底注释写作与编辑规范」章节。
 
 - Default to low-token startup: read this file, check Git status/stat, and then read the matching operation file.
 - Read `AGENT_HANDOFF.md` only for unfinished work, dirty-worktree recovery, or compacted/uncertain sessions.

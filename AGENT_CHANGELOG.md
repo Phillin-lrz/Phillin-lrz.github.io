@@ -376,3 +376,12 @@ Rollback:
 - Added the newest `BAR_POSTS` entry and refreshed only the content-data cache on its eight consumer pages to `bar-content-20261020-laojia`; synchronized the cache snapshot in `AGENT_BRIEF.md`.
 - Verification: exact source-to-HTML paragraph/separator comparison passed with zero mismatches; local references, title/date/category and all eight cache references checked. `node --check assets/content.js` and `git diff --check` passed. Browser visual verification skipped by project preference; layout remains unverified.
 - Local files only; no stage, commit, push, or remote check. Rollback: remove the new article and metadata entry, restore the eight cache references and brief snapshot, and remove this log entry. `AGENTS.md` unchanged.
+
+## 2026-10-21 — 杯底注释专项修订与永久写作规范
+
+- 原有注释存在机械复述正文结尾、偏离全文核心思想或情感等问题；按作者已确定的文字逐字替换 11 条注释，不重新创作或润色。
+- 文章范围：`article-collapse-20260825.html`、`article-no-pending-tasks-20260827.html`、`note-upstairs.html`、`article-2046-20260915.html`、`article-in-the-mood-for-love-20260919.html`、`article-letters-20260923.html`、`article-guiqulaixi-20261008.html`、`article-days-of-being-wild-20261013.html`、`article-fireworks-20261016.html`、`article-ashes-of-time-20261016.html`、`article-laojia-20261020.html`。仅修改 `article-endnote` 中的注释文字，保留前缀和 HTML 结构；正文、标题、摘要、日期、标签及其他文章均未改动。
+- `AGENTS.md` 增加强制性规则；`AGENT_OP_CONTENT_PUBLISH.md` 完整保存作者提供的第二部分规范（定义、原则、禁忌、流程及范例），并将既有文章/注释修订纳入读取入口；`AGENT_BRIEF.md` 增加简短索引。
+- 验证范围为上述 11 篇 HTML 与本次四个指令/状态文件：11 条注释与指定文案逐字一致；与 HEAD 比较，注释外全文及 HTML 标签序列无差异；完整写作规范与用户第二部分原文一致；文件清单和 `git diff --check` 检查通过。无 JavaScript、CSS、共享资源或缓存版本改动，无需 JS 语法检查。
+- 按项目偏好跳过浏览器视觉验证，较长注释的实际换行未作视觉检查。启动工作区干净，无冲突；仅本地编辑，未 stage、commit、push 或部署。
+- 回滚：恢复上述 11 篇文章的原注释；删除 `AGENTS.md` 本次新增章节、操作文件新增规范及入口扩展、Brief 索引（并恢复原更新时间），删除本条日志。无需改动其他文件。
