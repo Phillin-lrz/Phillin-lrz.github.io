@@ -385,3 +385,11 @@ Rollback:
 - 验证范围为上述 11 篇 HTML 与本次四个指令/状态文件：11 条注释与指定文案逐字一致；与 HEAD 比较，注释外全文及 HTML 标签序列无差异；完整写作规范与用户第二部分原文一致；文件清单和 `git diff --check` 检查通过。无 JavaScript、CSS、共享资源或缓存版本改动，无需 JS 语法检查。
 - 按项目偏好跳过浏览器视觉验证，较长注释的实际换行未作视觉检查。启动工作区干净，无冲突；仅本地编辑，未 stage、commit、push 或部署。
 - 回滚：恢复上述 11 篇文章的原注释；删除 `AGENTS.md` 本次新增章节、操作文件新增规范及入口扩展、Brief 索引（并恢复原更新时间），删除本条日志。无需改动其他文件。
+
+## 2026-10-23 — Millennium Mambo（本地内容更新）
+
+- 将用户提供的 Word《Millennium Mambo》加入「一些思绪」，日期 2026-10-23；新增 article-millennium-mambo-20261023.html，保留 170 个正文段落及指定杯底注释，无图片。
+- assets/content.js 新增文章索引；仅刷新八个真实消费者的 content.js 缓存版本为 bar-content-20261023-millennium-mambo。
+- 验证：正文逐段及杯底注释与 DOCX 提取结果完全一致；15 处本地引用存在；八页缓存引用匹配；node --check assets/content.js、git diff --check 通过。
+- 按项目偏好跳过浏览器视觉验证，排版仍有未实测风险。仅本地修改，未暂存、提交或执行远程操作；AGENTS.md 未变更。
+- 回滚：删除新增文章页，撤销本次索引、八页缓存版本和本条日志；保留其他已有修改。

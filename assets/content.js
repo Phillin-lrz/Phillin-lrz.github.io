@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "millennium-mambo-20261023",
+    title: "Millennium Mambo",
+    tag: "一些思绪",
+    publishedAt: "2026-10-23",
+    summary: "一篇看完《千禧曼波》后的思绪：喜欢它的颜色、音乐与摄影，却不喜欢镜头里的混乱生活；从不愉快的熟悉感、王家卫的留白，写到十年后的旁白和夕张的雪。",
+    url: "article-millennium-mambo-20261023.html",
+  },
+  {
     id: "laojia-20261020",
     title: "老家",
     tag: "一些思绪",
