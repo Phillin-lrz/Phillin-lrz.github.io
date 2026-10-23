@@ -1,5 +1,14 @@
 # Codex project instructions
 
+## User override — manual acceptance only (2026-10-24)
+
+The user performs acceptance testing. This rule supersedes automatic verification requirements elsewhere in this file and the operation/state files.
+
+- Do not automatically run tests, syntax checks, `git diff --check`, browser checks, screenshots, recordings, performance checks, or other acceptance workflows unless the user explicitly requests them for the current task.
+- Source inspection and Git status/diff reads needed to understand or safely edit existing work are still allowed; they are not an acceptance phase.
+- Complete authorized code changes and hand them over for the user's manual testing. Do not describe unperformed checks as passed.
+- Preserve a running local preview when the user is using it to test. Do not merge, publish, or deploy without explicit authorization.
+
 This repository is a static GitHub Pages website for `Phil Lin的Bar`.
 
 Use this file as the primary Codex project-level instruction entry. Keep business documentation in `README.md`; keep durable agent state in the `AGENT_*.md` files.

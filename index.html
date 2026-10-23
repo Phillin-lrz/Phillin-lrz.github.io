@@ -5,149 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phil Lin的Bar | 酒鬼医学生的博客</title>
     <meta name="description" content="一个医学生放置文字、酒、音乐、照片和杂念的私人吧台。">
-    <link rel="stylesheet" href="assets/styles.css?v=bar-art-20260914-paired-notes">
+    <link rel="stylesheet" href="assets/styles.css?v=bar-final-type-20261024">
+    <link rel="preload" href="assets/fonts/signature-oooh.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="assets/fonts/noto-serif-sc-de.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="stylesheet" href="assets/home.css?v=bar-final-type-20261024">
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="回到首页">
-        <img class="brand-mark brand-badge" src="assets/bar-badge.png?v=bar-art-20260824-ten-pm" alt="">
-        <span>Phil Lin的Bar</span>
-      </a>
-      <nav class="nav-links" aria-label="主导航">
-        <a href="index.html" aria-current="page">首页</a>
-        <a href="posts.html">文章</a>
-        <a href="tonight.html">今晚</a>
-        <a href="reviews.html">私藏</a>
-        <a href="playlist.html">歌单</a>
-        <a href="gallery.html">摄影</a>
+  <body class="home-page">
+<a class="hp-skip" href="#top">跳到主要内容</a>
+
+<header class="hp-header">
+  <a class="hp-brand" href="index.html" aria-label="返回首页"><img class="hp-brand-badge" src="assets/bar-badge.png?v=bar-art-20260824-ten-pm" alt=""><span class="hp-brand-word">Phil Lin<small>的</small>Bar</span></a>
+  <button id="mobileNav" class="hp-mobile-nav" type="button" aria-expanded="false" aria-controls="siteNav">MENU ＋</button>
+  <nav class="hp-nav" id="siteNav" aria-label="主导航">
+    <a href="index.html" class="hp-active" aria-current="page">首页</a><a href="#menu">酒单</a><a href="posts.html">文章</a><a href="tonight.html">今晚</a><a href="reviews.html">私藏</a><a href="playlist.html">歌单</a><a href="gallery.html">摄影</a><a href="friends.html">友链</a>
         <a href="about.html">关于</a>
-      </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="开关动效：烛光微粒" title="开关动效：烛光微粒">✦</button>
-    </header>
-
-    <main>
-      <section class="menu-hero" aria-label="Phil Lin的Bar 菜单">
-        <div class="menu-board">
-          <div class="hero-atmosphere" aria-hidden="true">
-            <span class="atmo-rain"></span>
-            <span class="atmo-bottle"></span>
-            <span class="atmo-window"></span>
-            <span class="atmo-counter"></span>
-          </div>
-          <div class="menu-intro">
-            <div class="menu-kicker" aria-hidden="true">
-              <img class="menu-mini-badge" src="assets/bar-badge.png?v=bar-art-20260824-ten-pm" alt="">
-              <span>Bar Menu</span>
-              <span>2026</span>
-            </div>
-            <div class="menu-title">
-              <p class="eyebrow">Bar Counter · 私人档案</p>
-              <h1>Phil Lin的Bar</h1>
-            </div>
-            <p class="hero-lede"><span>白天把事情做完，</span><span>夜里给没想明白的事留一点位置。</span></p>
-            <div class="hero-note">
-              <p>这里放文字、酒、音乐、照片，也放一些暂时整理不好的东西。不保证清醒，也不急着下结论。</p>
-              <div class="hero-actions">
-                <a class="button primary" href="posts.html">进入文章</a>
-                <a class="button secondary" href="reviews.html">看看私藏</a>
-                <a class="button secondary" href="tonight.html">今晚状态</a>
-                <a class="button secondary" href="about.html">关于我</a>
-              </div>
-            </div>
-          </div>
-          <div class="lyric-plate" aria-label="Fruit Fly lyric">
-            <p>I flutter in circle never landing on nothing</p>
-            <span class="lyric-source"><span class="record-icon" aria-hidden="true"></span>Fruit Fly</span>
-          </div>
-          <div class="menu-grid" aria-label="吧台菜单">
-            <article class="menu-drink menu-drink-group" data-drink="Martini">
-              <span class="drink-glyph martini-glyph"><span></span></span>
-              <span class="drink-name">Martini Flight</span>
-              <strong>文章</strong>
-              <p>主入口进入完整归档；长文和札记都算作这套文章酒单里的不同变体。</p>
-              <a class="menu-primary-link" href="posts.html">进入文章归档</a>
-              <div class="menu-variants" aria-label="文章分类">
-                <a href="tag-lab.html"><span>Gibson</span>生活日志</a>
-                <a href="tag-thoughts.html"><span>Dirty Martini</span>一些思绪</a>
-                <a href="tag-recommendations.html"><span>Vesper</span>种草安利</a>
-                <a href="notes.html"><span>Hanky Panky</span>吧台札记</a>
-              </div>
-            </article>
-            <a class="menu-drink" href="tonight.html" data-drink="Gimlet">
-              <span class="drink-glyph gimlet-glyph"><span></span></span>
-              <span class="drink-name">Gimlet</span>
-              <strong>今晚</strong>
-              <p>当前状态、复习压力、写作余味，都先放在这里。</p>
-            </a>
-            <a class="menu-drink" href="reviews.html" data-drink="Boulevardier">
-              <span class="drink-glyph boulevardier-glyph"><span></span></span>
-              <span class="drink-name">Boulevardier</span>
-              <strong>私藏</strong>
-              <p>一些去过、想再去或暂时记下的酒吧、餐厅、咖啡店和小店落脚点。</p>
-            </a>
-            <a class="menu-drink" href="playlist.html" data-drink="Sazerac">
-              <span class="drink-glyph sazerac-glyph"><span></span></span>
-              <span class="drink-name">Sazerac</span>
-              <strong>歌单</strong>
-              <p>写字、走夜路、赶完 DDL 后的声音线索，每份歌单都有自己的详情页。</p>
-            </a>
-            <a class="menu-drink" href="gallery.html" data-drink="French 75">
-              <span class="drink-glyph french-75-glyph"><span></span></span>
-              <span class="drink-name">French 75</span>
-              <strong>摄影作品</strong>
-              <p>一些光影、街角和杯壁反光，先按地点收进画廊。</p>
-            </a>
-            <a class="menu-drink" href="friends.html" data-drink="Tom Collins">
-              <span class="drink-glyph collins-glyph"><span></span></span>
-              <span class="drink-name">Tom Collins</span>
-              <strong>友链</strong>
-              <p>这里收集朋友们的网站、博客和个人主页。</p>
-            </a>
-            <a class="menu-drink" href="about.html" data-drink="Last Word">
-              <span class="drink-glyph last-word-glyph"><span></span></span>
-              <span class="drink-name">Last Word</span>
-              <strong>关于我</strong>
-              <p>这里是 Phil Lin 的个人空间，记录学习、实验、写作和生活里的碎碎念。</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section split-section">
-        <div>
-          <p class="eyebrow">Tonight</p>
-          <h2>今晚状态</h2>
-        </div>
-        <div class="post-list compact">
-          <a class="post-card" href="tonight.html">
-            <span class="post-date">Now / Aftertaste</span>
-            <h3>最近还在把事情做完</h3>
-            <p>有些东西没想清楚，先放在今晚这一页。</p>
-          </a>
-          <a class="post-card" href="playlist.html">
-            <span class="post-date">Playlist</span>
-            <h3>夜间歌单</h3>
-            <p>写字、走夜路和赶完 DDL 后，放在旁边的一些声音线索。</p>
-          </a>
-        </div>
-      </section>
-
-      <section class="section split-section">
-        <div>
-          <p class="eyebrow">文章</p>
-          <h2>最近文章</h2>
-        </div>
-        <div class="post-list compact" data-recent-posts></div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>© 2026 Phil Lin的Bar</span>
-      <span>酒鬼医学生，非专业调酒，偶尔认真写字。</span>
-    </footer>
-
+  <button class="hp-motion" id="themeToggle" type="button" aria-label="开关动效：烛光微粒">✦ 动效</button></nav>
+  <div class="hp-header-right"><span class="hp-edition">Phil Lin · Private Counter</span><button class="hp-toggle" id="lightToggle" type="button" title="切换玻璃光影" aria-label="切换玻璃光影" aria-pressed="true">✧</button></div>
+</header>
+<main id="top">
+<section class="hp-stage" id="stage" aria-label="Phil Lin的Bar 首页">
+  <div class="hp-light-panel" aria-hidden="true"></div><div class="hp-light-rail" aria-hidden="true"></div>
+  <div class="hp-hero">
+    <div class="hp-intro">
+      <div class="hp-micro">PRIVATE COUNTER &nbsp;/&nbsp; EST. 2026</div>
+      <h1 class="hp-hero-h1"><span class="hp-h1-first">Phil Lin</span><span class="hp-h1-last"><span class="hp-de">的</span><em>Bar</em></span></h1>
+      <div class="hp-title-rule" aria-hidden="true"></div>
+      <p class="hp-hero-statement">白天把事情做完，<br>夜里给没想明白的事留一点位置。</p>
+      <p class="hp-hero-text">这里放文字、酒、音乐、照片，也放一些暂时整理不好的东西。不保证清醒，也不急着下结论。</p>
+      <div class="hp-hero-action"><a href="posts.html">最近写下的 <span>↗</span></a><a href="tonight.html">今晚 <span>↗</span></a></div>
+      <div class="hp-intro-bottom"><span>I flutter in circle never landing on nothing</span><small style="font:9px Inter,sans-serif;letter-spacing:.14em;color:var(--bar-muted);text-transform:uppercase">Fruit Fly</small></div>
+    </div>
+    <section class="hp-menu-paper" id="menu" aria-label="Bar Menu 鸡尾酒菜单"><div class="hp-menu-body">
+      <div class="hp-menu-meta"><span>PHIL LIN'S BAR / PRIVATE MENU</span><i>Established 2026</i></div>
+      <div class="hp-menu-title"><h2>Bar <em>Menu.</em></h2><small>每一杯，都有去处。</small></div>
+      <div class="hp-menu-list">
+        <a class="hp-menu-item" data-drink="Martini Flight" href="posts.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-martini"></span></span><span class="hp-no">01</span><span class="hp-cocktail">Martini Flight</span><span class="hp-dest">文章</span><span class="hp-arrow">↗</span></a>
+        <div class="hp-sub-drinks" aria-label="Martini Flight 四个文章分类"><a href="tag-lab.html">Gibson<small>生活日志</small></a><a href="tag-thoughts.html">Dirty Martini<small>一些思绪</small></a><a href="tag-recommendations.html">Vesper<small>种草安利</small></a><a href="notes.html">Hanky Panky<small>吧台札记</small></a></div>
+        <a class="hp-menu-item" data-drink="Gimlet" href="tonight.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-coupe"></span></span><span class="hp-no">02</span><span class="hp-cocktail">Gimlet</span><span class="hp-dest">今晚</span><span class="hp-arrow">↗</span></a>
+        <a class="hp-menu-item" data-drink="Boulevardier" href="reviews.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-rocks"></span></span><span class="hp-no">03</span><span class="hp-cocktail">Boulevardier</span><span class="hp-dest">私藏</span><span class="hp-arrow">↗</span></a>
+        <a class="hp-menu-item" data-drink="Sazerac" href="playlist.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-sazerac"></span></span><span class="hp-no">04</span><span class="hp-cocktail">Sazerac</span><span class="hp-dest">歌单</span><span class="hp-arrow">↗</span></a>
+        <a class="hp-menu-item" data-drink="French 75" href="gallery.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-french"></span></span><span class="hp-no">05</span><span class="hp-cocktail">French 75</span><span class="hp-dest">摄影</span><span class="hp-arrow">↗</span></a>
+        <a class="hp-menu-item" data-drink="Tom Collins" href="friends.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-collins"></span></span><span class="hp-no">06</span><span class="hp-cocktail">Tom Collins</span><span class="hp-dest">友链</span><span class="hp-arrow">↗</span></a>
+        <a class="hp-menu-item" data-drink="Last Word" href="about.html"><span class="hp-seal" aria-hidden="true"><span class="hp-vessel hp-lastword"></span></span><span class="hp-no">07</span><span class="hp-cocktail">Last Word</span><span class="hp-dest">关于</span><span class="hp-arrow">↗</span></a>
+      </div>
+      <div class="hp-menu-foot"><span>SEVEN POURINGS &nbsp;/&nbsp; NO. 001</span><i>the aftertaste remains.</i></div>
+    </div></section>
+  </div>
+</section>
+<section class="hp-story" id="writing" aria-label="最近文章和私人收藏">
+  <div class="hp-story-inner">
+    <div class="hp-writing">
+      <p class="hp-eyeline">01 / STILL HAPPENING</p>
+      <h2 class="hp-section-title">最近写下的</h2>
+      <div class="hp-writing-rows" data-recent-posts data-recent-layout="rows" data-recent-limit="4"></div><noscript><p>启用 JavaScript 查看最近文章，或<a href="posts.html">浏览完整文章归档</a>。</p></noscript>
+    </div>
+    <aside class="hp-small-margin" aria-label="电影与音乐的私人索引">
+      <div class="hp-shelf" id="cinema"><div class="hp-mini-heading">ON SCREEN <i>07 films</i></div><div class="hp-shelf-list">
+        <a href="article-days-of-being-wild-20261013.html"><em>01</em>阿飞正传</a><span><em>02</em>重庆森林</span><a href="article-ashes-of-time-20261016.html"><em>03</em>东邪西毒</a><span><em>04</em>堕落天使</span><a href="article-in-the-mood-for-love-20260919.html"><em>05</em>花样年华</a><span><em>06</em>2046</span><a href="article-millennium-mambo-20261023.html"><em>07</em>千禧曼波</a>
+      </div></div>
+      <div class="hp-shelf" id="music"><div class="hp-mini-heading">ON REPEAT <i>06 entries</i></div><div class="hp-shelf-list">
+        <a href="note-only-love-strangers.html" title="王菲 · 只爱陌生人"><em>01</em>只爱陌生人</a><span><em>02</em>暗涌</span><a href="article-fireworks-20261016.html" title="窦靖童 · 烟花"><em>03</em>烟花</a><a href="article-letters-20260923.html" title="椎名林檎演唱版本 · Letters"><em>04</em>Letters</a><span><em>05</em>Fruit Fly</span><span><em>06</em>空中飞人</span>
+      </div></div>
+    </aside>
+  </div>
+  <details class="hp-gripes"><summary>吧台碎语 · 吐槽</summary><div data-home-gripes></div></details>
+  <div class="hp-colophon"><span>Phil Lin的Bar &nbsp; / &nbsp; The private archive</span><strong>酒 · 电影 · 音乐 · 文字 · 生活</strong></div>
+</section>
+</main>
+<footer class="hp-footer"><span>© 2026 PHIL LIN的BAR</span><span>酒鬼医学生，非专业调酒，偶尔认真写字。</span></footer>
     <script src="assets/content.js?v=bar-content-20261023-millennium-mambo"></script>
     <script src="assets/gripes.js?v=bar-gripe-20260902-five-hour-reset"></script>
-    <script src="assets/site.js?v=bar-art-20260914-paired-notes"></script>
+    <script src="assets/site.js?v=bar-motion-20261024"></script>
+      <script src="assets/home.js?v=bar-motion-20261024"></script>
   </body>
 </html>

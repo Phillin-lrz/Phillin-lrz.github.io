@@ -37,3 +37,9 @@ Read this file only for planning, phase selection, or an explicit pending-work a
 2. Check `git status --short` and `git diff --stat`.
 3. Read the operation file matching the requested work.
 4. Use this todo only to choose among the open decisions above.
+
+## Homepage follow-up — 2026-10-24
+
+- [x] Integrate and locally verify the approved homepage on `codex/home-private-counter`.
+- [ ] User review of homepage; only then choose the next inner-page family from `AGENT_HOME_REDESIGN.md`.
+- [ ] Propose film/music record structure separately before creating new routes or changing navigation.

@@ -72,3 +72,47 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 - Some existing state files contain mojibake text inherited from earlier Windows/encoding issues; do not fix broad text encoding unless the user asks.
 - Visual layout risk remains whenever CSS or frontend markup changes because visual verification is skipped by default.
 - Local files may intentionally differ from the online GitHub Pages site; do not inspect or reconcile the remote site unless the user explicitly requests it.
+
+## Homepage redesign — 2026-10-24
+
+- Local-only branch `codex/home-private-counter` integrates the approved homepage reference. See `AGENT_HOME_REDESIGN.md` for scope, verification, remaining limits, proposed phases and rollback.
+- Home-only assets: `assets/home.css` and `assets/home.js`, version `bar-home-20261024`. Homepage site.js URL uses `bar-site-20261024-home`; other pages retain existing URLs and default rendering.
+- The shared recent renderer now supports opt-in rows and count; preserve paired URLs and default card mode. Existing gripe rail is moved into the homepage expandable section with handlers retained.
+
+## Interior redesign — 2026-10-24
+
+- Phase 2 continues on `codex/home-private-counter`; see `AGENT_INTERIOR_REDESIGN.md` for architecture, verification, screenshots and rollback to the phase-1 snapshot.
+- Shared stylesheet URL: `bar-design-20261024`; it imports `assets/interior.css?v=bar-interior-20261024` in a named design layer. Shared site.js URL: `bar-site-20261024-interiors`. Both are refreshed on 138 root HTML consumers; data/image URLs are unchanged.
+- Homepage stylesheet URL: `bar-home-20261024-refine`. The “翻开酒单” button is removed; the header menu anchor and complete cocktail menu remain.
+- Maintain design tokens/page-family rules in interior.css. Preserve the legacy layer for structures and original drink-label assets until separately audited. Mobile interior navigation and collapsible non-reading gripe sections are initialized by site.js.
+
+## Navigation follow-up — 2026-10-24
+
+- Homepage top film/music anchors removed; collection shelves and the existing cocktail-menu anchor remain. All 138 root public pages now have one friends link in the top main navigation; five formerly brand-only headers received the existing standard navigation.
+- Removed notes.html's note-rule section. Article data and note rendering remain unchanged. Motion controls remain unchanged: particle canvas is ~7% opacity, mobile defaults off, photography hides it; the separate homepage glass button controls hero glass lighting.
+- Static header/content comparison and JS syntax/diff checks passed. Browser visual verification skipped for this small follow-up per project preference; narrow-header visual risk remains.
+
+## Manual testing and signature/motion follow-up — 2026-10-24
+
+- User now performs acceptance testing. AGENTS.md's manual-acceptance override supersedes older automatic-check requirements: no automatic tests, syntax checks, browser checks, screenshots, recordings or performance checks unless explicitly requested for the current task.
+- Signature/motion implementation, font licenses, cancellation state, running preview and rollback are recorded in AGENT_SIGNATURE_MOTION.md. No further acceptance checks were run after cancellation; final acceptance is the user's.
+- Preview left running at http://127.0.0.1:8765/index.html for the user's manual testing. Do not interrupt it while they are using it.
+
+## Title-only typography — 2026-10-24
+
+- Current homepage signature is the self-hosted Oooh Baby subset; 的 retains the Noto Serif glyph. Primary inner-page titles use Noto Sans SC ExtraLight 200, subset to current titles. Read AGENT_TITLE_FONTS.md for exact scope, licenses and rollback.
+- CSS versions are bar-title-fonts-20261024. Body/subheading/nav/button fonts, layout, content and animations were not changed. Only explicitly requested title-rendering inspection was performed; general acceptance remains manual.
+- Preview restarted at http://127.0.0.1:8765/index.html (exec session 23862). Preserve it for the user's testing.
+
+## Handwritten titles and cool-metal palette — 2026-10-24
+
+- Inner visual primary titles now use self-hosted Yozai Light Chinese and Oooh Baby Latin, selected after real browser comparison. Homepage signature font/two-line layout is unchanged. Current CSS and SVG query token is bar-cool-hand-20261024.
+- Shared text roles and retained CSS/SVG labels use titanium silver/ice-blue tones with restrained rose/wine accents. No content, navigation, structure or animation changes. Read AGENT_TITLE_METAL.md and assets/fonts/README.md for font provenance, subset maintenance, scope, targeted rendering observations and external rollback snapshot.
+- Only user-requested typography rendering was inspected; broad acceptance remains manual. Preserve the existing port-8765 preview. No commit/push/deployment.
+
+## Final typography / labels — 2026-10-24
+
+- Inner visual primary titles now use WenKai Lite Light, with the existing signature Latin face; Yozai is inactive. Shared CSS/SVG cache token: bar-final-type-20261024. Body/nav/button/subheading/metadata fonts are unchanged.
+- Fixed the shared 58px drink-portrait grid's oversized scaled child, preserving external dimensions/gaps; refined seven CSS vessels and 18 retained SVG labels. No layout, content, animation or function redesign.
+- User confirmed keeping the current homepage 的; do not apply A/B/C. The font comparison is closed. All current website code stays as-is, including the frozen English wordmark.
+- See AGENT_FINAL_POLISH.md for scope, licenses, explicit three-size rendering observations, screenshots, manual-acceptance limits and rollback. Local preview at port 8765 is preserved; no commit/push/deployment.

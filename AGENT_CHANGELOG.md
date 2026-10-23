@@ -393,3 +393,44 @@ Rollback:
 - 验证：正文逐段及杯底注释与 DOCX 提取结果完全一致；15 处本地引用存在；八页缓存引用匹配；node --check assets/content.js、git diff --check 通过。
 - 按项目偏好跳过浏览器视觉验证，排版仍有未实测风险。仅本地修改，未暂存、提交或执行远程操作；AGENTS.md 未变更。
 - 回滚：删除新增文章页，撤销本次索引、八页缓存版本和本条日志；保留其他已有修改。
+
+## 2026-10-24 — Local homepage reference integration
+
+- Branch `codex/home-private-counter`: recompose index.html with home.css/home.js; preserve badge, real dynamic recent content, paired links, seven drink seals/four Martini categories, existing navigation and gripe paging. Shared site.js adds opt-in rows/count; inner pages and data untouched.
+- Syntax/diff checks, local reference and renderer checks, responsive browser QA and representative inner-page regressions passed. Screenshots and phase/rollback details recorded in AGENT_HOME_REDESIGN.md. Physical mobile/Safari remain unverified. No commit/push/merge/deployment.
+
+## 2026-10-24 — Phase 2 shared interior design
+
+- Removed homepage menu action and rebalanced spacing. Added interior.css shared tokens/page-family design in an explicit cascade layer; retained legacy structures/artwork. Added mobile navigation/skip links and collapsible non-reading gripe sections in site.js.
+- Refreshed only shared CSS/site.js URLs on 138 HTML pages. Deterministic audit confirms all article/track/place/photo content and data unchanged. Responsive/function checks, syntax and diff checks passed; fixes and screenshot locations recorded in AGENT_INTERIOR_REDESIGN.md.
+- Work remains local on codex/home-private-counter. No instruction-file edits, new dependencies, routes, images, commits, merges or deployment. Physical mobile/Safari/older engines remain unverified.
+
+## 2026-10-24 — Navigation and notes follow-up
+
+- Removed homepage film/music top links, added friends to all 138 public main navigations (including standard navigation on five brand-only headers), and removed the notes rule panel. Preserved content shelves, cocktail menu, motion behavior and content data.
+- All 138 headers and body-preservation allowlist checks passed; JS syntax and diff checks passed. Visual checks skipped per project preference. No Git commit/merge/push/deployment.
+
+## 2026-10-24 — Homepage signature and finite motion
+
+- Self-hosted licensed Chorus/Noto glyph fonts apply only to the large homepage wordmark; two left-aligned lines read Phil Lin / 的Bar. Removed continuous particle/cursor code; added finite entrance, reveal and seal feedback with reduced-motion support. Content/rendering/navigation logic preserved.
+- User canceled recording and then further acceptance checks; handed over to manual testing with local preview retained. Added the manual-acceptance override to AGENTS.md and recorded details/rollback in AGENT_SIGNATURE_MOTION.md. No merge, push or deployment.
+
+## 2026-10-24 — Title-only font refinement from supplied reference
+
+- Changed homepage signature to a locally served Oooh Baby subset, preserving the two-line left alignment and title block metrics. Inner primary titles now use self-hosted Noto Sans SC ExtraLight 200. Included original OFL licenses and limited font glyph subsets; preserved other typography, layout, content and animation code.
+- Per explicit task request, inspected actual desktop/mobile title rendering only. No broader acceptance, syntax, performance or regression checks. Details and rollback: AGENT_TITLE_FONTS.md. No publication or Git commit/merge/push.
+
+## 2026-10-24 — Handwritten primary titles and cool-metal details
+
+- Selected self-hosted Yozai Light plus Oooh Baby Latin after actual browser comparisons; retained homepage wordmark typography. Updated only primary-title typography, text roles, existing CSS/SVG label palettes/strokes and applicable CSS asset versions. No content/layout/navigation/motion changes.
+- Added OFL notice and font documentation; recorded exact scope, rendering-only observations, manual-acceptance limits and rollback in AGENT_TITLE_METAL.md. Broad checks were not run; preview preserved; no commit/push/deployment.
+
+## 2026-10-24 — Final type / labels / shared optical alignment
+
+- Preserved the formal homepage 的 and frozen English wordmark; prepared marked A/B/C actual-homepage crops for the user's selection. C recommended, replacement pending choice.
+- Selected self-hosted WenKai Lite Light primary titles after real comparisons; refined existing CSS/SVG labels and fixed the shared oversized-grid-child alignment cause without per-drink offsets or external size changes. Added title-only word grouping to the mixed Fruit Fly headline; visible content unchanged.
+- Completed explicitly requested 3-size observations of 17 route types; no title overflow observed. Scope, licenses, manual acceptance limits, screenshots and rollback recorded in AGENT_FINAL_POLISH.md; preview preserved; no Git write/remote operation.
+
+## 2026-10-24 — User retained the current wordmark
+
+- User declined further replacement of homepage 的 and confirmed keeping the current version. Closed the A/B/C selection in brief, handoff, final-polish record and font README. Website code, preview and development branch are unchanged. Followed AGENTS.md; no instruction-file change, tests, checks or publication.

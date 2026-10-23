@@ -1,0 +1,12 @@
+# Signature and motion follow-up — 2026-10-24
+
+- Branch remains `codex/home-private-counter`; no commit, merge, push or deployment.
+- Homepage wordmark now reads `Phil Lin` / `的Bar`, both rows left aligned. Only the large homepage wordmark uses self-hosted TeX Gyre Chorus (URW Chancery L lineage) and a Google Fonts-supplied Noto Serif SC subset for 的. Font files and original GUST/LPPL/OFL licenses are under assets/fonts/. Other text fonts are unchanged.
+- No reference image was accessible in the request. Implementation follows the written specification; exact image matching remains unconfirmed.
+- Removed the continuous particle/cursor canvas implementation from site.js. Rendering/navigation logic from NOTE_TAG onward is unchanged. Existing motion controls now govern finite entry and interaction effects; OS reduced-motion preference disables them.
+- home.js provides finite wordmark/glass entrance, one-shot IntersectionObserver reveals and finite seal press feedback. home.css provides desktop seal hover feedback. No production requestAnimationFrame loop remains.
+- Only asset versions were refreshed on inner HTML pages. Home preloads its two font files; combined font payload is 102,940 bytes. No website runtime dependencies were added.
+- Before cancellation, local mobile-viewport sampling measured median frame intervals around 16.7 ms and no long tasks in short three-second samples. This was desktop-engine viewport emulation, not physical mobile testing; do not treat it as a full acceptance pass.
+- The user canceled recording, then all further acceptance testing and took over manual testing. Do not run further checks, screenshots or performance measurements without a new explicit request. This preference is now recorded at the top of AGENTS.md.
+- Local preview left running for manual testing: http://127.0.0.1:8765/index.html (owned exec session 70541). Its optional `motion-audit` instrumentation is served only by the external preview helper; it is not repository code.
+- Start-of-task source copies are outside the repository under C:/Users/Phil Lin/.codex/visualizations/2026/10/23/01a16998-8852-7fd2-b552-f3ecff8771f5/wordmark-motion-baseline/. Restore these copies to roll back this follow-up without losing earlier redesign work. Remove newly added font assets if reverting all references. To roll back the instruction change, remove the manual-acceptance override section from AGENTS.md only on user instruction.

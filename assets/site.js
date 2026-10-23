@@ -1,281 +1,31 @@
 const root = document.documentElement;
-const savedParticles = localStorage.getItem("blog-particles");
 const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
-const compactMotionQuery = window.matchMedia("(max-width: 720px)");
-const reduceMotion = reduceMotionQuery.matches;
-const defaultMotionOff = reduceMotion || compactMotionQuery.matches;
-
-if (savedParticles) {
-  root.dataset.particles = savedParticles;
-} else if (defaultMotionOff) {
-  root.dataset.particles = "off";
-}
-
-function updateMotionButton(button) {
-  const isOff = root.dataset.particles === "off";
-  button.setAttribute("aria-pressed", String(!isOff));
-  button.title = reduceMotion ? "系统已减少动态效果" : isOff ? "打开烛光微粒" : "关闭烛光微粒";
-  button.setAttribute("aria-label", button.title);
-}
-
-document.querySelectorAll("#themeToggle").forEach((button) => {
-  updateMotionButton(button);
-  if (reduceMotion) {
-    button.disabled = true;
-  }
-  button.addEventListener("click", () => {
-    if (reduceMotion) return;
-    const next = root.dataset.particles === "off" ? "on" : "off";
-    root.dataset.particles = next;
-    localStorage.setItem("blog-particles", next);
-    updateMotionButton(button);
-    if (next === "on") {
-      if (!canvas) {
-        initAmbientMotion();
-      } else if (!animationFrame) {
-        startTime = performance.now();
-        draw();
-      }
-    }
+let motionEnabled = true;
+try { motionEnabled = localStorage.getItem("bar-motion") !== "off"; } catch { /* Storage is optional. */ }
+function syncMotionPreference() {
+  const enabled = motionEnabled && !reduceMotionQuery.matches;
+  root.dataset.motion = enabled ? "on" : "off";
+  document.querySelectorAll("#themeToggle").forEach((button) => {
+    button.setAttribute("aria-pressed", String(enabled));
+    button.disabled = reduceMotionQuery.matches;
+    button.title = reduceMotionQuery.matches ? "系统已减少动态效果" : enabled ? "关闭入场与反馈动效" : "打开入场与反馈动效";
+    button.setAttribute("aria-label", button.title);
+    button.textContent = button.classList.contains("hp-motion") ? enabled ? "✧ 动效开" : "◌ 动效关" : enabled ? "✦" : "◌";
   });
-});
-
-document.querySelectorAll("[data-accent]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const accent = button.dataset.accent;
-    root.dataset.accent = accent;
-    localStorage.setItem("blog-accent", accent);
-  });
-});
-
-const pointer = { x: 0, y: 0, active: false };
-let barNodes = [];
-let startTime = performance.now();
-let canvas = null;
-let cursor = null;
-let ctx = null;
-let animationFrame = null;
-
-const cocktailConstellations = [
-  {
-    name: "Martini",
-    tone: "rgba(255, 241, 204,",
-    points: [
-      [0.12, 0.22], [0.25, 0.22], [0.19, 0.38], [0.19, 0.53], [0.13, 0.62], [0.25, 0.62],
-    ],
-    links: [[0, 1], [0, 2], [1, 2], [2, 3], [3, 4], [3, 5]],
-  },
-  {
-    name: "Old Fashioned",
-    tone: "rgba(240, 164, 58,",
-    points: [
-      [0.72, 0.22], [0.86, 0.22], [0.84, 0.52], [0.74, 0.52], [0.77, 0.38], [0.82, 0.34],
-    ],
-    links: [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [3, 4], [2, 5]],
-  },
-  {
-    name: "Coupe",
-    tone: "rgba(255, 210, 138,",
-    points: [
-      [0.34, 0.66], [0.52, 0.66], [0.48, 0.78], [0.38, 0.78], [0.43, 0.86], [0.36, 0.92], [0.5, 0.92],
-    ],
-    links: [[0, 1], [0, 3], [1, 2], [2, 3], [2, 4], [3, 4], [4, 5], [4, 6]],
-  },
-  {
-    name: "Highball",
-    tone: "rgba(154, 155, 93,",
-    points: [
-      [0.56, 0.2], [0.64, 0.2], [0.65, 0.54], [0.55, 0.54], [0.58, 0.34], [0.63, 0.42], [0.68, 0.16],
-    ],
-    links: [[0, 1], [1, 2], [2, 3], [3, 0], [4, 5], [1, 6]],
-  },
-];
-
-function resizeCanvas() {
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = Math.floor(window.innerWidth * ratio);
-  canvas.height = Math.floor(window.innerHeight * ratio);
-  canvas.style.width = `${window.innerWidth}px`;
-  canvas.style.height = `${window.innerHeight}px`;
-  ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
-  buildNodes();
+  window.dispatchEvent(new CustomEvent("bar-motion-change", { detail: { enabled } }));
 }
-
-function buildNodes() {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  barNodes = cocktailConstellations.flatMap((shape) =>
-    shape.points.map(([x, y], index) => ({
-      x: x * width,
-      y: y * height,
-      baseX: x * width,
-      baseY: y * height,
-      index,
-      shape,
-      size: index === 0 || index === 1 ? 2.8 : 2.1,
-      phase: Math.random() * Math.PI * 2,
-    })),
-  );
-}
-
-function drawNode(node, time) {
-  const bob = Math.sin(time / 900 + node.phase) * 2.5;
-  node.x = node.baseX + Math.cos(time / 1200 + node.phase) * 1.8;
-  node.y = node.baseY + bob;
-
-  ctx.beginPath();
-  ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2);
-  ctx.fillStyle = `${node.shape.tone} 0.82)`;
-  ctx.fill();
-
-  ctx.beginPath();
-  ctx.arc(node.x, node.y, node.size * 3.2, 0, Math.PI * 2);
-  ctx.strokeStyle = `${node.shape.tone} 0.08)`;
-  ctx.stroke();
-}
-
-function drawConstellationLines(time) {
-  let offset = 0;
-  cocktailConstellations.forEach((shape) => {
-    shape.links.forEach(([a, b]) => {
-      const from = barNodes[offset + a];
-      const to = barNodes[offset + b];
-      ctx.beginPath();
-      ctx.moveTo(from.x, from.y);
-      ctx.lineTo(to.x, to.y);
-      ctx.strokeStyle = `${shape.tone} ${0.18 + Math.sin(time / 1200 + a) * 0.04})`;
-      ctx.lineWidth = 1;
-      ctx.stroke();
-    });
-    offset += shape.points.length;
-  });
-}
-
-function drawPointerConnections() {
-  if (!pointer.active) return;
-
-  barNodes.forEach((node) => {
-    const distance = Math.hypot(node.x - pointer.x, node.y - pointer.y);
-    if (distance < 210) {
-      const alpha = 0.32 * (1 - distance / 210);
-      ctx.beginPath();
-      ctx.moveTo(node.x, node.y);
-      ctx.lineTo(pointer.x, pointer.y);
-      ctx.strokeStyle = `rgba(255, 210, 138, ${alpha})`;
-      ctx.lineWidth = 1.2;
-      ctx.stroke();
-    }
-  });
-
-  ctx.beginPath();
-  ctx.arc(pointer.x, pointer.y, 7, 0, Math.PI * 2);
-  ctx.strokeStyle = "rgba(255, 241, 204, 0.42)";
-  ctx.stroke();
-}
-
-function drawGarnishes(time) {
-  const width = window.innerWidth;
-  const height = window.innerHeight;
-  const garnishPoints = [
-    [0.9, 0.36, "#9a9b5d"], [0.08, 0.72, "#f0a43a"], [0.68, 0.82, "#9f2f28"],
-  ];
-
-  garnishPoints.forEach(([x, y, color], index) => {
-    const px = x * width + Math.sin(time / 1400 + index) * 7;
-    const py = y * height + Math.cos(time / 1100 + index) * 5;
-    ctx.beginPath();
-    ctx.ellipse(px, py, 12, 5, Math.PI / 5, 0, Math.PI * 2);
-    ctx.strokeStyle = `${color}99`;
-    ctx.stroke();
-  });
-}
-
-function draw() {
-  if (root.dataset.particles === "off") {
-    animationFrame = null;
-    return;
-  }
-  const time = performance.now() - startTime;
-  ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-  drawGarnishes(time);
-  drawConstellationLines(time);
-  barNodes.forEach((node) => drawNode(node, time));
-  drawPointerConnections();
-  animationFrame = requestAnimationFrame(draw);
-}
-
-function shouldStartAmbientMotion() {
-  return !reduceMotion && !compactMotionQuery.matches && root.dataset.particles !== "off";
-}
-
-function initAmbientMotion() {
-  if (!shouldStartAmbientMotion()) return;
-
-  canvas = document.createElement("canvas");
-  canvas.id = "particleCanvas";
-  canvas.setAttribute("aria-hidden", "true");
-  document.body.prepend(canvas);
-
-  cursor = document.createElement("div");
-  cursor.className = "bar-cursor";
-  cursor.setAttribute("aria-hidden", "true");
-  cursor.dataset.hidden = "true";
-  document.body.append(cursor);
-
-  ctx = canvas.getContext("2d");
-  if (!ctx) return;
-
-  function syncCursorPosition() {
-    if (!pointer.active) return;
-    cursor.dataset.hidden = "false";
-    cursor.style.left = `${pointer.x}px`;
-    cursor.style.top = `${pointer.y}px`;
-  }
-
-  function moveCursor(event) {
-    pointer.x = event.clientX;
-    pointer.y = event.clientY;
-    pointer.active = true;
-    syncCursorPosition();
-  }
-
-  function hideCursor() {
-    pointer.active = false;
-    cursor.dataset.hidden = "true";
-  }
-
-  window.addEventListener("resize", resizeCanvas);
-
-  window.addEventListener("pointermove", moveCursor);
-  document.addEventListener("pointerover", moveCursor);
-  window.addEventListener("mousemove", moveCursor);
-  document.addEventListener("mouseover", moveCursor);
-  window.addEventListener("pointerleave", hideCursor);
-  window.addEventListener("mouseleave", hideCursor);
-  window.addEventListener("pointerenter", syncCursorPosition);
-  window.addEventListener("mouseenter", syncCursorPosition);
-
-  document.querySelectorAll("[data-drink]").forEach((item) => {
-    const activateDrink = () => {
-      cursor.dataset.drink = item.dataset.drink || "";
-      cursor.dataset.active = "true";
-    };
-    const clearDrink = () => {
-      cursor.dataset.drink = "";
-      cursor.dataset.active = "false";
-    };
-
-    item.addEventListener("pointerenter", activateDrink);
-    item.addEventListener("mouseenter", activateDrink);
-    item.addEventListener("pointerleave", clearDrink);
-    item.addEventListener("mouseleave", clearDrink);
-  });
-
-  resizeCanvas();
-  draw();
-}
-
-initAmbientMotion();
+document.querySelectorAll("#themeToggle").forEach((button) => button.addEventListener("click", () => {
+  if (reduceMotionQuery.matches) return;
+  motionEnabled = !motionEnabled;
+  try { localStorage.setItem("bar-motion", motionEnabled ? "on" : "off"); } catch { /* Keep the control usable. */ }
+  syncMotionPreference();
+}));
+reduceMotionQuery.addEventListener("change", syncMotionPreference);
+syncMotionPreference();
+document.querySelectorAll("[data-accent]").forEach((button) => button.addEventListener("click", () => {
+  root.dataset.accent = button.dataset.accent;
+  try { localStorage.setItem("blog-accent", button.dataset.accent); } catch { /* Storage is optional. */ }
+}));
 
 const NOTE_TAG = "吧台札记";
 
@@ -428,7 +178,15 @@ function renderNoteList() {
 
 function renderRecentPosts() {
   document.querySelectorAll("[data-recent-posts]").forEach((container) => {
-    const posts = allPosts().slice(0, 3);
+    const limit = Math.max(1, Math.min(12, Number(container.dataset.recentLimit) || 3));
+    const posts = allPosts().slice(0, limit);
+    if (container.dataset.recentLayout === "rows" && posts.length) {
+      container.innerHTML = posts.map((post) => {
+        const url = post.kind === "paired-note" ? post.pairUrl || "notes.html" : postUrl(post);
+        return `<a class="hp-writing-row" href="${escapeHtml(url)}"><time datetime="${escapeHtml(post.publishedAt)}">${escapeHtml(post.publishedAt.replaceAll("-", " / "))}</time><b>${escapeHtml(post.title)}</b><span aria-hidden="true">↗</span></a>`;
+      }).join("");
+      return;
+    }
     container.innerHTML = posts.length
       ? posts.map((post) => postCard(post, "h3")).join("")
       : '<article class="post-card"><span class="post-date">尚无文章</span><h3>亟待创作</h3><p>新的文字还在吧台后面准备。</p></article>';
@@ -817,6 +575,62 @@ function renderGripeRail() {
   update();
 }
 
+function initInteriorChrome() {
+  const header = document.querySelector(".site-header");
+  const nav = header?.querySelector(".nav-links");
+  if (!header || !nav) return;
+  nav.id = "interiorNav";
+  const menu = document.createElement("button");
+  menu.type = "button";
+  menu.className = "interior-menu";
+  menu.setAttribute("aria-controls", nav.id);
+  function closeMenu(restoreFocus = false) {
+    nav.classList.remove("is-open");
+    menu.setAttribute("aria-expanded", "false");
+    menu.textContent = "MENU ＋";
+    if (restoreFocus) menu.focus();
+  }
+  closeMenu();
+  header.insertBefore(menu, nav);
+  header.classList.add("has-menu");
+  menu.addEventListener("click", () => {
+    const open = menu.getAttribute("aria-expanded") !== "true";
+    nav.classList.toggle("is-open", open);
+    menu.setAttribute("aria-expanded", String(open));
+    menu.textContent = open ? "CLOSE ×" : "MENU ＋";
+  });
+  nav.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+  document.addEventListener("click", (event) => {
+    if (!header.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menu.getAttribute("aria-expanded") === "true") closeMenu(true);
+  });
+  window.matchMedia("(max-width: 1050px)").addEventListener("change", () => closeMenu());
+
+  const main = document.querySelector("main");
+  if (main && !main.id) main.id = "mainContent";
+  const skip = document.createElement("a");
+  skip.className = "bar-skip";
+  skip.href = `#${main?.id || "mainContent"}`;
+  skip.textContent = "跳到主要内容";
+  document.body.prepend(skip);
+
+  const rail = document.querySelector("[data-gripe-rail]");
+  // Reading pages already intentionally suppress this rail; keep that behavior.
+  if (rail && !document.querySelector(".article-layout, .paired-notes-shell")) {
+    const fragments = document.createElement("details");
+    fragments.className = "bar-fragments";
+    const summary = document.createElement("summary");
+    summary.textContent = "吧台碎语 · 吐槽";
+    fragments.append(summary, rail);
+    const footer = document.querySelector(".site-footer");
+    document.body.insertBefore(fragments, footer);
+  }
+}
+
 renderRecentPosts();
 initPostFilters();
 renderTagPages();
@@ -827,3 +641,4 @@ renderGalleryList();
 initGalleryFilters();
 renderNoteList();
 renderGripeRail();
+initInteriorChrome();

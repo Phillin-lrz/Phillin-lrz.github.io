@@ -1,3 +1,7 @@
+/* Explicit cascade: existing structural/icon compatibility, then the shared design system. */
+@layer legacy, design;
+@import url("interior.css?v=bar-final-type-20261024") layer(design);
+@layer legacy {
 :root {
   color-scheme: dark;
   --ink: #fff7e8;
@@ -555,7 +559,7 @@ h3 {
   position: absolute;
   right: 1rem;
   bottom: 0.7rem;
-  color: rgba(255, 210, 138, 0.16);
+  color: rgba(var(--bar-metal-rgb), 0.16);
   font-size: 5rem;
   line-height: 1;
 }
@@ -729,7 +733,7 @@ a:not(.brand):not(.menu-drink):not(.post-card):not(.friend-profile):hover {
 }
 
 .friend-copy p:last-child {
-  color: #f4dfbd;
+  color: var(--ink);
   font-size: clamp(1.05rem, 2vw, 1.35rem);
 }
 
@@ -822,7 +826,7 @@ pre code {
 }
 
 .article p {
-  color: #f4dfbd;
+  color: var(--ink);
   margin-bottom: 1.35rem;
   font-size: 1.05rem;
   line-height: 1.86;
@@ -919,7 +923,7 @@ pre code {
   content: counter(schedule-item, decimal-leading-zero);
   grid-column: 1 / -1;
   margin-bottom: -0.35rem;
-  color: rgba(255, 210, 138, 0.42);
+  color: rgba(var(--bar-metal-rgb), 0.42);
   font-size: 0.68rem;
   letter-spacing: 0.08em;
 }
@@ -933,7 +937,7 @@ pre code {
 
 .schedule-list p {
   margin: 0;
-  color: #f4dfbd;
+  color: var(--ink);
   font-size: 0.98rem;
   line-height: 1.65;
 }
@@ -1088,7 +1092,7 @@ body:has(.article-layout) .gripe-rail {
 
 .gripe-item p {
   margin-bottom: 0.65rem;
-  color: #f4dfbd;
+  color: var(--ink);
   font-size: 0.92rem;
   line-height: 1.6;
 }
@@ -1427,12 +1431,12 @@ body::after {
   border: 1px solid rgba(255, 210, 138, 0.18);
   border-inline: 0;
   padding: 0.72rem 0.1rem 0.78rem;
-  color: rgba(255, 241, 204, 0.88);
+  color: rgba(var(--bar-metal-rgb), 0.88);
 }
 
 .lyric-plate p {
   margin: 0;
-  color: #f5dfbc;
+  color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(1.05rem, 2.1vw, 1.65rem);
   font-style: italic;
@@ -1447,7 +1451,7 @@ body::after {
   flex: 0 0 auto;
   align-items: center;
   gap: 0.44rem;
-  color: rgba(255, 210, 138, 0.76);
+  color: rgba(var(--bar-metal-rgb), 0.76);
   font-size: 0.72rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -1869,7 +1873,7 @@ body::after {
 }
 
 .track-number {
-  color: rgba(255, 210, 138, 0.7);
+  color: rgba(var(--bar-metal-rgb), 0.7);
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.1rem;
   line-height: 1.2;
@@ -2786,7 +2790,7 @@ body::after {
   background: var(--drink-label) center / contain no-repeat !important;
   border-radius: 0;
   box-shadow: none;
-  filter: drop-shadow(0 0.65rem 1.1rem rgba(0, 0, 0, 0.34)) drop-shadow(0 0 12px rgba(255, 210, 138, 0.16));
+  filter: none;
 }
 
 .drink-glyph > span::before,
@@ -2796,75 +2800,75 @@ body::after {
 }
 
 .martini-glyph > span {
-  --drink-label: url("drink-labels/martini.svg");
+  --drink-label: url("drink-labels/martini.svg?v=bar-final-type-20261024");
 }
 
 .gibson-glyph > span {
-  --drink-label: url("drink-labels/gibson.svg");
+  --drink-label: url("drink-labels/gibson.svg?v=bar-final-type-20261024");
 }
 
 .dirty-martini-glyph > span {
-  --drink-label: url("drink-labels/dirty-martini.svg");
+  --drink-label: url("drink-labels/dirty-martini.svg?v=bar-final-type-20261024");
 }
 
 .vesper-glyph > span {
-  --drink-label: url("drink-labels/vesper.svg");
+  --drink-label: url("drink-labels/vesper.svg?v=bar-final-type-20261024");
 }
 
 .hanky-panky-glyph > span {
-  --drink-label: url("drink-labels/hanky-panky.svg");
+  --drink-label: url("drink-labels/hanky-panky.svg?v=bar-final-type-20261024");
 }
 
 .gimlet-glyph > span {
-  --drink-label: url("drink-labels/gimlet.svg");
+  --drink-label: url("drink-labels/gimlet.svg?v=bar-final-type-20261024");
 }
 
 .boulevardier-glyph > span {
-  --drink-label: url("drink-labels/boulevardier.svg");
+  --drink-label: url("drink-labels/boulevardier.svg?v=bar-final-type-20261024");
 }
 
 .sazerac-glyph > span {
-  --drink-label: url("drink-labels/sazerac.svg");
+  --drink-label: url("drink-labels/sazerac.svg?v=bar-final-type-20261024");
 }
 
 .french-75-glyph > span {
-  --drink-label: url("drink-labels/french-75.svg");
+  --drink-label: url("drink-labels/french-75.svg?v=bar-final-type-20261024");
 }
 
 .collins-glyph > span {
-  --drink-label: url("drink-labels/collins.svg");
+  --drink-label: url("drink-labels/collins.svg?v=bar-final-type-20261024");
 }
 
 .cat-collins-glyph > span {
-  --drink-label: url("drink-labels/cat-collins.svg");
+  --drink-label: url("drink-labels/cat-collins.svg?v=bar-final-type-20261024");
 }
 
 .last-word-glyph > span {
-  --drink-label: url("drink-labels/last-word.svg");
+  --drink-label: url("drink-labels/last-word.svg?v=bar-final-type-20261024");
 }
 
 .highball-glyph > span {
-  --drink-label: url("drink-labels/highball.svg");
+  --drink-label: url("drink-labels/highball.svg?v=bar-final-type-20261024");
 }
 
 .paloma-glyph > span {
-  --drink-label: url("drink-labels/paloma.svg");
+  --drink-label: url("drink-labels/paloma.svg?v=bar-final-type-20261024");
 }
 
 .negroni-glyph > span {
-  --drink-label: url("drink-labels/negroni.svg");
+  --drink-label: url("drink-labels/negroni.svg?v=bar-final-type-20261024");
 }
 
 .coupe-glyph > span {
-  --drink-label: url("drink-labels/coupe.svg");
+  --drink-label: url("drink-labels/coupe.svg?v=bar-final-type-20261024");
 }
 
 .rocks-glyph > span {
-  --drink-label: url("drink-labels/rocks.svg");
+  --drink-label: url("drink-labels/rocks.svg?v=bar-final-type-20261024");
 }
 
 .paper-plane-glyph > span {
-  --drink-label: url("drink-labels/paper-plane.svg");
+  --drink-label: url("drink-labels/paper-plane.svg?v=bar-final-type-20261024");
 }
 
 .friend-profile {
@@ -3143,7 +3147,7 @@ body::after {
 }
 
 .hero-lede {
-  color: #f2d9b0;
+  color: var(--ink);
   text-shadow: 0 0 22px rgba(255, 210, 138, 0.12);
 }
 
@@ -4504,7 +4508,7 @@ body::after {
 .article blockquote {
   border-left-color: rgba(184, 137, 71, 0.62);
   background: rgba(234, 215, 181, 0.026);
-  color: #d9bd8e;
+  color: var(--bar-metal);
 }
 
 .status-card {
@@ -4590,7 +4594,7 @@ body::after {
   background:
     radial-gradient(circle, rgba(234, 215, 181, 0.09), transparent 62%),
     rgba(12, 7, 5, 0.74);
-  color: #e1c184;
+  color: var(--bar-metal);
   box-shadow: 0 0 22px rgba(184, 137, 71, 0.12);
 }
 
@@ -4616,7 +4620,7 @@ body::after {
 }
 
 .review-oneline {
-  color: #e7c891 !important;
+  color: var(--bar-metal) !important;
   font-size: 1.02rem;
   font-weight: 800;
 }
@@ -4634,7 +4638,7 @@ body::after {
   border-radius: 999px;
   padding: 0.22rem 0.5rem;
   background: rgba(234, 215, 181, 0.035);
-  color: #d8bf92;
+  color: var(--bar-metal);
   font-size: 0.78rem;
 }
 
@@ -4676,7 +4680,7 @@ body::after {
 }
 
 .review-rating strong {
-  color: #e0bf82;
+  color: var(--bar-metal);
   text-align: right;
 }
 
@@ -4727,7 +4731,7 @@ body::after {
   gap: 0.55rem;
   align-items: center;
   padding: 0.52rem 0.6rem;
-  color: #d8bf92;
+  color: var(--bar-metal);
   font-size: 0.78rem;
 }
 
@@ -4766,7 +4770,7 @@ body::after {
   border-radius: 999px;
   padding: 0.16rem 0.48rem;
   background: rgba(184, 137, 71, 0.08);
-  color: #e6c891;
+  color: var(--bar-metal);
   font-size: 0.72rem;
   line-height: 1.35;
 }
@@ -4833,7 +4837,7 @@ body::after {
 
 .place-ledger dd {
   margin: 0.1rem 0 0;
-  color: #e6c891;
+  color: var(--bar-metal);
 }
 
 .place-visits {
@@ -4984,7 +4988,7 @@ body::after {
 .gripe-detail-header h1 {
   max-width: 12em;
   margin: 0;
-  color: #f5dfbc;
+  color: var(--ink);
   font-size: clamp(2rem, 6.6vw, 4.8rem);
   line-height: 1.02;
 }
@@ -5008,7 +5012,7 @@ body::after {
 .gripe-detail-lede {
   max-width: 42rem;
   margin: 1.05rem 0 1.25rem;
-  color: #ead7b0;
+  color: var(--ink);
   font-size: clamp(1rem, 2vw, 1.16rem);
   line-height: 1.8;
 }
@@ -5860,4 +5864,6 @@ body::after {
   .paired-cover-actions .button {
     width: 100%;
   }
+}
+
 }
