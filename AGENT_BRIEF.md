@@ -1,6 +1,6 @@
 # AGENT_BRIEF
 
-Last updated: 2026-10-21
+Last updated: 2026-10-25
 
 This is the lightweight startup file for Codex work in this repository. Read this file first, then read only the operation file and source files required by the task type.
 
@@ -137,3 +137,10 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 
 - 标题区分隔线在原有盒内上移：列表页桌面 20px、文章页桌面 16px、移动端 12px；原有标题与后续内容位置、间距不变。共享 styles.css 与 interior.css token 为 bar-heading-rule-20261024；脚本和首页专属资源仍为 bar-scene-motion-20261024。
 - 本轮仅按 AGENTS.md 阅读必要源代码，未运行自动或视觉验收。回滚快照：外部工作目录 heading-rules-before-apply/；保留现有 8765 预览，未提交/推送/部署。
+
+## Group Notes 01「窦靖童 Part1」— 2026-10-25
+
+- 新增总目录 `group-notes-doujingtong.html`、五篇独立 `group-dou-*.html`。用户看过四种方案后授权试做「平面五联折页＋冷刊排版」。最新样式由 `assets/group-notes.css?v=bar-group-notes-20261025-flat-fold` 在六个系列页及五个索引页加载：宽屏归档序言约三成＋四首歌横排，首页左侧序言跨两行＋右侧四篇两列，手机序言置顶。歌名横排；玻璃薄片、书脊、立体阴影与位移动效已移除。目录为文字标题区＋纵向清单。
+- 归档只有一个系列 `BAR_POSTS` 条目，主标题为「窦靖童 Part1」，使用 `kind: "group-notes"`、`groupNumber`、`groupCredit`、`groupEntries`。标题/完整目录链接总目录，序言和四首歌直接进入对应正文；避免整卡透明覆盖链接。八个消费者使用 `bar-content-20261025-dou-part1`；首页、posts 和三个标签页 site.js 更新为 `bar-site-20261025-flat-fold`，其他页面继续使用原 token。新系列正文页不加载 content.js。
+- 用户已明确确认以本次 Word《Group_Notes_窦靖童_五篇完整修订版.docx》为正文权威来源，覆盖任务 Markdown 对缺失正文 Markdown 的要求。旧 Fruit Fly 两篇和《烟花》未修改；未新增杯底注释。
+- 详细范围、人工检查清单与回滚见 `AGENT_GROUP_NOTES.md`。按手动验收覆盖规则未运行任何自动或视觉验收，未操作现有 8765 预览，未提交/推送/部署。AGENTS.md 未修改。

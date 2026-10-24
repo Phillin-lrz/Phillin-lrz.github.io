@@ -96,3 +96,10 @@ For later ordinary publishing, start from `AGENT_BRIEF.md` and the matching oper
 - 当前共享 CSS/site.js 与首页资源 token 为 bar-scene-motion-20261024。右上角 themeToggle 共享 bar-motion；旧 glass 开关及首页导航内 hp-motion 控件已删除。
 - 本轮只读源码和定向 diff，没有自动测试、语法检查、浏览器或截图验收。用户继续手动测试；8765 预览未动，前一轮《重庆森林》的本地改动保留。无提交、推送或部署。
 
+
+## Group Notes 索引显示 handoff — 2026-10-25
+
+- 本地新增 Group Notes 01「窦靖童 Part1」（用户后续指定的系列名称；序言篇名仍为「窦靖童」），详见 AGENT_GROUP_NOTES.md。用户已确认本次 Word 为正文权威来源；仍只有一个归档记录与六个独立系列页面。
+- 用户不满意玻璃薄页和金属书脊，比较四种方案并授权试做「平面五联折页＋冷刊排版」。最新为序言约三成＋四首歌的平面分栏；首页共用 groupNoteCard 的 compact 配置，序言在左跨两行、歌曲在右排两列；手机序言置顶。全横排标题、细线、轻微底色分区，没有玻璃图形、书脊、立体阴影或位移动效；系列目录保持文字标题区与纵向清单。数据及正文不改，保持与 paired-note 分支独立。
+- content token 仍为 bar-content-20261025-dou-part1（八个消费者）；group-notes.css 更新为 bar-group-notes-20261025-flat-fold（十一页）。index/posts/三个标签页的 site.js token 更新为 bar-site-20261025-flat-fold，其他页保留原 token。前一版外部回滚快照 group-notes-before-flat-fold/ 及细节见 AGENT_GROUP_NOTES.md。
+- 手动验收覆盖规则持续生效；本次未运行自动或浏览器检查。保留现有 8765 预览，无提交/推送/部署；AGENTS.md 未改。

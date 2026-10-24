@@ -463,3 +463,34 @@ Rollback:
 ## 2026-10-24 — 标题区分隔线上移
 - 将各页标题区分隔线在原盒内上移：列表页桌面 20px、正文页桌面 16px、移动端 12px。保留标题、筛选栏、正文和容器原有位置；删除旧玻璃装饰留下的移动端隐藏规则，使分隔线在窄屏保持一致。
 - 刷新共享 CSS 缓存，更新 AGENT_BRIEF.md。依据 AGENTS.md 未运行自动测试、语法检查或视觉检查；保留本地预览，未提交/推送/部署。回滚快照在外部工作目录 heading-rules-before-apply/；AGENTS.md 未修改。
+
+## 2026-10-25 — Group Notes 01「窦靖童」（本地，人工验收）
+
+- 用户明确确认以《Group_Notes_窦靖童_五篇完整修订版.docx》作为正文权威来源，覆盖任务 Markdown 对缺失正文 Markdown 的要求。新增系列目录、00—04 五篇独立正文与 scoped assets/group-notes.css；保留原文段落、分隔、引用及强调，不增写杯底注释。
+- assets/content.js 仅新增一个系列入口条目（一些思绪）；八个消费者 content token 更新为 bar-content-20261025-group-notes。site.js、既有共享样式、Paired Notes、两篇旧 Fruit Fly 与《烟花》未修改。README、AGENT_BRIEF 和 AGENT_GROUP_NOTES.md 记录结构、来源、范围及回滚。
+- 仅做必要源代码和定向 diff 阅读；按 AGENTS.md 手动验收覆盖规则未运行测试、语法检查、diff --check、浏览器、截图或其他自动验收。新增页面布局、字体回退和导航仍待用户手测；未操作现有 8765 预览，未暂存/提交/推送/合并/部署，AGENTS.md 未改。回滚范围与步骤见 AGENT_GROUP_NOTES.md。
+
+## 2026-10-25 — Group Notes 首页与归档独立显示（本地，人工验收）
+
+- 根据用户反馈将索引主标题改为「窦靖童」，把 GROUP NOTES / VOL. 01 从标题中独立出来。单条系列记录增加 kind/groupNumber/groupTracks；site.js 新增独立系列卡及首页系列条目，展示 00 序言与 01—04 四首歌，仍链接同一个系列目录。Paired Notes 和普通文章显示分支保留。
+- 样式集中于 assets/group-notes.css；首页、posts、三个标签页新增该样式并更新相关 site.js token。content 八个消费者 token 为 bar-content-20261025-group-cards；系列 CSS 十一个消费者为 bar-group-notes-20261025-cards；五个索引页 site.js 为 bar-site-20261025-group-cards。正文、既有共享样式与其他资源不改。
+- 更新 README、AGENT_BRIEF、AGENT_GROUP_NOTES；仅做必要源代码/定向 diff 阅读，未运行任何自动或视觉验收。移动端卡片换行及间距待用户手测，保留现有预览，无提交/推送/部署。回滚见 AGENT_GROUP_NOTES.md。
+
+## 2026-10-25 — Group Notes 五片玻璃手册封面重设计（本地，待人工验收）
+
+- 用户认为此前的普通目录卡不如 Paired Notes，要求结合冷色美术投入更完整的设计。Group Notes 改为金属书脊、卷号、五片错层玻璃薄页和五个独立篇章入口。首页与归档共用封面组件，首页采用序言横排＋四篇两列；系列目录复用同一封面图形并保留纵向清单。所有图形为原生 CSS，静态成立，只在动效允许时提供有限悬停展开。
+- 数据改用 groupCredit/groupEntries，篇目含原 Word 目录说明和深链；标题/翻开入口进入总目录，篇目直接进入正文，不用整卡透明链接。正文、原 Paired Notes 与共享全站样式未改。content 八消费者 token 为 bar-content-20261025-group-folio，系列 CSS 十一消费者为 bar-group-notes-20261025-folio，五个索引页 site.js 为 bar-site-20261025-group-folio。
+- 原样式有较大替换，前一版本源文件快照已保存在外部工作目录 group-notes-before-glass-folio/；具体路径、替换范围与回滚见 AGENT_GROUP_NOTES.md。README、brief、handoff、系列记录已同步。
+- 按 AGENTS.md 手动验收规则，仅做必要源码与定向 diff 阅读，未运行自动测试、语法检查、diff --check、浏览器、截图或其他验收。封面层次、首页增加的高度、手机篇目换行及焦点/动效待用户手测。保留现有预览，无提交/推送/合并/部署；AGENTS.md 未修改。
+
+## 2026-10-25 — Group Notes 平面五联折页（本地，待人工验收）
+
+- 用户比较四种视觉方案后，授权试做「五联折页结构＋冷刊排版」。移除金属书脊、玻璃薄片、立体阴影及悬停位移，采用横排标题、细分隔线和轻微底色差；宽屏归档序言约三成＋四首歌横排，首页左侧序言跨两行＋右侧四篇两列，手机序言置顶。
+- groupNoteCard 保留单一组件与 compact 首页模式；主标题/完整目录链接总目录，00 序言与四首歌分别深链。系列目录改为文字标题区＋纵向清单。正文、数据、Paired Notes 及其他共享样式未改。CSS 十一消费者 token 为 bar-group-notes-20261025-flat-fold，五个索引页 site.js 为 bar-site-20261025-flat-fold；content 仍为 bar-content-20261025-group-folio。
+- 较大索引 CSS 替换前已在外部工作目录 group-notes-before-flat-fold/ 保存前版源码与相关 HTML；完整路径及选择性回滚见 AGENT_GROUP_NOTES.md。README、brief、handoff、系列记录已同步。
+- 按 AGENTS.md 手动验收覆盖规则，未运行测试、语法检查、diff --check、浏览器、截图等自动验收；仅做必要源码/定向 diff 阅读。分栏比例、首页高度、移动端换行及链接待用户手测。保留现有预览；未提交/推送/部署，AGENTS.md 未改。
+
+## 2026-10-25 — Group Notes 系列改名「窦靖童 Part1」（本地）
+
+- 按用户要求修改系列索引标题、目录页标题及五篇顶部系列导航为「窦靖童 Part1」。序言自身篇名、正文、URL、样式及渲染逻辑不变。content.js 八个消费者仅刷新该资源 token 为 bar-content-20261025-dou-part1。
+- README、brief、handoff、系列记录同步名称与缓存版本；回滚本次改名时恢复上述系列标签和原 content token（bar-content-20261025-group-folio）。沿用 AGENTS.md 手动验收要求，仅做必要源码阅读，未运行自动或视觉验收，未提交/推送/部署，未操作现有预览；AGENTS.md 未修改。

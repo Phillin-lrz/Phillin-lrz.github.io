@@ -2,6 +2,24 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "group-notes-doujingtong-01",
+    title: "窦靖童 Part1",
+    kind: "group-notes",
+    groupNumber: "01",
+    groupCredit: "LEAH DOU",
+    groupEntries: [
+      { title: "窦靖童", role: "序言", deck: "四场 Live 与那次颠覆性的改版", url: "group-dou-00.html" },
+      { title: "誓言", deck: "听完所有歌词，重新听见多年以前", url: "group-dou-01-shiyan.html" },
+      { title: "改变", deck: "我想被爱，但不想再改造成别人喜欢的样子", url: "group-dou-02-gaibian.html" },
+      { title: "空中飞人", deck: "一段 Bridge 和那些不必解释的画面", url: "group-dou-03-kongzhongfeiren.html" },
+      { title: "Fruit Fly", deck: "越想抽离，盘旋和爆发反而越强烈", url: "group-dou-04-fruit-fly.html" },
+    ],
+    tag: "一些思绪",
+    publishedAt: "2026-10-25",
+    summary: "四首歌，以及反复听它们的这些日子。",
+    url: "group-notes-doujingtong.html",
+  },
+  {
     id: "chungking-express-20261024",
     title: "重庆森林",
     tag: "一些思绪",

@@ -61,6 +61,7 @@ function postUrl(post) {
 
 function postCard(post, heading = "h2") {
   if (post.kind === "paired-note") return pairedNoteCard(post, heading);
+  if (post.kind === "group-notes") return groupNoteCard(post, heading);
   const title = escapeHtml(post.title);
   const summary = escapeHtml(post.summary || "尚未填写简介。");
   const tag = escapeHtml(post.tag);
@@ -167,6 +168,40 @@ function pairedNoteCard(pair, heading = "h2") {
   `;
 }
 
+function groupNoteCard(post, heading = "h2", compact = false) {
+  const number = escapeHtml(post.groupNumber || "01");
+  const title = escapeHtml(post.title);
+  const entries = post.groupEntries || [];
+  const prologue = entries[0];
+  const last = String(Math.max(0, entries.length - 1)).padStart(2, "0");
+  const chapters = entries.slice(1).map((entry, index) => `
+    <a class="gn-fold-track" href="${escapeHtml(entry.url)}" aria-label="${String(index + 1).padStart(2, "0")} ${escapeHtml(entry.title)}">
+      <span class="gn-fold-number">${String(index + 1).padStart(2, "0")}</span>
+      <span class="gn-fold-name">${escapeHtml(entry.title)}</span>
+      <span class="gn-fold-deck">${escapeHtml(entry.deck || "")}</span>
+      <span class="gn-fold-action">阅读<span aria-hidden="true">↗</span></span>
+    </a>
+  `).join("");
+  return `
+    <article class="post-card group-note-card${compact ? " group-note-card-home" : ""}">
+      <header class="gn-fold-heading">
+        <span>GROUP NOTES <i>/ VOL. ${number}</i></span>
+        <time datetime="${escapeHtml(post.publishedAt)}">${escapeHtml(post.publishedAt.replaceAll("-", "."))}</time>
+      </header>
+      <div class="gn-fold-layout">
+        <div class="gn-fold-intro">
+          <span class="gn-fold-credit">${escapeHtml(post.groupCredit || "")}</span>
+          <${heading}><a href="${escapeHtml(postUrl(post))}">${title}</a></${heading}>
+          <p>${escapeHtml(post.summary || "")}</p>
+          <a class="gn-fold-prologue" href="${escapeHtml(prologue?.url || postUrl(post))}"><span>00 / ${escapeHtml(prologue?.role || "序言")}</span><span aria-hidden="true">↗</span></a>
+        </div>
+        ${chapters}
+      </div>
+      <footer class="gn-fold-footer"><span>00—${last} / ${escapeHtml(post.tag)}</span><a href="${escapeHtml(postUrl(post))}">完整目录 <span aria-hidden="true">↗</span></a></footer>
+    </article>
+  `;
+}
+
 function renderNoteList() {
   document.querySelectorAll("[data-note-list]").forEach((container) => {
     const notes = allNotes();
@@ -182,6 +217,7 @@ function renderRecentPosts() {
     const posts = allPosts().slice(0, limit);
     if (container.dataset.recentLayout === "rows" && posts.length) {
       container.innerHTML = posts.map((post) => {
+        if (post.kind === "group-notes") return groupNoteCard(post, "h3", true);
         const url = post.kind === "paired-note" ? post.pairUrl || "notes.html" : postUrl(post);
         return `<a class="hp-writing-row" href="${escapeHtml(url)}"><time datetime="${escapeHtml(post.publishedAt)}">${escapeHtml(post.publishedAt.replaceAll("-", " / "))}</time><b>${escapeHtml(post.title)}</b><span aria-hidden="true">↗</span></a>`;
       }).join("");
