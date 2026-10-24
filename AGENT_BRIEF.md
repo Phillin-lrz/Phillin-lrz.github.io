@@ -116,3 +116,11 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 - Fixed the shared 58px drink-portrait grid's oversized scaled child, preserving external dimensions/gaps; refined seven CSS vessels and 18 retained SVG labels. No layout, content, animation or function redesign.
 - User confirmed keeping the current homepage 的; do not apply A/B/C. The font comparison is closed. All current website code stays as-is, including the frozen English wordmark.
 - See AGENT_FINAL_POLISH.md for scope, licenses, explicit three-size rendering observations, screenshots, manual-acceptance limits and rollback. Local preview at port 8765 is preserved; no commit/push/deployment.
+
+## 全站冷铬酒标 — 2026-10-24
+
+- 用户已选择 D 冷铬金属器物方案，所有公开页面的现有酒标统一为原生 CSS 图形。新增 assets/drink-icons.css，由 styles.css 的 design layer 导入；首页与内页共享材质实现。
+- 现有布局与酒标外框不变；首页仍为 39px/32px（520px 断点），内页仍为 58px 区域和 3.12rem 画布。友链页保留猫喝 Collins 特征。
+- 当前共享 styles.css 与首页 home.css 的 URL token 为 bar-chrome-icons-20261024；其他字体、数据、脚本、SVG 与 interior.css token 不变。
+- 详见 AGENT_DRINK_ICONS.md 的范围、手动验收限制和外部回滚快照。本轮未执行自动测试或视觉验收，保留现有 8765 预览，未提交/推送/部署。
+

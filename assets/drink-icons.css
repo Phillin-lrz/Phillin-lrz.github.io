@@ -1,0 +1,76 @@
+/* D / cold-chrome drink icons. Decorative geometry stays inside existing layout boxes. */
+.bar-drink{font-size:var(--drink-icon-size,3.12rem);position:relative;display:block;width:1em;height:1em;isolation:isolate;color:#c5d4dc;background:none;border-radius:0;box-shadow:none;filter:none;line-height:1}
+.bar-drink,.bar-drink *{box-sizing:border-box}
+.bar-drink i{display:block;position:absolute;margin:0;padding:0;font-style:normal;font-size:inherit;line-height:1;border:0}
+.bar-drink .drink-part-halo{inset:.08em;border-radius:50%;background:radial-gradient(ellipse at 50% 62%,#a8d2e913,transparent 70%)}
+.bar-drink .drink-part-bowl{left:.16em;top:.27em;width:.68em;height:.36em;clip-path:polygon(0 0,100% 0,53% 100%,47% 100%);background:var(--material);z-index:2}
+.bar-drink .drink-part-liquid{left:.23em;top:.31em;width:.54em;height:.25em;clip-path:polygon(0 0,100% 0,50% 100%);background:var(--fill);z-index:3}
+.bar-drink .drink-part-lip{left:.16em;top:.265em;width:.68em;height:.045em;border-radius:50%;background:linear-gradient(180deg,#edf9ff,#8097a3 38%,#182630 60%,#b8cdd7);z-index:5}
+.bar-drink .drink-part-stem{left:.48em;top:.61em;width:.04em;height:.24em;background:var(--material);z-index:2}
+.bar-drink .drink-part-foot{left:.29em;top:.845em;width:.42em;height:.045em;border-radius:50%;background:var(--material);z-index:2}
+.bar-drink .drink-part-g1,.bar-drink .drink-part-g2{z-index:8}
+.bar-drink .drink-part-facet1{left:.17em;top:.29em;width:.3em;height:.28em;clip-path:polygon(0 0,100% 100%,35% 0);background:#edffff59;z-index:4}
+.bar-drink .drink-part-facet2{left:.48em;top:.29em;width:.3em;height:.27em;clip-path:polygon(0 100%,100% 0,50% 0);background:#02060c6b;z-index:4}
+.bar-drink .drink-part-accent{z-index:9}
+.bar-drink .drink-part-glint{z-index:10;left:.25em;top:.28em;width:.12em;height:.014em;background:#fff;transform:rotate(9deg);opacity:.8}
+.bar-drink.bar-drink-dirty-martini .drink-part-bowl,.bar-drink.bar-drink-gimlet .drink-part-bowl,.bar-drink.bar-drink-last-word .drink-part-bowl{left:.13em;top:.32em;width:.74em;height:.33em;clip-path:none;border-radius:4% 4% 50% 50% / 5% 5% 90% 90%}
+.bar-drink.bar-drink-dirty-martini .drink-part-liquid,.bar-drink.bar-drink-gimlet .drink-part-liquid,.bar-drink.bar-drink-last-word .drink-part-liquid{left:.19em;top:.36em;width:.62em;height:.22em;clip-path:none;border-radius:2% 2% 50% 50% / 5% 5% 95% 95%}
+.bar-drink.bar-drink-dirty-martini .drink-part-lip,.bar-drink.bar-drink-gimlet .drink-part-lip,.bar-drink.bar-drink-last-word .drink-part-lip{left:.13em;top:.31em;width:.74em}
+.bar-drink.bar-drink-vesper .drink-part-bowl{left:.25em;top:.17em;width:.50em;height:.49em}
+.bar-drink.bar-drink-vesper .drink-part-liquid{left:.29em;top:.23em;width:.42em;height:.34em}
+.bar-drink.bar-drink-vesper .drink-part-lip{left:.25em;top:.17em;width:.5em}
+.bar-drink.bar-drink-hanky-panky .drink-part-bowl{left:.24em;top:.28em;width:.52em;height:.38em;clip-path:none;border-radius:5% 5% 50% 50% / 5% 5% 70% 70%}
+.bar-drink.bar-drink-hanky-panky .drink-part-liquid{left:.29em;top:.34em;width:.42em;height:.24em;clip-path:none;border-radius:0 0 50% 50%}
+.bar-drink.bar-drink-hanky-panky .drink-part-lip{left:.24em;top:.28em;width:.52em}
+.bar-drink.bar-drink-boulevardier .drink-part-bowl,.bar-drink.bar-drink-sazerac .drink-part-bowl{left:.23em;top:.35em;width:.54em;height:.5em;clip-path:none;border-radius:.035em .035em .08em .08em}
+.bar-drink.bar-drink-boulevardier .drink-part-liquid,.bar-drink.bar-drink-sazerac .drink-part-liquid{left:.28em;top:.47em;width:.44em;height:.31em;clip-path:none;border-radius:0 0 .04em .04em}
+.bar-drink.bar-drink-boulevardier .drink-part-lip,.bar-drink.bar-drink-sazerac .drink-part-lip{left:.23em;top:.34em;width:.54em;height:.07em}
+.bar-drink.bar-drink-boulevardier .drink-part-stem,.bar-drink.bar-drink-boulevardier .drink-part-foot,.bar-drink.bar-drink-sazerac .drink-part-stem,.bar-drink.bar-drink-sazerac .drink-part-foot,.bar-drink.bar-drink-collins .drink-part-stem,.bar-drink.bar-drink-collins .drink-part-foot{display:none}
+.bar-drink.bar-drink-sazerac .drink-part-bowl{left:.26em;width:.48em;clip-path:polygon(0 0,100% 0,91% 100%,9% 100%)}
+.bar-drink.bar-drink-sazerac .drink-part-liquid{left:.30em;width:.40em;clip-path:polygon(0 0,100% 0,92% 100%,8% 100%)}
+.bar-drink.bar-drink-sazerac .drink-part-lip{left:.26em;width:.48em}
+.bar-drink.bar-drink-french-75 .drink-part-bowl{left:.35em;top:.13em;width:.3em;height:.56em;clip-path:none;border-radius:.025em .025em .15em .15em}
+.bar-drink.bar-drink-french-75 .drink-part-liquid{left:.4em;top:.23em;width:.2em;height:.39em;clip-path:none;border-radius:0 0 .1em .1em}
+.bar-drink.bar-drink-french-75 .drink-part-lip{left:.35em;top:.13em;width:.3em}
+.bar-drink.bar-drink-french-75 .drink-part-stem{top:.65em;height:.21em}
+.bar-drink.bar-drink-collins .drink-part-bowl{left:.29em;top:.15em;width:.42em;height:.71em;clip-path:none;border-radius:.03em .03em .06em .06em}
+.bar-drink.bar-drink-collins .drink-part-liquid{left:.34em;top:.26em;width:.32em;height:.53em;clip-path:none;border-radius:0 0 .03em .03em}
+.bar-drink.bar-drink-collins .drink-part-lip{left:.29em;top:.15em;width:.42em}
+.bar-drink.bar-drink-gibson .drink-part-g1,.bar-drink.bar-drink-gibson .drink-part-g2{top:.14em;left:.44em;width:.17em;height:.17em;border-radius:50%;background:radial-gradient(circle at 30% 26%,#f4f7e8,#acbfae 50%,#465b5b 78%,#c3d8d0 100%);box-shadow:inset .015em .015em .025em #fff8}
+.bar-drink.bar-drink-gibson .drink-part-g2{left:.64em;top:.09em;width:.14em;height:.14em}
+.bar-drink.bar-drink-gibson .drink-part-accent{left:.34em;top:.19em;width:.5em;height:.018em;background:#c6d3da;transform:rotate(-14deg)}
+.bar-drink.bar-drink-dirty-martini .drink-part-g1,.bar-drink.bar-drink-dirty-martini .drink-part-g2{left:.49em;top:.31em;width:.19em;height:.14em;transform:rotate(-25deg);border-radius:50%;background:radial-gradient(circle at 28% 26%,#ccd6a2,#7f8e61 52%,#3f5140 84%);box-shadow:inset -.04em 0 #542e30}
+.bar-drink.bar-drink-dirty-martini .drink-part-g2{left:.69em;top:.22em}
+.bar-drink.bar-drink-dirty-martini .drink-part-accent{left:.45em;top:.31em;width:.47em;height:.018em;transform:rotate(-26deg);background:#c6d3da}
+.bar-drink.bar-drink-vesper .drink-part-g1,.bar-drink.bar-drink-hanky-panky .drink-part-g1,.bar-drink.bar-drink-sazerac .drink-part-g1,.bar-drink.bar-drink-french-75 .drink-part-g1{left:.66em;top:.1em;width:.20em;height:.31em;border:.046em solid #d5c398;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(30deg)}
+.bar-drink.bar-drink-hanky-panky .drink-part-g1{top:.19em;left:.69em;border-color:#cb966f transparent transparent #cb966f;transform:rotate(45deg)}
+.bar-drink.bar-drink-sazerac .drink-part-g1{top:.21em;left:.65em;transform:rotate(53deg)}
+.bar-drink.bar-drink-french-75 .drink-part-g1{left:.57em;top:.07em;width:.18em;height:.29em}
+.bar-drink.bar-drink-gimlet .drink-part-g1,.bar-drink.bar-drink-collins .drink-part-g1,.bar-drink.bar-drink-boulevardier .drink-part-g1{left:.69em;top:.22em;width:.23em;height:.23em;border-radius:50%;background:conic-gradient(#a4b68c 0deg 42deg,#40594b 43deg 47deg,#a4b68c 48deg 87deg,#40594b 88deg 92deg,#a4b68c 93deg 132deg,#40594b 133deg 137deg,#a4b68c 138deg 177deg,#40594b 178deg 182deg,#a4b68c 183deg 222deg,#40594b 223deg 227deg,#a4b68c 228deg 267deg,#40594b 268deg 272deg,#a4b68c 273deg 312deg,#40594b 313deg 317deg,#a4b68c 318deg);border:.018em solid #c9d5b3}
+.bar-drink.bar-drink-boulevardier .drink-part-g1{left:.62em;top:.25em;background:conic-gradient(#c48d69,#674337,#d4a079,#6a4939,#c48d69);border-color:#d4a382}
+.bar-drink.bar-drink-collins .drink-part-g1{left:.61em;top:.16em;background:conic-gradient(#d3cd9a,#747952,#e0d7aa,#747952,#d3cd9a);border-color:#d5d7ab}
+.bar-drink.bar-drink-last-word .drink-part-g1{left:.64em;top:.27em;width:.14em;height:.14em;border-radius:50%;background:radial-gradient(circle at 32% 23%,#dda5aa,#8f4e65 48%,#482b3e 90%)}
+.bar-drink.bar-drink-last-word .drink-part-accent{left:.69em;top:.15em;width:.1em;height:.17em;border-left:.014em solid #b5c899;border-radius:70%;transform:rotate(28deg)}
+.bar-drink.bar-drink-flight .drink-part-accent{left:.27em;top:.08em;width:.07em;height:.07em;border-radius:50%;background:#b3c7d4;box-shadow:.14em 0 #b3c7d4,.28em 0 #b3c7d4,.42em 0 #b3c7d4}
+.bar-drink.bar-drink-boulevardier .drink-part-detail,.bar-drink.bar-drink-collins .drink-part-detail{left:.38em;top:.48em;width:.2em;height:.2em;transform:rotate(-9deg);border:.012em solid #edfaff8c;border-radius:.025em;background:#bde1ef22;z-index:7}
+.bar-drink.bar-drink-collins .drink-part-detail{top:.34em;box-shadow:.02em .28em #bde1ef22}
+.bar-drink.bar-drink-french-75 .drink-part-detail{left:.48em;top:.36em;width:.035em;height:.035em;border-radius:50%;background:#f8edce;box-shadow:.03em .09em #f8edce,-.015em .2em #f8edce;z-index:7}
+.bar-drink{--material:linear-gradient(110deg,#13252f 0%,#526a79 10%,#d9f1fa 18%,#89a4b4 23%,#1a2e3a 32%,#e5f5fa 44%,#738e9e 50%,#0b1720 57%,#587786 72%,#d9eefa 85%,#364a59 97%);--fill:linear-gradient(150deg,#e0f3fa77,#192d3e88 46%,#7d9bab44)}
+.bar-drink .drink-part-facet1{opacity:.22}.bar-drink .drink-part-facet2{opacity:.24}
+.bar-drink.bar-drink-dirty-martini .drink-part-liquid{background:linear-gradient(140deg,#b4c2a788,#394c4988,#839a7977)}
+.bar-drink.bar-drink-vesper .drink-part-liquid{background:linear-gradient(140deg,#eddfb777,#34434a88,#e1c68d66)}
+.bar-drink.bar-drink-hanky-panky .drink-part-liquid{background:linear-gradient(140deg,#c7886977,#3e303a99,#895b5866)}
+.bar-drink .drink-part-halo{background:radial-gradient(ellipse at 50% 68%,#9fc7e922,transparent 65%)}
+
+/* Standard Martini retains its single-olive identity; flight has four dots. */
+.bar-drink.bar-drink-martini .drink-part-g1{left:.63em;top:.16em;width:.17em;height:.13em;transform:rotate(-22deg);border-radius:50%;background:radial-gradient(circle at 28% 26%,#ccd6a2,#7f8e61 52%,#3f5140 84%);box-shadow:inset -.035em 0 #542e30}
+.bar-drink.bar-drink-martini .drink-part-accent{left:.48em;top:.22em;width:.4em;height:.018em;background:#c6d3da;transform:rotate(-22deg)}
+/* The friends-page cat and straw remain part of its Collins identity. */
+.bar-drink.bar-drink-cat-collins .drink-part-bowl{left:.52em;width:.30em}
+.bar-drink.bar-drink-cat-collins .drink-part-liquid{left:.56em;width:.22em}
+.bar-drink.bar-drink-cat-collins .drink-part-lip{left:.52em;width:.30em}
+.bar-drink.bar-drink-cat-collins .drink-part-g1{left:.73em;top:.13em;width:.2em;height:.2em}
+.bar-drink.bar-drink-cat-collins .drink-part-detail{left:.59em;top:.34em;width:.14em;height:.16em}
+.bar-drink.bar-drink-cat-collins .drink-part-cat{left:.08em;top:.43em;width:.48em;height:.38em;clip-path:polygon(4% 38%,8% 0,35% 21%,66% 20%,93% 0,96% 40%,100% 65%,83% 94%,52% 100%,19% 94%,0 64%);background:linear-gradient(125deg,#9eb7c5,#243d49 20%,#0b171f 49%,#3b5666 78%,#adbfca);z-index:8}
+.bar-drink.bar-drink-cat-collins .drink-part-cat-eyes{left:.22em;top:.61em;width:.045em;height:.025em;border-radius:50%;background:#c7d6dc;box-shadow:.15em 0 #c7d6dc;z-index:9}
+.bar-drink.bar-drink-cat-collins .drink-part-straw{left:.46em;top:.31em;width:.018em;height:.44em;background:linear-gradient(90deg,#d1dce3,#7d939e);transform:rotate(37deg);z-index:10}

@@ -434,3 +434,18 @@ Rollback:
 ## 2026-10-24 — User retained the current wordmark
 
 - User declined further replacement of homepage 的 and confirmed keeping the current version. Closed the A/B/C selection in brief, handoff, final-polish record and font README. Website code, preview and development branch are unchanged. Followed AGENTS.md; no instruction-file change, tests, checks or publication.
+
+## 2026-10-24 — Homepage shelf links
+- Added missing local homepage links for 堕落天使 → note-upstairs.html, 2046 → article-2046-20260915.html, and Fruit Fly → article-fruit-fly-20260713.html.
+- Source inspection confirmed existing destination pages. No automated acceptance or browser checks were run under AGENTS.md's manual-acceptance rule. No commit, push, or deployment. Rollback: restore these three anchors to their prior span elements in index.html.
+
+
+## 2026-10-24 — 今晚近况更新
+- 按用户提供的原文更新 tonight.html 的开场白、当前状态标题与正文、最近在听/喝/写/学及余味；保留标点和现有布局。
+- 依据 AGENTS.md 人工验收规则，未运行自动测试、语法检查或视觉检查；仅本地修改，未提交、推送或部署。
+
+
+## 2026-10-24 — 全站 D 冷铬酒标
+- 按用户选择，将首页七款及 125 个公开内页的现有酒标替换为共享原生 CSS 冷铬图形，保留尺寸、排版与交互；同步文章模板、样式缓存及状态记录。友链页保留猫喝 Collins 特征。
+- 只进行了必要源码与定向 diff 阅读；按 AGENTS.md 要求未执行自动测试或视觉验收，保留现有本地预览，未提交、推送或部署。范围与回滚见 AGENT_DRINK_ICONS.md。
+

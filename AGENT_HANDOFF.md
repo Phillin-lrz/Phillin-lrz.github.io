@@ -82,3 +82,10 @@ For later ordinary publishing, start from `AGENT_BRIEF.md` and the matching oper
 - Final user decision: keep the existing formal homepage 的 and the current implementation; A/B/C will not be applied. No title-font selection remains pending. The comparison crops are historical references only.
 - User explicitly requested this task's browser comparisons and desktop/tablet/mobile title/label checks. 17 representative routes x 3 viewports showed no primary-title horizontal overflow and canvas/text-center error below .004px. No unrelated automatic tests, syntax/diff checks, video or hardware benchmark. General acceptance remains manual.
 - All temporary comparison HTML/font copies were moved outside the site. Preserve http://127.0.0.1:8765/index.html for manual testing; no commit, push, merge or deployment.
+
+## 全站酒标 handoff — 2026-10-24
+
+- 用户已选择 D，冷铬 CSS 酒标已本地应用于首页七款及 125 个公开内页，现有文章模板同步。所有外框、行高、文字布局与原交互保持原设置。
+- 共享图形位于 assets/drink-icons.css；styles.css 与首页 home.css 当前 URL token 为 bar-chrome-icons-20261024。原 SVG 保留作历史资源。详见 AGENT_DRINK_ICONS.md。
+- 用户手动验收：本次实施未运行测试、语法检查、diff --check、浏览器或截图检查。原 8765 预览保持运行；无 Git 写入或远程操作。
+

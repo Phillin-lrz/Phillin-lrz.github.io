@@ -1170,3 +1170,11 @@ html[data-motion="on"] .motion-reveal:not(.is-visible) { opacity: 0; transform: 
 @media (prefers-reduced-motion: reduce) {
   .motion-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* D / cold chrome: replace only the art inside existing 39px/32px menu seals. */
+.hp-menu-item .hp-seal { background: none; border-color: transparent; box-shadow: none; }
+.hp-menu-item .hp-seal:after { display: none; }
+.hp-menu-item .bar-drink { --drink-icon-size: 37px; }
+@media (max-width: 520px) {
+  .hp-menu-item .bar-drink { --drink-icon-size: 30px; }
+}
