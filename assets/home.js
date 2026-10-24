@@ -21,21 +21,7 @@
   });
   narrow.addEventListener("change", () => setMenu(false));
 
-  const light = document.getElementById("lightToggle");
-  const stage = document.getElementById("stage");
-  let glass = true;
-  try { glass = localStorage.getItem("bar-home-glass") !== "off"; } catch { /* Storage can be unavailable. */ }
-  function syncLight() {
-    stage.classList.toggle("dark", !glass);
-    light.setAttribute("aria-pressed", String(glass));
-    light.textContent = glass ? "✧" : "◌";
-  }
-  light.addEventListener("click", () => {
-    glass = !glass;
-    syncLight();
-    try { localStorage.setItem("bar-home-glass", glass ? "on" : "off"); } catch { /* Keep the control usable. */ }
-  });
-  syncLight();
+  // The glass scenery is permanent; site.js owns the single motion control.
 
   // Move the existing rail, including its pagination handlers, without duplicating data.
   const rail = document.querySelector("[data-gripe-rail]");
@@ -63,9 +49,6 @@
       animate(line, [{ opacity: 0, transform: "translate3d(0,18px,0)" }, { opacity: 1, transform: "translate3d(0,0,0)" }],
         { duration: 900, delay: index * 150, easing: "cubic-bezier(.2,.7,.2,1)", fill: "backwards" });
     });
-    if (!stage.classList.contains("dark")) animate(stage.querySelector(".hp-light-panel"),
-      [{ opacity: 0, transform: "translate3d(28px,0,0) skewX(-8deg)" }, { opacity: 1, transform: "translate3d(0,0,0) skewX(-8deg)" }],
-      { duration: 1200, easing: "cubic-bezier(.2,.7,.2,1)" });
     if (!("IntersectionObserver" in window)) return;
     observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {

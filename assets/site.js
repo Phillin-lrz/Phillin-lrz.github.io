@@ -8,9 +8,9 @@ function syncMotionPreference() {
   document.querySelectorAll("#themeToggle").forEach((button) => {
     button.setAttribute("aria-pressed", String(enabled));
     button.disabled = reduceMotionQuery.matches;
-    button.title = reduceMotionQuery.matches ? "系统已减少动态效果" : enabled ? "关闭入场与反馈动效" : "打开入场与反馈动效";
+    button.title = reduceMotionQuery.matches ? "系统已减少动态效果" : enabled ? "关闭动态效果" : "打开动态效果";
     button.setAttribute("aria-label", button.title);
-    button.textContent = button.classList.contains("hp-motion") ? enabled ? "✧ 动效开" : "◌ 动效关" : enabled ? "✦" : "◌";
+    button.textContent = enabled ? "✦" : "◌";
   });
   window.dispatchEvent(new CustomEvent("bar-motion-change", { detail: { enabled } }));
 }
@@ -480,8 +480,11 @@ function initGalleryFilters() {
   filters.addEventListener("click", (event) => {
     const button = event.target.closest("[data-gallery-filter]");
     if (!button) return;
-    filters.querySelectorAll("[data-gallery-filter]").forEach((item) => item.classList.remove("is-active"));
-    button.classList.add("is-active");
+    filters.querySelectorAll("[data-gallery-filter]").forEach((item) => {
+      const selected = item === button;
+      item.classList.toggle("is-active", selected);
+      item.setAttribute("aria-pressed", String(selected));
+    });
     renderGalleryList(button.dataset.galleryFilter);
   });
 }

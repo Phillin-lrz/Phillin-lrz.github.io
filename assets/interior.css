@@ -3,8 +3,8 @@
 /* Shared design system. Imported into the design layer by styles.css.
    Keep each page family here; legacy contains the retained drink artwork and structures. */
 :root {
-  --bar-night: #0b1118;
-  --bar-surface: #121a1e;
+  --bar-night: #0e1115;
+  --bar-surface: rgba(18,28,31,.9);
   --bar-paper: #e5e8e5;
   --bar-muted: #aebcc2;
   --bar-quiet: #91a4ac;
@@ -17,6 +17,11 @@
   --bar-wine: #6c3036;
   --bar-teal: var(--bar-ice);
   --bar-line: rgba(var(--bar-metal-rgb),.23);
+  /* Shared with the homepage: charcoal, blue-green ambient light and wine reflections. */
+  --bar-scene-base: radial-gradient(ellipse 72% 120% at 73% 39%,#172126 1%,transparent 65%),radial-gradient(ellipse 42% 52% at 91% 52%,rgba(113,43,43,.30),transparent 78%),#0e1115;
+  --bar-scene-glow: radial-gradient(ellipse 18% 47% at 86% 12%,rgba(75,129,124,.27),transparent 70%),radial-gradient(ellipse 22% 37% at 53% 90%,rgba(145,59,53,.16),transparent 76%),radial-gradient(ellipse 32% 23% at 97% 79%,rgba(214,122,71,.20),transparent 69%);
+  --bar-glass-plane: linear-gradient(90deg,rgba(41,109,107,.022),rgba(93,155,143,.135) 21%,rgba(36,87,91,.05) 48%,rgba(8,20,26,.11) 75%,transparent);
+  --bar-glass-shadow: 24px 0 90px rgba(7,23,26,.21),inset 12px 0 18px rgba(168,203,200,.035);
   --bar-serif: Georgia, "Noto Serif CJK SC", "Songti SC", "STSong", serif;
   --bar-sans: Inter, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   --ink: var(--bar-paper);
@@ -35,8 +40,11 @@
 }
 html { overflow-x: clip; scroll-padding-top: 100px; }
 body:not(.home-page) {
+  position: relative;
+  isolation: isolate;
   padding: 0;
-  background: var(--bar-night);
+  background: var(--bar-scene-base);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--bar-sans);
   line-height: 1.8;
@@ -44,7 +52,23 @@ body:not(.home-page) {
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
 }
-body:not(.home-page)::before, body:not(.home-page)::after { display: none; }
+/* Static scenery stays present even when interface motion is disabled. */
+body:not(.home-page)::before {
+  content: ""; display: block; position: fixed; inset: 0; z-index: -2;
+  pointer-events: none; background: var(--bar-scene-glow); background-size: auto;
+  opacity: 1; filter: blur(30px); mask-image: none; mix-blend-mode: normal;
+  border: 0; border-radius: 0; box-shadow: none;
+}
+body:not(.home-page)::after {
+  content: ""; display: block; position: fixed; inset: -80px auto -70px 55.5%;
+  width: 12.5%; z-index: -1; pointer-events: none; transform: skewX(-8deg);
+  border: 0; border-left: 1px solid rgba(164,204,204,.10); border-right: 1px solid rgba(212,218,207,.06);
+  border-radius: 0; background: repeating-linear-gradient(90deg,transparent 0 17px,rgba(211,235,226,.015) 18px,transparent 19px),var(--bar-glass-plane);
+  backdrop-filter: blur(13px); box-shadow: var(--bar-glass-shadow); opacity: 1;
+  mask-image: none; mix-blend-mode: normal;
+}
+@media (max-width: 950px) { body:not(.home-page)::after { left: 79%; width: 14%; } }
+@media (max-width: 520px) { body:not(.home-page)::after { opacity: .65; } }
 ::selection { background: #754046; color: #fff5e1; }
 :focus-visible { outline: 2px solid var(--bar-brass); outline-offset: 5px; }
 .site-header {
@@ -84,7 +108,7 @@ body:not(.home-page)::before, body:not(.home-page)::after { display: none; }
 .page { padding: 0 0 80px; }
 .page-heading { position: relative; max-width: 900px; padding: clamp(50px,7vw,98px) 0 44px; margin: 0; }
 .page-heading::before, .drink-heading::before, .drink-page::before { display: none; }
-.page-heading:not(.gallery-heading)::after { content: ""; display: block; position: absolute; top: 36px; right: -180px; width: 100px; height: 70%; border-left: 1px solid #71979520; background: linear-gradient(90deg,#7197950c,transparent); transform: skewX(-8deg); backdrop-filter: blur(8px); pointer-events: none; }
+.page-heading::after { display: none; content: none; }
 /* Only visual primary titles use the editorial writing face; the small paired-cover kicker stays unchanged. */
 body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-family: "Bar Title Editorial", cursive; font-weight: 300; font-synthesis: none; }
 .page-heading h1, .article h1, .gallery-detail-copy h1 { margin: 20px 0 22px; font-size: clamp(38px,5vw,70px); line-height: 1.3; letter-spacing: .015em; text-wrap: balance; word-break: normal; overflow-wrap: anywhere; line-break: strict; }
@@ -209,6 +233,14 @@ body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-
 
 /* Photography: no decorative surface or image color grading. */
 .gallery-heading { max-width: 950px; }
+/* Keep the filter row in normal flow; its rule belongs below every wrapped button. */
+.gallery-toolbar {
+  position: relative; display: flex; flex-wrap: wrap; align-items: center;
+  gap: 10px; margin: 0 0 32px; padding: 0 0 22px; border: 0;
+  border-bottom: 1px solid var(--line);
+}
+.gallery-toolbar .chip { flex: 0 0 auto; margin: 0; }
+.gallery-stack > .gallery-section:first-child { border-top: 0; padding-top: 0; }
 .gallery-section { padding-top: 28px; border-color: var(--line); }
 .gallery-section-header h2 { font: 400 30px var(--bar-serif); }
 .gallery-section .gallery-grid { gap: 12px; }

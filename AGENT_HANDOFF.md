@@ -89,3 +89,10 @@ For later ordinary publishing, start from `AGENT_BRIEF.md` and the matching oper
 - 共享图形位于 assets/drink-icons.css；styles.css 与首页 home.css 当前 URL token 为 bar-chrome-icons-20261024。原 SVG 保留作历史资源。详见 AGENT_DRINK_ICONS.md。
 - 用户手动验收：本次实施未运行测试、语法检查、diff --check、浏览器或截图检查。原 8765 预览保持运行；无 Git 写入或远程操作。
 
+
+## 背景与动效控制 handoff — 2026-10-24
+
+- 用户要求的摄影筛选栏修复、首页顶部酒单入口删除、右上角统一动效按钮、玻璃常驻及全站背景色调统一已本地实现。范围和回滚见 AGENT_SCENE_MOTION.md。
+- 当前共享 CSS/site.js 与首页资源 token 为 bar-scene-motion-20261024。右上角 themeToggle 共享 bar-motion；旧 glass 开关及首页导航内 hp-motion 控件已删除。
+- 本轮只读源码和定向 diff，没有自动测试、语法检查、浏览器或截图验收。用户继续手动测试；8765 预览未动，前一轮《重庆森林》的本地改动保留。无提交、推送或部署。
+

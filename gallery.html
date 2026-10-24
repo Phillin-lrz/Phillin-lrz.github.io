@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>摄影作品 | Phil Lin的Bar</title>
     <meta name="description" content="Phil Lin的Bar 的摄影作品画廊，按地点和场景整理。">
-    <link rel="stylesheet" href="assets/styles.css?v=bar-chrome-icons-20261024">
+    <link rel="stylesheet" href="assets/styles.css?v=bar-scene-motion-20261024">
   </head>
   <body>
     <header class="site-header">
@@ -23,7 +23,7 @@
         <a href="friends.html">友链</a>
         <a href="about.html">关于</a>
       </nav>
-      <button class="icon-button" id="themeToggle" type="button" aria-label="开关动效：烛光微粒" title="开关动效：烛光微粒">✦</button>
+      <button class="icon-button" id="themeToggle" type="button" aria-label="关闭动态效果" title="关闭动态效果" aria-pressed="true">✦</button>
     </header>
 
     <main class="page drink-page drink-french-75">
@@ -38,13 +38,13 @@
       </section>
 
       <section class="gallery-toolbar" aria-label="摄影分类">
-        <button class="chip is-active" type="button" data-gallery-filter="all">全部</button>
-        <button class="chip" type="button" data-gallery-filter="酒吧">酒吧</button>
-        <button class="chip" type="button" data-gallery-filter="旅途">旅途</button>
-        <button class="chip" type="button" data-gallery-filter="餐酒">餐酒</button>
-        <button class="chip" type="button" data-gallery-filter="餐厅">餐厅</button>
-        <button class="chip" type="button" data-gallery-filter="聚餐">聚餐</button>
-        <button class="chip" type="button" data-gallery-filter="杯子">杯子</button>
+        <button class="chip is-active" type="button" data-gallery-filter="all" aria-pressed="true">全部</button>
+        <button class="chip" type="button" data-gallery-filter="酒吧" aria-pressed="false">酒吧</button>
+        <button class="chip" type="button" data-gallery-filter="旅途" aria-pressed="false">旅途</button>
+        <button class="chip" type="button" data-gallery-filter="餐酒" aria-pressed="false">餐酒</button>
+        <button class="chip" type="button" data-gallery-filter="餐厅" aria-pressed="false">餐厅</button>
+        <button class="chip" type="button" data-gallery-filter="聚餐" aria-pressed="false">聚餐</button>
+        <button class="chip" type="button" data-gallery-filter="杯子" aria-pressed="false">杯子</button>
       </section>
 
       <section class="gallery-stack" data-gallery-list aria-label="摄影作品画廊"></section>
@@ -58,6 +58,6 @@
 
     <script src="assets/gripes.js?v=bar-gripe-20260902-five-hour-reset"></script>
     <script src="assets/gallery.js?v=bar-gallery-20260828-ash-zoom-inn"></script>
-    <script src="assets/site.js?v=bar-motion-20261024"></script>
+    <script src="assets/site.js?v=bar-scene-motion-20261024"></script>
   </body>
 </html>

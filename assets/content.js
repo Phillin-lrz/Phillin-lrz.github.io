@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "chungking-express-20261024",
+    title: "重庆森林",
+    tag: "一些思绪",
+    publishedAt: "2026-10-24",
+    summary: "一篇关于《重庆森林》的思绪：从王菲、配乐与初中时的第一次观看，写到多年重看的陪伴，以及失意以后仍然值得期待、值得喜欢的生活。",
+    url: "article-chungking-express-20261024.html",
+  },
+  {
     id: "millennium-mambo-20261023",
     title: "Millennium Mambo",
     tag: "一些思绪",

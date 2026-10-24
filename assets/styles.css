@@ -1,6 +1,6 @@
 /* Explicit cascade: existing structural/icon compatibility, then the shared design system. */
 @layer legacy, design;
-@import url("interior.css?v=bar-final-type-20261024") layer(design);
+@import url("interior.css?v=bar-scene-motion-20261024") layer(design);
 @import url("drink-icons.css?v=bar-chrome-icons-20261024") layer(design);
 @layer legacy {
 :root {

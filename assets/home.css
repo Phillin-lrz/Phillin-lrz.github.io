@@ -321,7 +321,7 @@ body:before {
   position:relative;
   isolation:isolate;
   overflow:hidden;
-  background:radial-gradient(ellipse 72% 120% at 73% 39%,#172126 1%,transparent 65%),radial-gradient(ellipse 42% 52% at 91% 52%,rgba(113,43,43,.30),transparent 78%),#0e1115
+  background:var(--bar-scene-base)
 }
 
 .hp-stage:before {
@@ -330,7 +330,7 @@ body:before {
   content:"";
   inset:0;
   pointer-events:none;
-  background:radial-gradient(ellipse 18% 47% at 86% 12%,rgba(75,129,124,.27),transparent 70%),radial-gradient(ellipse 22% 37% at 53% 90%,rgba(145,59,53,.16),transparent 76%),radial-gradient(ellipse 32% 23% at 97% 79%,rgba(214,122,71,.20),transparent 69%);
+  background:var(--bar-scene-glow);
   filter:blur(30px)
 }
 
@@ -356,10 +356,10 @@ body:before {
   pointer-events:none;
   border-left:1px solid rgba(164,204,204,.10);
   border-right:1px solid rgba(212,218,207,.06);
-  background:linear-gradient(90deg,rgba(41,109,107,.022),rgba(93,155,143,.135) 21%,rgba(36,87,91,.05) 48%,rgba(8,20,26,.11) 75%,transparent);
+  background:var(--bar-glass-plane);
   backdrop-filter:blur(13px);
   z-index:1;
-  box-shadow:24px 0 90px rgba(7,23,26,.21),inset 12px 0 18px rgba(168,203,200,.035)
+  box-shadow:var(--bar-glass-shadow)
 }
 
 .hp-light-panel:before {
@@ -381,13 +381,6 @@ body:before {
   width:1px;
   background:linear-gradient(180deg,transparent 6%,rgba(138,173,169,.15) 47%,transparent 83%);
   pointer-events:none
-}
-
-.hp-stage.dark .hp-light-panel,.hp-stage.dark .hp-light-rail {
-  opacity:0
-}
-.hp-stage.dark:before {
-  opacity:.25
 }
 
 .hp-hero {
@@ -1119,7 +1112,6 @@ body.home-page { padding: 0; line-height: normal; animation: none; --paper: var(
 .hp-brand { font-weight: normal; }
 .hp-skip { position: absolute; left: 18px; top: -80px; z-index: 30; padding: 12px; background: var(--bar-paper); color: var(--bar-night); }
 .hp-skip:focus { top: 10px; }
-.hp-motion { border: 0; background: transparent; color:var(--bar-muted); cursor: pointer; font-size: 11px; padding: 12px 0; }
 .hp-intro-bottom small { flex-shrink: 0; }
 .hp-menu-item { scroll-margin-top: 30px; }
 .hp-menu-paper, #cinema, #music { scroll-margin-top: 24px; }
@@ -1132,7 +1124,7 @@ body.home-page { padding: 0; line-height: normal; animation: none; --paper: var(
 .home-page .gripe-item { color:var(--bar-muted); }
 .home-page .gripe-item p { line-height: 1.8; }
 .home-page .gripe-pager .chip { color:var(--bar-metal); }
-@media (min-width: 1051px) { .hp-nav { gap: clamp(12px, 1.7vw, 28px); } .hp-nav .hp-motion { display: none; } .hp-edition { display: none; } }
+@media (min-width: 1051px) { .hp-nav { gap: clamp(12px, 1.7vw, 28px); } .hp-edition { display: none; } }
 @media (max-width: 1050px) {
   .hp-mobile-nav { display: block; margin-left: auto; cursor: pointer; color:var(--bar-metal); border: 1px solid #75644d; background: transparent; padding: 10px 12px; font-size: 11px; letter-spacing: .15em; }
   .hp-nav { display: none; position: absolute; left: 15px; right: 15px; top: 79px; background: #12191c; border: 1px solid #75644d; box-shadow: 0 30px 70px #000c; padding: 9px 20px; flex-direction: column; gap: 0; align-items: stretch; max-height: calc(100svh - 95px); overflow-y: auto; }
@@ -1156,7 +1148,6 @@ body.home-page { padding: 0; line-height: normal; animation: none; --paper: var(
 /* Keep the menu masthead on one line at narrow widths and with a scrollbar. */
 .hp-menu-title h2 { white-space: nowrap; }
 @media (max-width: 520px) { .hp-menu-title h2 { font-size: clamp(32px, 10.5vw, 49px); } .hp-menu-title { gap: 8px; } }
-@media (min-width: 1051px) { .hp-nav .hp-motion { display: inline-block; } }
 
 /* Event-driven feedback: opacity and transform only; no persistent animated layers. */
 html[data-motion="on"] .motion-reveal.is-visible {

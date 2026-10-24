@@ -124,3 +124,11 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 - 当前共享 styles.css 与首页 home.css 的 URL token 为 bar-chrome-icons-20261024；其他字体、数据、脚本、SVG 与 interior.css token 不变。
 - 详见 AGENT_DRINK_ICONS.md 的范围、手动验收限制和外部回滚快照。本轮未执行自动测试或视觉验收，保留现有 8765 预览，未提交/推送/部署。
 
+
+## 背景与动效控制统一 — 2026-10-24
+
+- 当前共享 CSS/site.js 和首页 home.css/home.js URL token 为 bar-scene-motion-20261024；interior.css 导入使用同一 token。酒标、字体和数据资源版本不变。
+- 首页顶部「酒单」入口与导航内独立动效开关已删除。所有页面右上角 themeToggle 统一控制动效并共享 bar-motion 偏好；玻璃背景永久显示，旧 bar-home-glass 设置不再使用。
+- 首页和内页共用青灰/炭黑/暗酒红背景变量，内页增加常驻玻璃层。摄影筛选栏改为独立底部留白与分隔线，按钮自然换行。
+- 详见 AGENT_SCENE_MOTION.md 的实现、人工验收限制与外部回滚快照。未运行自动测试或浏览器验收，保留 8765 预览，未提交/推送/部署。
+
