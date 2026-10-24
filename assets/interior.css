@@ -108,7 +108,14 @@ body:not(.home-page)::after {
 .page { padding: 0 0 80px; }
 .page-heading { position: relative; max-width: 900px; padding: clamp(50px,7vw,98px) 0 44px; margin: 0; }
 .page-heading::before, .drink-heading::before, .drink-page::before { display: none; }
-.page-heading::after { display: none; content: none; }
+/* Raise the heading divider inside its existing box; content stays in place. */
+.page-heading, .article-header { border-bottom-color: transparent; }
+.page-heading::after, .article-header::after {
+  content: ""; display: block; position: absolute; left: 0; right: 0; top: auto;
+  bottom: 20px; width: auto; height: 1px; border: 0; background: var(--line);
+  opacity: 1; transform: none; box-shadow: none; pointer-events: none;
+}
+.article-header::after { bottom: 16px; }
 /* Only visual primary titles use the editorial writing face; the small paired-cover kicker stays unchanged. */
 body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-family: "Bar Title Editorial", cursive; font-weight: 300; font-synthesis: none; }
 .page-heading h1, .article h1, .gallery-detail-copy h1 { margin: 20px 0 22px; font-size: clamp(38px,5vw,70px); line-height: 1.3; letter-spacing: .015em; text-wrap: balance; word-break: normal; overflow-wrap: anywhere; line-break: strict; }
@@ -155,7 +162,7 @@ body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-
 /* Reading: calm measure and text, with metadata kept in the margin. */
 .article-layout { grid-template-columns: minmax(0,740px) minmax(150px,210px); gap: clamp(36px,6vw,90px); padding: 65px 0 100px; }
 .article { min-width: 0; }
-.article-header { border-bottom: 1px solid var(--line); margin-bottom: 42px; padding-bottom: 28px; }
+.article-header { border-bottom: 1px solid transparent; margin-bottom: 42px; padding-bottom: 28px; }
 .article .article-deck { color: var(--muted); font-family: var(--bar-sans); font-size: 15px; line-height: 1.95; }
 .article .article-meta { color: var(--bar-brass); font: 12px/1.8 var(--bar-sans); }
 .article p, .article li { font: 400 17px/2.05 var(--bar-serif); color: var(--bar-reading); letter-spacing: .018em; overflow-wrap: break-word; }
@@ -277,7 +284,6 @@ body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-
 .gripe-ticket { background: var(--bar-surface); border-color: var(--line); box-shadow: none; }
 
 @media (max-width: 1050px) {
-  .page-heading:not(.gallery-heading)::after { display: none; }
   .site-header { gap: 14px; }
   .site-header.has-menu .interior-menu { display: block; margin-left: auto; padding: 10px 12px; border: 1px solid var(--line); background: none; color: var(--bar-brass); font: 11px var(--bar-sans); letter-spacing: .12em; }
   .site-header.has-menu .nav-links { display: none; position: absolute; inset: 100% 16px auto; margin: 0; padding: 14px 22px; background: #12191c; border: 1px solid var(--line); box-shadow: 0 20px 40px #0008; z-index: 20; max-height: calc(100svh - 90px); overflow-y: auto; }
@@ -293,7 +299,7 @@ body:not(.home-page) h1:not(.paired-cover-kicker), .paired-cover-side h2 { font-
   .brand-mark { width: 30px; height: 30px; }
   .page, .article-layout, .paired-notes-shell, .gallery-detail { width: calc(100% - 44px); }
   .page-heading { padding: 46px 0 28px; }
-  .page-heading:not(.gallery-heading)::after { display: none; }
+  .page-heading::after, .article-header::after { bottom: 12px; }
   .page-heading h1 { font-size: 38px; }
   .article h1 { font-size: clamp(33px,8.8vw,38px); }
   .drink-portrait { gap: 12px; margin-bottom: 20px; }

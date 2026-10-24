@@ -132,3 +132,8 @@ This is the lightweight startup file for Codex work in this repository. Read thi
 - 首页和内页共用青灰/炭黑/暗酒红背景变量，内页增加常驻玻璃层。摄影筛选栏改为独立底部留白与分隔线，按钮自然换行。
 - 详见 AGENT_SCENE_MOTION.md 的实现、人工验收限制与外部回滚快照。未运行自动测试或浏览器验收，保留 8765 预览，未提交/推送/部署。
 
+
+## 标题分隔线上移 — 2026-10-24
+
+- 标题区分隔线在原有盒内上移：列表页桌面 20px、文章页桌面 16px、移动端 12px；原有标题与后续内容位置、间距不变。共享 styles.css 与 interior.css token 为 bar-heading-rule-20261024；脚本和首页专属资源仍为 bar-scene-motion-20261024。
+- 本轮仅按 AGENTS.md 阅读必要源代码，未运行自动或视觉验收。回滚快照：外部工作目录 heading-rules-before-apply/；保留现有 8765 预览，未提交/推送/部署。
