@@ -494,3 +494,10 @@ Rollback:
 
 - 按用户要求修改系列索引标题、目录页标题及五篇顶部系列导航为「窦靖童 Part1」。序言自身篇名、正文、URL、样式及渲染逻辑不变。content.js 八个消费者仅刷新该资源 token 为 bar-content-20261025-dou-part1。
 - README、brief、handoff、系列记录同步名称与缓存版本；回滚本次改名时恢复上述系列标签和原 content token（bar-content-20261025-group-folio）。沿用 AGENTS.md 手动验收要求，仅做必要源码阅读，未运行自动或视觉验收，未提交/推送/部署，未操作现有预览；AGENTS.md 未修改。
+
+## 2026-10-28 — 作息忏悔吐槽（本地）
+
+- 按用户原文向 assets/gripes.js 新增一则吐槽，心情「忏悔」、emoji 😔，发布时间 2026-10-28 09:20:03（Asia/Shanghai）。
+- 仅刷新根目录公开 HTML 的 gripes.js 引用版本为 bar-gripe-20261028-healthy-routine；其他资源版本不变。
+- 使用 AGENTS.md；读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md。启动 Git status/diff stat 为空；依手动验收覆盖规则未运行测试、语法检查或视觉验收。保留现有本地预览，未提交、推送或部署；页面显示由用户手动验收。
+- 回滚：移除该条吐槽，将本轮 HTML 吐槽资源 token 恢复为 bar-gripe-20260902-five-hour-reset，并删除本条记录。AGENTS.md 未修改。
