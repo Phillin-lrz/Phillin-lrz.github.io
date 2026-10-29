@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "2018-20261029",
+    title: "2018.",
+    tag: "一些思绪",
+    publishedAt: "2026-10-29",
+    summary: "重听2018年创建的《修身养性》歌单，想起十二三岁的自己，以及这些年的选择与失去。仍然尽量不后悔，也仍然会怀念那些当时就很美好的时刻。",
+    url: "article-2018-20261029.html",
+  },
+  {
     id: "group-notes-doujingtong-01",
     title: "窦靖童 Part1",
     kind: "group-notes",

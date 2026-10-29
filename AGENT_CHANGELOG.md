@@ -501,3 +501,9 @@ Rollback:
 - 仅刷新根目录公开 HTML 的 gripes.js 引用版本为 bar-gripe-20261028-healthy-routine；其他资源版本不变。
 - 使用 AGENTS.md；读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md。启动 Git status/diff stat 为空；依手动验收覆盖规则未运行测试、语法检查或视觉验收。保留现有本地预览，未提交、推送或部署；页面显示由用户手动验收。
 - 回滚：移除该条吐槽，将本轮 HTML 吐槽资源 token 恢复为 bar-gripe-20260902-five-hour-reset，并删除本条记录。AGENTS.md 未修改。
+## 2026-10-29 — 《2018.》本地内容入库
+
+- 按用户提供的 Word《2018-20261029.docx》新增 article-2018-20261029.html，归入「一些思绪」，日期 2026-10-29。保留原题及 113 个非空正文段落；原文未附杯底注释，本轮未新增。
+- assets/content.js 新增文章元数据；八个实际消费者仅刷新 content.js 版本为 bar-content-20261029-2018。沿用现有文章模板，不修改共享布局、样式、脚本。
+- 读取 AGENTS.md、AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_OP_PROJECT_STATE.md；初始工作区干净。正文经 DOCX XML 提取后写入 HTML。按手动验收覆盖规则，未运行自动测试、语法检查、正文比对或浏览器/视觉验收；段落呈现与排版待用户手动确认。
+- 只更新本地文件，保留现有预览，未提交/推送/部署。未读取深层状态文件，未修改 AGENTS.md。回滚：删除新文章、移除本次 BAR_POSTS 条目，并将八个消费者的 content.js token 改回 bar-content-20261025-dou-part1。
