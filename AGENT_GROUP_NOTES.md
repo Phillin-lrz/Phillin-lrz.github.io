@@ -47,3 +47,10 @@ Before implementing the selected flat-fold direction, exact copies of the previo
 The design follow-up replaces the former compact list card and its CSS with a shared cover composition; its material depth and added homepage height are intentional but await manual review. Before this redesign, exact local source snapshots were saved outside the repository at `C:\Users\Phil Lin\.codex\visualizations\2026\10\24\01a16f04-9056-7e51-9b83-279b0517c6f5\group-notes-before-glass-folio\`. To restore the previous directory-card version, selectively restore the corresponding source/HTML files from that folder, preserving later unrelated changes, and update the brief/handoff/README and this record. Keep the changelog as history and add a rollback note; no prior changelog contents were read or snapshotted. The snapshot includes CSS, site.js, content.js, the affected HTML files and current non-protected maintenance documents.
 
 This is an additive change; no older prose was rewritten. To undo only this operation and its display follow-up, remove its one BAR_POSTS record, restore the eight content query strings to `bar-content-20261024-chungking`, remove the five index stylesheet links, restore those five site.js tokens to `bar-scene-motion-20261024`, and remove the six new series HTML pages and `assets/group-notes.css`. Remove only the new group renderer functions/dispatch branches from site.js, keeping the original paired and ordinary post paths. Remove the associated README/brief additions and this state file, and record the rollback in the changelog. Preserve any later unrelated changes when applying these edits. AGENTS.md was not modified, so there is no instruction-file change to roll back. The supplied Word and task Markdown were not edited.
+
+
+## 杯底注释补充 — 2026-10-29
+
+- 用户明确本系列是五篇独立小文章，要求在各自页面分别添加杯底注释。已为 group-dou-00.html、group-dou-01-shiyan.html、group-dou-02-gaibian.html、group-dou-03-kongzhongfeiren.html、group-dou-04-fruit-fly.html 分别提炼并添加。
+- 本节取代此前“不新增杯底注释”的当前状态描述；原 Word 正文、组文目录与导航保持原样。注释放在每篇正文后、系列导航前，复用共享 article-endnote。
+- 未运行自动或视觉验收，措辞及显示待用户手动确认；未操作预览或远程。回滚本次内容补充只需移除五篇各自新增的 article-endnote footer。

@@ -103,3 +103,11 @@ For later ordinary publishing, start from `AGENT_BRIEF.md` and the matching oper
 - 用户不满意玻璃薄页和金属书脊，比较四种方案并授权试做「平面五联折页＋冷刊排版」。最新为序言约三成＋四首歌的平面分栏；首页共用 groupNoteCard 的 compact 配置，序言在左跨两行、歌曲在右排两列；手机序言置顶。全横排标题、细线、轻微底色分区，没有玻璃图形、书脊、立体阴影或位移动效；系列目录保持文字标题区与纵向清单。数据及正文不改，保持与 paired-note 分支独立。
 - content token 仍为 bar-content-20261025-dou-part1（八个消费者）；group-notes.css 更新为 bar-group-notes-20261025-flat-fold（十一页）。index/posts/三个标签页的 site.js token 更新为 bar-site-20261025-flat-fold，其他页保留原 token。前一版外部回滚快照 group-notes-before-flat-fold/ 及细节见 AGENT_GROUP_NOTES.md。
 - 手动验收覆盖规则持续生效；本次未运行自动或浏览器检查。保留现有 8765 预览，无提交/推送/部署；AGENTS.md 未改。
+
+
+## 杯底注释补齐与默认要求 — 2026-10-29
+
+- 用户明确：原稿没有杯底注释时，由 Codex 阅读完整正文后自行撰写。组文每篇独立文章（包括序言）都要在各自正文页添加，不能只在目录页添加一条。
+- 已为《2018.》以及「窦靖童 Part1」的序言、《誓言》《改变》《空中飞人》《Fruit Fly》六个正文页分别添加独立注释，正文不变。沿用 article-endnote 样式，无资源版本变动。
+- AGENTS.md、AGENT_BRIEF.md 和 AGENT_OP_CONTENT_PUBLISH.md 已同步此要求，撤销“原稿未提供可不强制新增”的兜底条款。作者指定注释仍优先保留；明确要求不添加时遵从作者。
+- 遵循手动验收规则：未运行自动或视觉验收，注释措辞及页面呈现待用户确认。保留现有预览；未提交、推送或部署。

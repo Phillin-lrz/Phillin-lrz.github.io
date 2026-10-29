@@ -507,3 +507,12 @@ Rollback:
 - assets/content.js 新增文章元数据；八个实际消费者仅刷新 content.js 版本为 bar-content-20261029-2018。沿用现有文章模板，不修改共享布局、样式、脚本。
 - 读取 AGENTS.md、AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_OP_PROJECT_STATE.md；初始工作区干净。正文经 DOCX XML 提取后写入 HTML。按手动验收覆盖规则，未运行自动测试、语法检查、正文比对或浏览器/视觉验收；段落呈现与排版待用户手动确认。
 - 只更新本地文件，保留现有预览，未提交/推送/部署。未读取深层状态文件，未修改 AGENTS.md。回滚：删除新文章、移除本次 BAR_POSTS 条目，并将八个消费者的 content.js token 改回 bar-content-20261025-dou-part1。
+
+
+## 2026-10-29 — 补齐六篇杯底注释并明确默认撰写责任
+
+- 用户纠正：没有提供杯底注释时需要 Codex 自行撰写；「窦靖童 Part1」五篇小文章必须各自在自己的正文页添加。
+- 根据六篇完整正文，为《2018.》及组文序言、《誓言》《改变》《空中飞人》《Fruit Fly》分别新增独立杯底注释，复用 article-endnote；不改正文、目录、元数据、CSS 或脚本。
+- 按 AGENTS.md 读取简报、内容/状态操作文件、handoff 及系列记录；未读深层历史。更新 AGENTS.md、AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_HANDOFF.md、AGENT_GROUP_NOTES.md，撤销原稿缺注释即可不新增的兜底规则。此前漏写的历史记录保留，由本条更正当前状态。
+- 仅做源文件阅读与本地编辑；按用户手动验收规则未运行测试、语法/差异检查、浏览器或视觉验收。注释文字和页面呈现待用户手动确认，现有预览未动；未提交/推送/部署。
+- 回滚：移除六个正文页本轮新增 footer。若需回滚指令变更，删除 AGENTS.md 新增的默认撰写段，恢复 brief 的原规范句、操作文件原兜底段并删除新增流程第 9 条；同步 handoff/系列记录并追加回滚说明，不删除历史日志。
