@@ -549,7 +549,7 @@ function gripeItem(item) {
         <span class="gripe-emoji" aria-label="${escapeHtml(item.mood)}">${escapeHtml(item.emoji)}</span>
         <span>${escapeHtml(item.mood)}</span>
       </div>
-      <p>${escapeHtml(item.text)}</p>
+      <p>${escapeHtml(item.text).replace(/\r?\n/g, "<br>")}</p>
       <div class="gripe-meta">
         <time datetime="${escapeHtml(item.publishedAt)}">${escapeHtml(item.publishedAt)}</time>
         ${detailLink}

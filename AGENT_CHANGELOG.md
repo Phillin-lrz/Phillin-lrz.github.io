@@ -516,3 +516,10 @@ Rollback:
 - 按 AGENTS.md 读取简报、内容/状态操作文件、handoff 及系列记录；未读深层历史。更新 AGENTS.md、AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_HANDOFF.md、AGENT_GROUP_NOTES.md，撤销原稿缺注释即可不新增的兜底规则。此前漏写的历史记录保留，由本条更正当前状态。
 - 仅做源文件阅读与本地编辑；按用户手动验收规则未运行测试、语法/差异检查、浏览器或视觉验收。注释文字和页面呈现待用户手动确认，现有预览未动；未提交/推送/部署。
 - 回滚：移除六个正文页本轮新增 footer。若需回滚指令变更，删除 AGENTS.md 新增的默认撰写段，恢复 brief 的原规范句、操作文件原兜底段并删除新增流程第 9 条；同步 handoff/系列记录并追加回滚说明，不删除历史日志。
+
+## 2026-11-05 — 睡前想到累吐槽（本地）
+
+- assets/gripes.js 按用户原文新增吐槽，去掉换行后的不可见零宽空格，保留两行结构；心情「想累了」、emoji 😮‍💨，发布时间 2026-11-05 10:11:49（Asia/Shanghai）。
+- assets/site.js 吐槽正文先 HTML 转义再将换行转换为 br，让末句独立显示。根目录公开 HTML 仅刷新 gripes.js/site.js 引用，分别使用 bar-gripe-20261105-bedtime-thoughts、bar-site-20261105-gripe-lines。
+- 依据 AGENTS.md，读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_OP_FRONTEND_LOGIC.md；启动 Git status/diff stat 为空，编辑前查看相关源码。按手动验收规则未运行测试、语法检查或视觉验收；换行及长正文显示待用户手动确认。未操作预览，未提交、推送或部署；AGENTS.md 未修改。
+- 回滚：移除本条吐槽，恢复 site.js 原有正文插值及本轮 HTML 资源引用，并移除此日志条目。
