@@ -523,3 +523,9 @@ Rollback:
 - assets/site.js 吐槽正文先 HTML 转义再将换行转换为 br，让末句独立显示。根目录公开 HTML 仅刷新 gripes.js/site.js 引用，分别使用 bar-gripe-20261105-bedtime-thoughts、bar-site-20261105-gripe-lines。
 - 依据 AGENTS.md，读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md、AGENT_OP_FRONTEND_LOGIC.md；启动 Git status/diff stat 为空，编辑前查看相关源码。按手动验收规则未运行测试、语法检查或视觉验收；换行及长正文显示待用户手动确认。未操作预览，未提交、推送或部署；AGENTS.md 未修改。
 - 回滚：移除本条吐槽，恢复 site.js 原有正文插值及本轮 HTML 资源引用，并移除此日志条目。
+## 2026-11-13 — 身心俱疲吐槽（本地）
+
+- assets/gripes.js 按用户原文新增「我草最近怎么这么累」吐槽，心情「身心俱疲」、emoji 😮‍💨，发布时间 2026-11-13 14:58:11（Asia/Shanghai）。
+- 根目录公开 HTML 的 gripes.js 引用由 bar-gripe-20261105-bedtime-thoughts 刷新为 bar-gripe-20261113-exhausted；只更新吐槽资源缓存版本。
+- 依据 AGENTS.md，读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md；启动 Git status/diff stat 为空，编辑前查看吐槽数据及首页引用。遵循手动验收覆盖规则未运行自动检查、测试或视觉验收，页面显示待用户确认。未操作预览，未提交、推送或部署；AGENTS.md 未修改。
+- 回滚：移除新增吐槽，将本轮 HTML 吐槽资源版本恢复为 bar-gripe-20261105-bedtime-thoughts，并删除本条日志。
