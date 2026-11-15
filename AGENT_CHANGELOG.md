@@ -529,3 +529,8 @@ Rollback:
 - 根目录公开 HTML 的 gripes.js 引用由 bar-gripe-20261105-bedtime-thoughts 刷新为 bar-gripe-20261113-exhausted；只更新吐槽资源缓存版本。
 - 依据 AGENTS.md，读取 AGENT_BRIEF.md、AGENT_OP_CONTENT_PUBLISH.md；启动 Git status/diff stat 为空，编辑前查看吐槽数据及首页引用。遵循手动验收覆盖规则未运行自动检查、测试或视觉验收，页面显示待用户确认。未操作预览，未提交、推送或部署；AGENTS.md 未修改。
 - 回滚：移除新增吐槽，将本轮 HTML 吐槽资源版本恢复为 bar-gripe-20261105-bedtime-thoughts，并删除本条日志。
+## 2026-11-16 — 没画在地图上的路
+- 从用户 Word 原稿新增 article-unmapped-roads-20261115.html，保留正文顺序与空段分隔，日期采用原稿文件日期 2026-11-15，归入一些思绪；补写杯底注释。
+- 更新 BAR_POSTS 与八个 content.js 消费页的数据缓存版本。
+- 按 AGENTS.md 手动验收覆盖规则，未运行自动检查或视觉验收；未提交、推送或部署。回滚时移除新增文章及对应数据记录，并恢复八页缓存版本。
+

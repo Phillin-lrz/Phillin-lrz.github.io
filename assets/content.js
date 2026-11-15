@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "unmapped-roads-20261115",
+    title: "没画在地图上的路",
+    tag: "一些思绪",
+    publishedAt: "2026-11-15",
+    summary: "从一次短暂而轻松的下午，写到努力、结果与休息之间的反复怀疑，以及那些规划没有覆盖的未来。",
+    url: "article-unmapped-roads-20261115.html",
+  },
+  {
     id: "2018-20261029",
     title: "2018.",
     tag: "一些思绪",
