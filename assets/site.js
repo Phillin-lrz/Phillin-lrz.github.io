@@ -39,8 +39,8 @@ function normalizedNotes() {
   }));
 }
 
-function allPosts() {
-  const builtInPosts = window.BAR_POSTS || [];
+function allPosts(includeFiction = false) {
+  const builtInPosts = [...(window.BAR_POSTS || []), ...(includeFiction ? window.BAR_FICTION || [] : [])];
   return collapsePairedNotes([...builtInPosts, ...normalizedNotes()]).sort(
     (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   );
@@ -159,7 +159,7 @@ function pairedNoteCard(pair, heading = "h2") {
     <article class="post-card paired-note-card">
       <a class="paired-card-cover" href="${pairUrl}" aria-label="阅读 Paired Notes ${number}：${escapeHtml(pair.title)}"></a>
       <div class="paired-card-heading">
-        <span class="post-date">PAIRED NOTES ${number} · ${date}</span>
+        <span class="post-date">${pair.tag === "纸境" ? "Paper Plane · 纸境 / " : ""}PAIRED NOTES ${number} · ${date}</span>
         <span>${subtitle}</span>
       </div>
       <div class="paired-card-sides">${sides}</div>
@@ -176,7 +176,7 @@ function groupNoteCard(post, heading = "h2", compact = false) {
   const last = String(Math.max(0, entries.length - 1)).padStart(2, "0");
   const chapters = entries.slice(1).map((entry, index) => `
     <a class="gn-fold-track" href="${escapeHtml(entry.url)}" aria-label="${String(index + 1).padStart(2, "0")} ${escapeHtml(entry.title)}">
-      <span class="gn-fold-number">${String(index + 1).padStart(2, "0")}</span>
+      <span class="gn-fold-number">${String(index + 1).padStart(2, "0")}${entry.tag ? ` · ${escapeHtml(entry.tag)}` : ""}</span>
       <span class="gn-fold-name">${escapeHtml(entry.title)}</span>
       <span class="gn-fold-deck">${escapeHtml(entry.deck || "")}</span>
       <span class="gn-fold-action">阅读<span aria-hidden="true">↗</span></span>
@@ -197,7 +197,7 @@ function groupNoteCard(post, heading = "h2", compact = false) {
         </div>
         ${chapters}
       </div>
-      <footer class="gn-fold-footer"><span>00—${last} / ${escapeHtml(post.tag)}</span><a href="${escapeHtml(postUrl(post))}">完整目录 <span aria-hidden="true">↗</span></a></footer>
+      <footer class="gn-fold-footer"><span>00—${last} / ${escapeHtml([...new Set(entries.map((entry) => entry.tag || post.tag))].join(" · "))}</span><a href="${escapeHtml(postUrl(post))}">完整目录 <span aria-hidden="true">↗</span></a></footer>
     </article>
   `;
 }
@@ -214,7 +214,11 @@ function renderNoteList() {
 function renderRecentPosts() {
   document.querySelectorAll("[data-recent-posts]").forEach((container) => {
     const limit = Math.max(1, Math.min(12, Number(container.dataset.recentLimit) || 3));
-    const posts = allPosts().slice(0, limit);
+    const collectionUrls = new Set((window.BAR_POSTS || [])
+      .filter((post) => post.kind === "group-notes").map(postUrl));
+    const posts = allPosts(true)
+      .filter((post) => !post.seriesUrl || !collectionUrls.has(post.seriesUrl))
+      .slice(0, limit);
     if (container.dataset.recentLayout === "rows" && posts.length) {
       container.innerHTML = posts.map((post) => {
         if (post.kind === "group-notes") return groupNoteCard(post, "h3", true);
@@ -265,6 +269,11 @@ function renderArticlePage() {
   const page = document.querySelector("[data-article-page]");
   if (!page) return;
   const id = new URLSearchParams(window.location.search).get("id");
+  const fiction = (window.BAR_FICTION || []).find((item) => item.id === id);
+  if (fiction?.url) {
+    window.location.replace(fiction.url);
+    return;
+  }
   const post = allPosts().find((item) => item.id === id);
   const title = page.querySelector("[data-article-title]");
   const tag = page.querySelector("[data-article-tag]");

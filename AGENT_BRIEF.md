@@ -1,6 +1,14 @@
 # AGENT_BRIEF
 
-Last updated: 2026-10-29
+## Paper Plane / 纸境 — 2026-11-17
+
+- 独立小说栏目已本地搭建：`fiction.html`，与「文章」同级；首页 Paper Plane 为独立编号酒款，不属于 Martini Flight。
+- 首页与现有公开根页面导航增加「纸境」。专属样式 `assets/fiction.css`；独立作品集合及目录渲染位于 `assets/fiction.js`，均使用 `bar-fiction-20261117`。
+- `BAR_FICTION` 已迁入用户指定的 18 篇，权威数据位于 `assets/content.js`；`assets/fiction.js` 负责目录渲染，两组双联沿用共享组件，显示为 18 篇 / 16 组。文章归档和札记不再收录这些独立条目；首页最近文字可跨栏目显示。
+- 窦靖童 Part1 保留五篇完整专题；誓言、改变、Fruit Fly 属于纸境，序言与空中飞人仍为一些思绪，专题条目显示各自栏目。B 组八篇已按用户指定范围定向编辑，原栏目保留。
+- 当前版本：content `bar-content-20261117-zhijing`，site `bar-site-20261117-zhijing`，fiction JS `bar-fiction-20261117-zhijing`，fiction CSS `bar-fiction-20261117-faceted`。范围及回滚见 `AGENT_FICTION.md`，本轮记录见 `AGENT_FICTION_MIGRATION.md`。用户本次明确授权验证：语法、静态不变量、链接、34 页 HTTP、关键页浏览器观察已执行；移动端仍待人工复查。原预览未运行，现已启动 8765 预览（会话 15525），保留供用户验收；无提交/推送/部署。
+
+Last updated: 2026-11-17
 
 This is the lightweight startup file for Codex work in this repository. Read this file first, then read only the operation file and source files required by the task type.
 

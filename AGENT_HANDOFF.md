@@ -111,3 +111,46 @@ For later ordinary publishing, start from `AGENT_BRIEF.md` and the matching oper
 - 已为《2018.》以及「窦靖童 Part1」的序言、《誓言》《改变》《空中飞人》《Fruit Fly》六个正文页分别添加独立注释，正文不变。沿用 article-endnote 样式，无资源版本变动。
 - AGENTS.md、AGENT_BRIEF.md 和 AGENT_OP_CONTENT_PUBLISH.md 已同步此要求，撤销“原稿未提供可不强制新增”的兜底条款。作者指定注释仍优先保留；明确要求不添加时遵从作者。
 - 遵循手动验收规则：未运行自动或视觉验收，注释措辞及页面呈现待用户确认。保留现有预览；未提交、推送或部署。
+
+## Paper Plane / 纸上航行 handoff — 2026-11-17
+
+- 用户已选择「Paper Plane · 纸上航行」，明确要求与「文章」同级，不能归入 Martini / Martini Flight。独立首页酒单入口、现有公开根页面主导航和 fiction.html 已本地搭建。
+- 独立样式与作品目录：assets/fiction.css、assets/fiction.js，版本 bar-fiction-20261117。BAR_FICTION 当前为空，未迁移现有文章；等待用户指定作品后再处理迁移与正文身份。
+- 后续迁移须保持小说独立归档、Paper Plane 酒标和 fiction.html 导航高亮，保留原正文及杯底注释。详见 AGENT_FICTION.md 的字段、范围、人工验收限制和回滚。
+- 仅进行源代码与定向 Git diff 阅读；未运行测试、语法检查、diff --check、浏览器或截图验收。既有 8765 预览未动，未暂存/提交/推送/部署，AGENTS.md 未改。
+
+
+## 纸上航行迁移与编辑 handoff — 2026-11-17
+
+- 本轮已迁移用户指定 A 组 18 篇到 content.js 的独立 BAR_FICTION，fiction.js 复用共享双联组件，18 篇显示为 16 组；B 组八篇在原栏目完成 22 处局部编辑，未重写其他正文。A 组正文／杯底注释／标题／日期和所有原 URL 保留。
+- 窦靖童专题仍为五篇完整目录：誓言、改变、Fruit Fly 属于纸上航行；序言和空中飞人仍为一些思绪。共享系列入口标出各篇栏目，原编号和前后篇导航不变。两个双联合集与独立侧页均保留。
+- content/site/fiction 版本及回滚见 AGENT_FICTION.md、AGENT_FICTION_MIGRATION.md。本次用户明确授权检查：三份 JS 语法、diff --check、九组不变量及链接检查、34 页 HTTP 和关键页面桌面浏览器观察通过；移动端及文章措辞仍由用户复查。
+- 原 8765 预览未运行，现已创建本机静态预览（exec 会话 15525），保留给用户验收。已有未提交栏目与导航改动保留；当前分支 main，无暂存、提交、推送或部署；AGENTS.md 未改。
+
+
+## 栏目更名：纸境 — 2026-11-17
+
+- 按用户要求将对外栏目名「纸上航行」统一改为「纸境」；保留 Paper Plane 鸡尾酒身份、fiction.html 与全部文章 URL、18 篇作品及两组双联结构。
+- 同步公开页面主导航、首页酒单、栏目标题与 description、正文栏目标识、侧栏、返回链接、专题归属和 JS 数据／渲染文案；仅刷新修改过的 content/site/fiction JS 资源版本，CSS 与视觉布局不变。
+- 使用 AGENTS.md，读取 brief、visual 操作文件及必要 handoff／源码／Git 差异；更新当前 brief 和 AGENT_FICTION.md。按本次任务的手动验收规则，未运行测试、语法／diff 检查或浏览器视觉验收；两字标题的字体回退效果由用户复查。8765 预览未动，无暂存／提交／推送／部署，AGENTS.md 未修改。
+- 如需仅撤销本次更名，可按外部 paper-realm-rename-baseline.json 的更名前工作文件恢复本次涉及的名称与 JS 缓存引用，保留其他既有修改。
+
+
+## Paper Plane 酒标纠正 — 2026-11-17
+
+- 用户明确酒标应画鸡尾酒本身。已删除杯沿纸飞机装饰，调整为浅口高脚 coupe、橙珊瑚色酒液、冷银玻璃边缘；不加冰块或装饰。依据 IBA Paper Plane 配方（https://iba-world.com/iba-cocktail/paper-plane/），四种原料等量、滤入冰镇鸡尾酒杯、无 garnish。
+- 仅修改 assets/fiction.css 的 Paper Plane 酒标规则，更新其 22 个 HTML 消费者的 CSS 缓存引用为 bar-fiction-20261117-coupe；栏目 hero 的独立折纸插图、文章及其他酒标保持原样。
+- 使用 AGENTS.md、brief、视觉操作文件和必要 handoff／源代码。更新当前栏目说明及状态记录。本次未运行自动或视觉验收；实际酒标效果待用户手动确认。既有预览未动，无暂存／提交／推送／部署，AGENTS.md 未改。若需撤销，仅恢复 Paper Plane CSS 规则及本次 CSS 版本引用，不覆盖其他未提交修改。
+
+
+## Paper Plane 酒标材质统一 — 2026-11-17
+
+- 根据用户反馈，撤回上一版独立透明玻璃杯与高亮酒液处理。Paper Plane 杯身现复用其他酒标的 --material 冷铬渐变，酒液采用同等透明度和低饱和的暖琥珀色；杯型与无装饰设定保留。
+- 仅修改 fiction.css 的杯身与酒液材质，22 个既有消费者更新 CSS 版本为 bar-fiction-20261117-chrome；布局尺寸未改。使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码，已更新当前栏目记录。未运行自动或视觉验收，材质与并排效果待用户手动确认；预览未动，无提交／推送／部署；AGENTS.md 未改，无指令文件回滚事项。
+
+
+## Paper Plane 切面冷铬＋琥珀映光 — 2026-11-17
+
+- 用户选择推荐的 A 为主、少量 B。沿用共享 --material 冷铬材质和原杯型，增强杯腹明暗切面、杯沿锐光及液面层次，杯梗和底座带少量琥珀反射；无纸飞机装饰。
+- 改动仅涉及 fiction.css 酒标规则及其 22 个既有 HTML 消费者的 CSS 版本（bar-fiction-20261117-faceted）。使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码；已更新当前状态。未运行自动或视觉验收，小尺寸反光与色彩强度待用户人工确认；预览未动，无提交／推送／部署，AGENTS.md 未改。
+- 更改前 CSS 备份：外部任务目录 paper-plane-before-faceted.css。仅撤销本轮时恢复对应酒标规则与 CSS 版本，不覆盖其他既有修改。
