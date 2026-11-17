@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none">
+  <title>私藏：折叠地图和手画圆圈</title>
+  <defs>
+    <linearGradient id="surface" x1="95" y1="70" x2="410" y2="287" gradientUnits="userSpaceOnUse"><stop stop-color="#4D606B"/><stop offset=".43" stop-color="#2B404D"/><stop offset="1" stop-color="#14232C"/></linearGradient>
+    <linearGradient id="paper" x1="110" y1="95" x2="358" y2="262" gradientUnits="userSpaceOnUse"><stop stop-color="#788990"/><stop offset=".35" stop-color="#566D79"/><stop offset=".78" stop-color="#394F5C"/><stop offset="1" stop-color="#263B48"/></linearGradient>
+    <linearGradient id="paper-back" x1="145" y1="205" x2="330" y2="105" gradientUnits="userSpaceOnUse"><stop stop-color="#273D4A"/><stop offset=".54" stop-color="#667D88"/><stop offset="1" stop-color="#93A3A9"/></linearGradient>
+    <linearGradient id="metal" x1="115" y1="100" x2="365" y2="245" gradientUnits="userSpaceOnUse"><stop stop-color="#1C303D"/><stop offset=".20" stop-color="#8FA8B5"/><stop offset=".27" stop-color="#C7D6DC"/><stop offset=".36" stop-color="#3B5361"/><stop offset=".6" stop-color="#162C3A"/><stop offset=".78" stop-color="#91AAB6"/><stop offset="1" stop-color="#354B59"/></linearGradient>
+    <linearGradient id="edge" x1="93" y1="282" x2="400" y2="73" gradientUnits="userSpaceOnUse"><stop stop-color="#99B0BB" stop-opacity=".16"/><stop offset=".38" stop-color="#BCCDD5" stop-opacity=".52"/><stop offset=".76" stop-color="#D9E2E1" stop-opacity=".78"/><stop offset="1" stop-color="#BEB5AC" stop-opacity=".38"/></linearGradient>
+    <linearGradient id="light" x1="280" y1="240" x2="350" y2="324" gradientUnits="userSpaceOnUse"><stop stop-color="#B5ABA0" stop-opacity=".17"/><stop offset="1" stop-color="#A9B7BC" stop-opacity="0"/></linearGradient>
+    <linearGradient id="wine" x1="248" y1="95" x2="295" y2="232" gradientUnits="userSpaceOnUse"><stop stop-color="#764955"/><stop offset=".48" stop-color="#603542"/><stop offset="1" stop-color="#302333"/></linearGradient>
+    <radialGradient id="ground"><stop stop-color="#02070B" stop-opacity=".65"/><stop offset="1" stop-color="#02070B" stop-opacity="0"/></radialGradient>
+  </defs>
+  <style>
+    .art-edge{fill:none;stroke:url(#edge);stroke-width:.85;stroke-linejoin:round;stroke-linecap:round}
+    .art-hair{fill:none;stroke:#BBCDD3;stroke-opacity:.21;stroke-width:.65;stroke-linejoin:round;stroke-linecap:round}
+    .art-ink{fill:none;stroke:#1D303B;stroke-opacity:.52;stroke-width:.8;stroke-linecap:round}
+    .art-warm{fill:none;stroke:#B5A396;stroke-opacity:.44;stroke-width:.8;stroke-linecap:round}
+  </style>
+
+  <defs><clipPath id="map-clip"><path d="M71 111L193 69L309 104L430 64L435 246L317 290L200 257L86 297Z"/></clipPath></defs>
+  <ellipse cx="261" cy="310" rx="190" ry="16" fill="url(#ground)"/>
+  <path d="M71 111L193 69L200 257L86 297Z" fill="url(#paper)"/>
+  <path d="M193 69L309 104L317 290L200 257Z" fill="url(#surface)"/>
+  <path d="M309 104L430 64L435 246L317 290Z" fill="url(#paper)"/>
+  <g clip-path="url(#map-clip)">
+    <path d="M306 304C293 259 340 237 341 203C342 166 395 134 410 74" stroke="#9FB8C3" stroke-opacity=".28" stroke-width="9"/>
+    <g stroke="#142D3D" stroke-opacity=".39" stroke-width="1.4" fill="none">
+      <path d="M80 137L165 105L195 112L248 131L299 142L352 127L432 100 M83 166L143 145L194 154L263 173L310 181L365 164L433 144 M83 212L148 191L199 204L267 225L316 232L380 209L435 188 M86 270L158 245L202 258L268 279L319 278L384 254L437 237"/>
+      <path d="M109 116L117 174L140 183L146 243L159 261 M156 86L161 129L177 135L182 204L170 218L177 274 M224 76L226 128L250 139L252 194L275 204L278 279 M281 95L282 160L267 165L270 224L296 230V288 M346 91L349 136L375 145L376 192L399 199L402 265 M402 73L400 116L420 126L420 178"/>
+    </g>
+    <path class="art-hair" d="M83 145L166 114L194 120L250 140L301 150L352 135L433 108 M89 218L148 198L199 211L267 232L316 240L382 217L435 196 M149 91L153 153L144 161L151 218L160 247 M290 99L291 160L276 167L279 223L305 230V285"/>
+    <ellipse cx="358" cy="149" rx="26" ry="11" transform="rotate(-23 358 149)" stroke="#7B4653" stroke-opacity=".84" stroke-width="1.6"/>
+    <path d="M333 158C336 148 359 132 378 136" stroke="#AD8B94" stroke-opacity=".29" stroke-width=".7"/>
+  </g>
+  <path class="art-edge" d="M71 111L193 69L309 104L430 64L435 246L317 290L200 257L86 297Z M193 69L200 257 M309 104L317 290"/>
+  <path d="M195 71L202 256 M311 105L319 289" stroke="#0D202D" stroke-opacity=".4" stroke-width="1.5"/>
+</svg>

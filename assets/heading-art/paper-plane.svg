@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none">
+ <title>纸境：冷银翼面与细薄折线的纸飞机</title>
+ <defs>
+  <linearGradient id="p-wing" x1="105" y1="192" x2="405" y2="102" gradientUnits="userSpaceOnUse"><stop stop-color="#263D4A"/><stop offset=".5" stop-color="#4D6471"/><stop offset=".78" stop-color="#637A85"/><stop offset="1" stop-color="#344F5F"/></linearGradient>
+  <linearGradient id="p-right" x1="282" y1="210" x2="415" y2="104" gradientUnits="userSpaceOnUse"><stop stop-color="#233D4E"/><stop offset=".55" stop-color="#4C6777"/><stop offset="1" stop-color="#75909E"/></linearGradient>
+  <linearGradient id="p-keel" x1="256" y1="213" x2="267" y2="259" gradientUnits="userSpaceOnUse"><stop stop-color="#7D929C"/><stop offset=".28" stop-color="#395665"/><stop offset="1" stop-color="#192F40"/></linearGradient>
+  <linearGradient id="p-edge" x1="88" y1="184" x2="435" y2="80" gradientUnits="userSpaceOnUse"><stop stop-color="#A5BDC7" stop-opacity=".2"/><stop offset=".5" stop-color="#CBD9DC" stop-opacity=".6"/><stop offset=".84" stop-color="#DDE5E2" stop-opacity=".78"/><stop offset="1" stop-color="#B9A89A" stop-opacity=".65"/></linearGradient>
+  <radialGradient id="p-shadow"><stop stop-color="#02080D" stop-opacity=".55"/><stop offset="1" stop-color="#02080D" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="272" cy="300" rx="157" ry="13" fill="url(#p-shadow)"/>
+ <path d="M88 184L435 80L266 207Z" fill="url(#p-wing)"/>
+ <path d="M435 80L318 267L266 207Z" fill="url(#p-right)"/>
+ <path d="M266 207L435 80L248 239L241 266Z" fill="url(#p-keel)"/>
+ <path d="M248 239L318 267L266 207Z" fill="#1C3446"/>
+ <path d="M318 267L321 270L438 82L435 80Z" fill="#314C5C"/>
+ <path d="M88 184L435 80L318 267L266 207L88 184Z M266 207L435 80 M266 207L241 266L248 239L435 80 M248 239L318 267" stroke="url(#p-edge)" stroke-width=".9" stroke-linejoin="round"/>
+ <path d="M96 183L426 84 M269 208L428 86" stroke="#DAE4E3" stroke-opacity=".12" stroke-width=".65"/>
+ <path d="M318 267L321 270L438 82" stroke="#94ADBC" stroke-opacity=".23" stroke-width=".65"/>
+</svg>

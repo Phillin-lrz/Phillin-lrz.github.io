@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none">
+ <title>种草安利：薄册与自然垂落的酒红书签</title>
+ <defs>
+  <linearGradient id="b-cover" x1="130" y1="99" x2="372" y2="205" gradientUnits="userSpaceOnUse"><stop stop-color="#627780"/><stop offset=".36" stop-color="#394F5C"/><stop offset="1" stop-color="#192E3B"/></linearGradient>
+  <linearGradient id="b-spine" x1="124" y1="130" x2="207" y2="235" gradientUnits="userSpaceOnUse"><stop stop-color="#273E4B"/><stop offset=".52" stop-color="#142A38"/><stop offset="1" stop-color="#344C5B"/></linearGradient>
+  <linearGradient id="b-pages" x1="221" y1="224" x2="408" y2="202" gradientUnits="userSpaceOnUse"><stop stop-color="#526C7A"/><stop offset=".48" stop-color="#82949A"/><stop offset="1" stop-color="#455E6C"/></linearGradient>
+  <linearGradient id="b-edge" x1="122" y1="231" x2="360" y2="91" gradientUnits="userSpaceOnUse"><stop stop-color="#A9BFC8" stop-opacity=".21"/><stop offset=".52" stop-color="#D2DDDF" stop-opacity=".65"/><stop offset="1" stop-color="#B6ACA1" stop-opacity=".42"/></linearGradient>
+  <linearGradient id="b-ribbon" x1="293" y1="204" x2="326" y2="278" gradientUnits="userSpaceOnUse"><stop stop-color="#9A727C"/><stop offset=".17" stop-color="#724450"/><stop offset=".63" stop-color="#4C2D3D"/><stop offset="1" stop-color="#70434F"/></linearGradient>
+  <radialGradient id="b-shadow"><stop stop-color="#02080D" stop-opacity=".65"/><stop offset="1" stop-color="#02080D" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="268" cy="283" rx="177" ry="19" fill="url(#b-shadow)"/>
+ <path d="M120 132L205 249L418 212V220L205 258L118 138Z" fill="#172C39" stroke="url(#b-edge)" stroke-width=".7"/>
+ <path d="M121 107L205 221L205 250L121 135Z" fill="url(#b-spine)"/>
+ <path d="M205 221L416 185V213L205 250Z" fill="url(#b-pages)"/>
+ <path d="M208 224L414 188" stroke="#CDD9DC" stroke-opacity=".24" stroke-width=".65"/>
+<path d="M208 226.9L414 190.9" stroke="#263F4E" stroke-opacity=".36" stroke-width=".65"/>
+<path d="M208 229.8L414 193.8" stroke="#263F4E" stroke-opacity=".36" stroke-width=".65"/>
+<path d="M208 232.7L414 196.7" stroke="#CDD9DC" stroke-opacity=".24" stroke-width=".65"/>
+<path d="M208 235.6L414 199.6" stroke="#263F4E" stroke-opacity=".36" stroke-width=".65"/>
+<path d="M208 238.5L414 202.5" stroke="#263F4E" stroke-opacity=".36" stroke-width=".65"/>
+<path d="M208 241.4L414 205.4" stroke="#CDD9DC" stroke-opacity=".24" stroke-width=".65"/>
+<path d="M208 244.3L414 208.3" stroke="#263F4E" stroke-opacity=".36" stroke-width=".65"/>
+ <path d="M121 106L326 78L416 185L205 221Z" fill="url(#b-cover)"/>
+ <path d="M121 106L326 78L416 185L205 221Z M121 106V135L205 250L416 213V185 M205 221V250" stroke="url(#b-edge)" stroke-width=".9" stroke-linejoin="round"/>
+ <path d="M131 109L322 84L405 182L210 214Z" stroke="#BDCFD6" stroke-opacity=".17" stroke-width=".65"/>
+ <path d="M169 126L294 108 M176 135L302 117" stroke="#AFC5CF" stroke-opacity=".10" stroke-width=".65"/>
+ <path d="M293 206L315 202C313 223 319 247 323 273L311 264L302 278C300 250 296 226 293 206Z" fill="url(#b-ribbon)"/>
+ <path d="M293 206L315 202C313 223 319 247 323 273L311 264L302 278C300 250 296 226 293 206Z" stroke="#B69AA3" stroke-opacity=".42" stroke-width=".7" stroke-linejoin="round"/>
+ <path d="M296 208C298 227 303 249 305 269 M311 207C310 216 311 226 313 235" stroke="#C4ABB1" stroke-opacity=".19" stroke-width=".6"/>
+ <path d="M128 133L204 239" stroke="#0A202E" stroke-opacity=".5" stroke-width="1.2"/>
+</svg>

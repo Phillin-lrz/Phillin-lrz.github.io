@@ -577,3 +577,26 @@ Rollback:
 - 用户选择推荐的 A 为主、少量 B。沿用共享 --material 冷铬材质和原杯型，增强杯腹明暗切面、杯沿锐光及液面层次，杯梗和底座带少量琥珀反射；无纸飞机装饰。
 - 改动仅涉及 fiction.css 酒标规则及其 22 个既有 HTML 消费者的 CSS 版本（bar-fiction-20261117-faceted）。使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码；已更新当前状态。未运行自动或视觉验收，小尺寸反光与色彩强度待用户人工确认；预览未动，无提交／推送／部署，AGENTS.md 未改。
 - 更改前 CSS 备份：外部任务目录 paper-plane-before-faceted.css。仅撤销本轮时恢复对应酒标规则与 CSS 版本，不覆盖其他既有修改。
+
+
+## 栏目右侧物件插图 — 2026-11-17
+
+- 用户批准将纸境右侧插图的艺术语言扩展到其他栏目。已为 posts、tonight、reviews、playlist、gallery、friends、about 及三个 tag 页面、notes 共 11 页增加独立 SVG、标题下中文附句和图下酒名小字；原栏目介绍保留。
+- 插图分别为散页、台灯、地图、唱片、底片、双椅、钥匙、手帐、金属线、棱镜、杯垫便签。新增 assets/section-art.css 与 assets/heading-art/，仅 11 个消费者加载，版本 bar-section-art-20261117。纸境原飞机、现有酒标、首页、正文、数据与功能未改。
+- 使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码；更新 brief 并新增 AGENT_SECTION_ART.md，记录范围、手动验收风险及外部 section-art-before.json 回滚来源。本轮仅读取源码和定向 Git diff，未运行自动或视觉验收；既有预览未动，无暂存／提交／推送／部署，AGENTS.md 未改。
+
+
+## 全栏目「冷银与夜色」原生 SVG — 2026-11-17
+
+- 用户认可冷色全栏目例图和原生 SVG 唱片／翻页日志试稿，授权整套落实。现已替换其余 11 个栏目插图：唱片、日志直接采用试稿源码，另九幅为弧面散页、半开窗、折叠地图、窗光相片、双吧椅、冷银钥匙、展开折信、酒红书签、卷角便签。纸境原飞机保留。
+- 全部为原生 SVG 路径／渐变／剪裁／样式，无嵌入生成图片及新依赖。统一 520×350 固有尺寸，11 页更新 SVG 缓存版本 bar-section-art-20261117-coded；CSS、栏目文案、酒标、正文与数据功能保持现有实现。旧五幅替换意象已从公开资产移除，保存在外部快照。
+- 使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码，更新 AGENT_SECTION_ART.md 与 brief。仅阅读源码、Git 状态与定向 diff，未运行测试、语法检查、diff --check、浏览器或截图验收；本轮实际明暗和移动端效果由用户人工确认。保留既有预览与上一轮未提交改动，无暂存／提交／推送／部署，AGENTS.md 未改。
+- 回滚快照：外部任务目录 section-art-before-coded.json，包含本轮替换前的 11 个页面、11 幅图及标题区 CSS；仅恢复对应资源和图片引用，保留其他工作。
+
+
+## 三幅插图优化与附句归位 — 2026-11-17
+
+- 按用户反馈重画种草安利（完整薄册＋自然垂落的酒红书签）和一些思绪（柔和展开的信纸＋浅折痕），优化纸境的翼面渐变、纸边厚度和细薄折线，保留实际鸡尾酒酒标。
+- 全部 12 个栏目页的中文附句由标题下移到插图 figcaption，中文在上、英文酒名小字在下；原栏目介绍保留。figure 取消整体 aria-hidden，图片继续作为装饰性空 alt。纸境现引用独立 paper-plane.svg，并共用 section-art.css。
+- CSS 版本 bar-section-art-20261117-captions；上述三幅 SVG 版本 bar-section-art-20261117-refined，其余九幅仍为 coded。未改数据、正文或功能；已更新 brief、AGENT_SECTION_ART.md 和 AGENT_FICTION.md。
+- 使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码；仅作源代码和定向 Git diff 阅读，未运行自动或视觉验收。三幅实际观感与图下文字换行待用户人工确认；既有预览未动，无暂存／提交／推送／部署，AGENTS.md 未改。回滚快照为外部 section-art-before-captions.json，包含 12 页、共享插图 CSS 与两个旧 SVG，保留本轮之前的未提交工作。

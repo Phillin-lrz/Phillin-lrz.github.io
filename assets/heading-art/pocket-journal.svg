@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none" class="journal">
+ <title>生活日志：冷灰色翻页笔记本</title>
+ <defs>
+  <linearGradient id="j-cover" x1="80" y1="220" x2="425" y2="300" gradientUnits="userSpaceOnUse"><stop stop-color="#263842"/><stop offset=".48" stop-color="#0B1720"/><stop offset="1" stop-color="#20313D"/></linearGradient>
+  <linearGradient id="j-left" x1="81" y1="191" x2="245" y2="229" gradientUnits="userSpaceOnUse"><stop stop-color="#7C8A90"/><stop offset=".28" stop-color="#65757D"/><stop offset=".72" stop-color="#4C606B"/><stop offset="1" stop-color="#263A47"/></linearGradient>
+  <linearGradient id="j-right" x1="250" y1="212" x2="431" y2="238" gradientUnits="userSpaceOnUse"><stop stop-color="#263B47"/><stop offset=".18" stop-color="#61747F"/><stop offset=".6" stop-color="#70818A"/><stop offset="1" stop-color="#536671"/></linearGradient>
+  <linearGradient id="j-turn" x1="246" y1="146" x2="328" y2="174" gradientUnits="userSpaceOnUse"><stop stop-color="#334A57"/><stop offset=".32" stop-color="#667B86"/><stop offset=".58" stop-color="#9EAEB3"/><stop offset=".83" stop-color="#7D919C"/><stop offset="1" stop-color="#3B5362"/></linearGradient>
+  <linearGradient id="j-return" x1="281" y1="64" x2="288" y2="243" gradientUnits="userSpaceOnUse"><stop stop-color="#B2BEC0"/><stop offset=".25" stop-color="#899CA4"/><stop offset=".55" stop-color="#3B5260"/><stop offset="1" stop-color="#203845"/></linearGradient>
+  <linearGradient id="j-edge" x1="79" y1="271" x2="327" y2="89" gradientUnits="userSpaceOnUse"><stop stop-color="#CAD9DC" stop-opacity=".25"/><stop offset=".45" stop-color="#D6E0DF" stop-opacity=".58"/><stop offset="1" stop-color="#DDE5E2" stop-opacity=".68"/></linearGradient>
+  <linearGradient id="j-fold-shadow" x1="248" y1="211" x2="288" y2="233" gradientUnits="userSpaceOnUse"><stop stop-color="#0B1822" stop-opacity=".8"/><stop offset="1" stop-color="#0B1822" stop-opacity="0"/></linearGradient>
+  <radialGradient id="j-ground"><stop stop-color="#01060B" stop-opacity=".75"/><stop offset="1" stop-color="#01060B" stop-opacity="0"/></radialGradient>
+  <clipPath id="j-left-clip"><path d="M76 167C125 145 183 160 240 186L245 290C179 261 128 249 73 267Z"/></clipPath>
+ </defs>
+ <style>.journal .edge{stroke:url(#j-edge);stroke-width:.85;stroke-linecap:round;stroke-linejoin:round}.journal .soft{stroke:#A3B6C0;stroke-opacity:.18;stroke-width:.65}</style>
+ <ellipse cx="257" cy="305" rx="205" ry="23" fill="url(#j-ground)"/>
+ <path d="M68 177C127 159 183 177 239 203C301 170 366 174 434 186L436 286C359 271 301 278 247 310C178 281 123 267 69 286Z" fill="url(#j-cover)"/>
+ <path class="edge" d="M68 177L69 286C123 267 178 281 247 310C301 278 359 271 436 286L434 186"/>
+ <path d="M73.00 268.00C127 250.00 181 263.00 245 291.00C304 259.00 363 250.00 432.00 269.00" stroke="#AEBEC5" stroke-opacity=".28" stroke-width=".6"/>
+<path d="M72.84 269.22C127 251.22 181 264.22 245 291.92C304 260.22 363 251.22 432.15 270.22" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+<path d="M72.68 270.44C127 252.44 181 265.44 245 292.83C304 261.44 363 252.44 432.29 271.44" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+<path d="M72.52 271.66C127 253.66 181 266.66 245 293.75C304 262.66 363 253.66 432.44 272.66" stroke="#AEBEC5" stroke-opacity=".28" stroke-width=".6"/>
+<path d="M72.37 272.88C127 254.88 181 267.88 245 294.66C304 263.88 363 254.88 432.59 273.88" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+<path d="M72.21 274.10C127 256.10 181 269.10 245 295.57C304 265.10 363 256.10 432.73 275.10" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+<path d="M72.05 275.32C127 257.32 181 270.32 245 296.49C304 266.32 363 257.32 432.88 276.32" stroke="#AEBEC5" stroke-opacity=".28" stroke-width=".6"/>
+<path d="M71.89 276.54C127 258.54 181 271.54 245 297.40C304 267.54 363 258.54 433.02 277.54" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+<path d="M71.73 277.76C127 259.76 181 272.76 245 298.32C304 268.76 363 259.76 433.17 278.76" stroke="#7E939F" stroke-opacity=".19" stroke-width=".6"/>
+ <path d="M76 167C125 145 183 160 240 186L245 290C179 261 128 249 73 267Z" fill="url(#j-left)"/>
+ <path d="M240 186C304 158 361 155 425 176L432 266C360 247 301 260 245 290Z" fill="url(#j-right)"/>
+ <g clip-path="url(#j-left-clip)"><path d="M102 183.0C127 178.0 156 184.0 205 195.0" stroke="#1D2D36" stroke-opacity=".4" stroke-width=".8"/>
+<path d="M102 193.8C127 188.8 156 194.8 195 205.8" stroke="#1D2D36" stroke-opacity=".32" stroke-width=".8"/>
+<path d="M102 204.6C127 199.6 156 205.6 185 216.6" stroke="#1D2D36" stroke-opacity=".32" stroke-width=".8"/>
+<path d="M102 215.4C127 210.4 156 216.4 205 227.4" stroke="#1D2D36" stroke-opacity=".32" stroke-width=".8"/>
+<path d="M102 226.2C127 221.2 156 227.2 195 238.2" stroke="#1D2D36" stroke-opacity=".32" stroke-width=".8"/>
+<path d="M102 237.0C127 232.0 156 238.0 174 249.0" stroke="#1D2D36" stroke-opacity=".32" stroke-width=".8"/>
+  <path d="M105 177L115 174L111 178L123 176L121 180L136 180 M127 199L138 198L135 202L152 202 M106 221L118 217L116 222L133 222L129 225L145 225 M116 243L130 241L129 245L144 246" stroke="#23343E" stroke-opacity=".43" stroke-width=".7" stroke-linecap="round"/>
+ </g>
+ <path class="edge" d="M76 167C125 145 183 160 240 186C304 158 361 155 425 176L432 266C360 247 301 260 245 290C179 261 128 249 73 267Z"/>
+ <path d="M248 190C289 172 341 168 387 178 M254 204C301 186 348 182 404 194 M259 218C302 201 348 198 399 208 M267 233C308 219 348 216 384 221" stroke="#263D4B" stroke-opacity=".32" stroke-width=".75"/>
+ <path d="M240 186L245 290" stroke="#142A38" stroke-width="3.5" stroke-opacity=".6"/>
+ <path d="M241 184C274 156 297 112 280 80C318 116 332 153 312 187C296 214 269 253 245 290Z" fill="url(#j-turn)"/>
+ <path d="M280 80C305 139 278 192 245 290L253 267C305 213 330 164 319 136C311 106 292 87 280 80Z" fill="url(#j-return)"/>
+ <path class="edge" d="M241 184C274 156 297 112 280 80C318 116 332 153 312 187C296 214 269 253 245 290"/>
+ <path d="M280 80C305 139 278 192 245 290" stroke="#D0DBDD" stroke-opacity=".38" stroke-width=".75"/>
+ <path d="M246 292C252 306 246 320 231 334L239 334C255 319 261 305 251 290Z" fill="#633C48" fill-opacity=".8"/>
+ <path d="M248 292C254 307 249 319 235 334" stroke="#B19BA1" stroke-opacity=".31" stroke-width=".65"/>
+ <path class="soft" d="M76 272C136 256 187 274 243 298 M255 300C305 271 365 265 432 277"/>
+</svg>

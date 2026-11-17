@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none">
+ <title>一些思绪：柔和展开的信纸与浅折痕</title>
+ <defs>
+  <linearGradient id="l-tl" x1="143" y1="99" x2="266" y2="161" gradientUnits="userSpaceOnUse"><stop stop-color="#566C77"/><stop offset=".63" stop-color="#71838B"/><stop offset="1" stop-color="#566F7C"/></linearGradient>
+  <linearGradient id="l-tr" x1="251" y1="86" x2="367" y2="152" gradientUnits="userSpaceOnUse"><stop stop-color="#4B626F"/><stop offset=".6" stop-color="#5A727E"/><stop offset="1" stop-color="#6C8089"/></linearGradient>
+  <linearGradient id="l-bl" x1="160" y1="260" x2="259" y2="179" gradientUnits="userSpaceOnUse"><stop stop-color="#3D5665"/><stop offset=".6" stop-color="#5C737F"/><stop offset="1" stop-color="#75888F"/></linearGradient>
+  <linearGradient id="l-br" x1="269" y1="181" x2="380" y2="252" gradientUnits="userSpaceOnUse"><stop stop-color="#5C737E"/><stop offset=".6" stop-color="#687E88"/><stop offset="1" stop-color="#3E5969"/></linearGradient>
+  <linearGradient id="l-edge" x1="144" y1="254" x2="351" y2="75" gradientUnits="userSpaceOnUse"><stop stop-color="#B5C9D2" stop-opacity=".16"/><stop offset=".38" stop-color="#CFDCDE" stop-opacity=".48"/><stop offset=".85" stop-color="#DEE5E3" stop-opacity=".6"/><stop offset="1" stop-color="#BEB3A8" stop-opacity=".33"/></linearGradient>
+  <radialGradient id="l-shadow"><stop stop-color="#02080D" stop-opacity=".62"/><stop offset="1" stop-color="#02080D" stop-opacity="0"/></radialGradient>
+ </defs>
+ <ellipse cx="265" cy="296" rx="156" ry="16" fill="url(#l-shadow)"/>
+ <path d="M139 88C173 86 214 80 249 76C252 109 259 140 261 167C224 173 188 181 150 183C146 149 142 119 139 88Z" fill="url(#l-tl)"/>
+ <path d="M249 76C286 70 326 64 355 63C363 95 368 127 371 159C334 159 297 162 261 167C259 140 252 109 249 76Z" fill="url(#l-tr)"/>
+ <path d="M150 183C188 181 224 173 261 167C265 204 269 235 274 266C234 274 195 279 161 281C157 248 153 215 150 183Z" fill="url(#l-bl)"/>
+ <path d="M261 167C297 162 334 159 371 159C377 189 383 221 389 249C350 256 312 262 274 266C269 235 265 204 261 167Z" fill="url(#l-br)"/>
+ <path d="M139 88C205 83 293 68 355 63C363 121 377 188 389 249C313 264 229 275 161 281C153 215 146 150 139 88Z" stroke="url(#l-edge)" stroke-width=".8"/>
+ <path d="M249 77C252 109 259 140 261 167C265 204 269 235 274 266" stroke="#203B4B" stroke-opacity=".22" stroke-width="1.2"/>
+ <path d="M248 77C251 109 258 140 260 167C264 204 268 235 273 266" stroke="#C5D6DC" stroke-opacity=".25" stroke-width=".6"/>
+ <path d="M150 183C188 181 224 173 261 167C297 162 334 159 371 159" stroke="#D4DFE0" stroke-opacity=".24" stroke-width=".65"/>
+ <path d="M150 184C188 182 224 174 261 168C297 163 334 160 371 160" stroke="#1B3646" stroke-opacity=".24" stroke-width=".75"/>
+ <g stroke="#253F4E" stroke-opacity=".49" stroke-width=".8" stroke-linecap="round">
+  <path d="M169 123C176 118 177 128 186 120L181 128L196 123L193 130L209 125 M174 140L185 136L182 143L197 139L193 146L210 141C216 138 220 145 226 139"/>
+  <path d="M280 105L294 101L289 108L305 104L301 110L315 106 M282 120C295 119 307 117 321 115"/>
+  <path d="M185 221C193 216 196 226 204 218L201 227L217 221L213 229L231 222 M193 239C210 236 226 234 240 230"/>
+ </g>
+ <path d="M164 283C198 281 234 276 271 269" stroke="#93AAB7" stroke-opacity=".18" stroke-width=".65"/>
+</svg>

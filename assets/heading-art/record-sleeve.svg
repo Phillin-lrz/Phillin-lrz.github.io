@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 350" fill="none" class="record">
+ <title>歌单：冷银反光的唱片与封套</title>
+ <defs>
+  <radialGradient id="r-vinyl" cx=".35" cy=".26" r=".8"><stop stop-color="#283942"/><stop offset=".5" stop-color="#101C23"/><stop offset="1" stop-color="#080E13"/></radialGradient>
+  <linearGradient id="r-cover" x1="81" y1="87" x2="284" y2="275" gradientUnits="userSpaceOnUse"><stop stop-color="#4D5E67"/><stop offset=".34" stop-color="#2A3C46"/><stop offset=".76" stop-color="#17252D"/><stop offset="1" stop-color="#111B22"/></linearGradient>
+  <linearGradient id="r-cover-reflection" x1="87" y1="65" x2="240" y2="244" gradientUnits="userSpaceOnUse"><stop stop-color="#DAE6E8" stop-opacity=".12"/><stop offset=".57" stop-color="#B9CDD5" stop-opacity=".02"/><stop offset="1" stop-color="#B9CDD5" stop-opacity="0"/></linearGradient>
+  <linearGradient id="r-edge" x1="73" y1="281" x2="290" y2="54" gradientUnits="userSpaceOnUse"><stop stop-color="#90A5AE" stop-opacity=".17"/><stop offset=".42" stop-color="#BDCED5" stop-opacity=".52"/><stop offset=".8" stop-color="#DCE6E6" stop-opacity=".8"/><stop offset="1" stop-color="#C4B6A8" stop-opacity=".45"/></linearGradient>
+  <linearGradient id="r-rim" x1="269" y1="68" x2="387" y2="276" gradientUnits="userSpaceOnUse"><stop stop-color="#C6D9DF" stop-opacity=".68"/><stop offset=".38" stop-color="#8EA8B5" stop-opacity=".18"/><stop offset=".71" stop-color="#667E8B" stop-opacity=".17"/><stop offset="1" stop-color="#B7C9CD" stop-opacity=".4"/></linearGradient>
+  <radialGradient id="r-label" cx=".31" cy=".2" r=".9"><stop stop-color="#67434B"/><stop offset=".6" stop-color="#472B36"/><stop offset="1" stop-color="#251D29"/></radialGradient>
+  <linearGradient id="r-fan" x1="310" y1="57" x2="412" y2="167" gradientUnits="userSpaceOnUse"><stop stop-color="#D5E4E8" stop-opacity=".055"/><stop offset="1" stop-color="#D5E4E8" stop-opacity="0"/></linearGradient>
+  <radialGradient id="r-ground"><stop stop-color="#02070B" stop-opacity=".7"/><stop offset="1" stop-color="#02070B" stop-opacity="0"/></radialGradient>
+  <clipPath id="r-disc-clip"><circle cx="319" cy="172" r="111"/></clipPath>
+ </defs>
+ <style>.record .edge{stroke:url(#r-edge);stroke-width:.85;stroke-linejoin:round}.record .tiny{stroke:#BCD0D6;stroke-opacity:.13;stroke-width:.6}</style>
+ <ellipse cx="261" cy="304" rx="197" ry="19" fill="url(#r-ground)"/>
+ <circle cx="319" cy="172" r="113.4" fill="#050C11"/>
+ <circle cx="319" cy="172" r="112" fill="url(#r-vinyl)" stroke="url(#r-rim)" stroke-width="1"/>
+ <circle cx="319" cy="172" r="67.00" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="68.13" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="69.26" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="70.39" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="71.52" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="72.65" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="73.78" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="74.91" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="76.04" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="77.17" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="78.30" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="79.43" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="80.56" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="81.69" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="82.82" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="83.95" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="85.08" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="86.21" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="87.34" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="88.47" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="89.60" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="90.73" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="91.86" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="92.99" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="94.12" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="95.25" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="96.38" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="97.51" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="98.64" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="99.77" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="100.90" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="102.03" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="103.16" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="104.29" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="105.42" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="106.55" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="107.68" stroke="#B4CDD5" stroke-opacity=".15" stroke-width=".65"/>
+<circle cx="319" cy="172" r="108.81" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="109.94" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+<circle cx="319" cy="172" r="111.07" stroke="#B4CDD5" stroke-opacity=".065" stroke-width=".45"/>
+ <g clip-path="url(#r-disc-clip)">
+  <path d="M319 172L278 54L348 44L375 61Z" fill="url(#r-fan)"/>
+  <path d="M319 172L428 192L413 228Z" fill="#9FBAC5" fill-opacity=".025"/>
+ </g>
+ <circle cx="319" cy="172" r="35" fill="url(#r-label)" stroke="#B9A1A8" stroke-opacity=".24" stroke-width=".8"/>
+ <circle cx="319" cy="172" r="25" stroke="#B49BA5" stroke-opacity=".10" stroke-width=".55"/>
+ <path class="tiny" d="M307 157H330 M310 160H326 M310 186H329"/>
+ <circle cx="319" cy="172" r="4" fill="#070D12" stroke="#AFBEC5" stroke-opacity=".48" stroke-width=".8"/>
+ <path d="M269 53L280 57L296 282L284 291Z" fill="#17262F"/>
+ <path class="edge" d="M269 53L280 57L296 282L284 291"/>
+ <path d="M83 63L269 53L284 291L71 298Z" fill="url(#r-cover)"/>
+ <path d="M83 63L269 53L284 291L71 298Z" fill="url(#r-cover-reflection)"/>
+ <path class="edge" d="M83 63L269 53L284 291L71 298Z"/>
+ <path d="M87 67L265 58L279 285" stroke="#D7E3E3" stroke-opacity=".10" stroke-width=".7"/>
+ <path d="M85 257C139 212 192 173 269 139" stroke="#B7A496" stroke-opacity=".49" stroke-width=".85"/>
+ <path d="M85 259C139 214 192 175 269 141" stroke="#AABDC6" stroke-opacity=".055" stroke-width="2"/>
+ <path d="M73 298L284 291" stroke="#CBD8D8" stroke-opacity=".17" stroke-width=".8"/>
+</svg>
