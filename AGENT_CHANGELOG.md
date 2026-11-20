@@ -600,3 +600,12 @@ Rollback:
 - 全部 12 个栏目页的中文附句由标题下移到插图 figcaption，中文在上、英文酒名小字在下；原栏目介绍保留。figure 取消整体 aria-hidden，图片继续作为装饰性空 alt。纸境现引用独立 paper-plane.svg，并共用 section-art.css。
 - CSS 版本 bar-section-art-20261117-captions；上述三幅 SVG 版本 bar-section-art-20261117-refined，其余九幅仍为 coded。未改数据、正文或功能；已更新 brief、AGENT_SECTION_ART.md 和 AGENT_FICTION.md。
 - 使用 AGENTS.md、brief、视觉操作文件及必要 handoff／源码；仅作源代码和定向 Git diff 阅读，未运行自动或视觉验收。三幅实际观感与图下文字换行待用户人工确认；既有预览未动，无暂存／提交／推送／部署，AGENTS.md 未改。回滚快照为外部 section-art-before-captions.json，包含 12 页、共享插图 CSS 与两个旧 SVG，保留本轮之前的未提交工作。
+
+## 2026-11-20 — 移除友链页猫图标入口
+
+- 按用户要求删除 friends.html 中指向 Pokersleep 的图标及链接、assets/styles.css 的专用链接和酒标规则、assets/drink-icons.css 的猫图标规则，以及 assets/drink-labels/cat-collins.svg。其他友链与栏目文字保留。旧记录中的保留要求由本次决定取代。
+- 已更新 AGENT_BRIEF.md；遵循 AGENTS.md 手动验收覆盖规则，仅定位源文件，未运行自动或视觉验收，现有预览未动；未提交、推送或部署。AGENTS.md 未修改，无指令文件回滚事项。
+
+## 2026-11-20 — 保留友链 Tom Collins 酒标
+
+- 根据用户澄清，friends.html 标题旁改用与首页同款的普通 Tom Collins 酒标，无外链；此前移除的猫图标、Pokersleep 链接及其专用资源不恢复。同步更新 AGENT_BRIEF.md。未执行自动或视觉验收，未修改 AGENTS.md，未提交／推送／部署。

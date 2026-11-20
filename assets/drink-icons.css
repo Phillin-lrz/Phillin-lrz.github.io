@@ -65,12 +65,3 @@
 /* Standard Martini retains its single-olive identity; flight has four dots. */
 .bar-drink.bar-drink-martini .drink-part-g1{left:.63em;top:.16em;width:.17em;height:.13em;transform:rotate(-22deg);border-radius:50%;background:radial-gradient(circle at 28% 26%,#ccd6a2,#7f8e61 52%,#3f5140 84%);box-shadow:inset -.035em 0 #542e30}
 .bar-drink.bar-drink-martini .drink-part-accent{left:.48em;top:.22em;width:.4em;height:.018em;background:#c6d3da;transform:rotate(-22deg)}
-/* The friends-page cat and straw remain part of its Collins identity. */
-.bar-drink.bar-drink-cat-collins .drink-part-bowl{left:.52em;width:.30em}
-.bar-drink.bar-drink-cat-collins .drink-part-liquid{left:.56em;width:.22em}
-.bar-drink.bar-drink-cat-collins .drink-part-lip{left:.52em;width:.30em}
-.bar-drink.bar-drink-cat-collins .drink-part-g1{left:.73em;top:.13em;width:.2em;height:.2em}
-.bar-drink.bar-drink-cat-collins .drink-part-detail{left:.59em;top:.34em;width:.14em;height:.16em}
-.bar-drink.bar-drink-cat-collins .drink-part-cat{left:.08em;top:.43em;width:.48em;height:.38em;clip-path:polygon(4% 38%,8% 0,35% 21%,66% 20%,93% 0,96% 40%,100% 65%,83% 94%,52% 100%,19% 94%,0 64%);background:linear-gradient(125deg,#9eb7c5,#243d49 20%,#0b171f 49%,#3b5666 78%,#adbfca);z-index:8}
-.bar-drink.bar-drink-cat-collins .drink-part-cat-eyes{left:.22em;top:.61em;width:.045em;height:.025em;border-radius:50%;background:#c7d6dc;box-shadow:.15em 0 #c7d6dc;z-index:9}
-.bar-drink.bar-drink-cat-collins .drink-part-straw{left:.46em;top:.31em;width:.018em;height:.44em;background:linear-gradient(90deg,#d1dce3,#7d939e);transform:rotate(37deg);z-index:10}
