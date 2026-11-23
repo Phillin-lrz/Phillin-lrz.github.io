@@ -42,7 +42,7 @@ function normalizedNotes() {
 function allPosts(includeFiction = false) {
   const builtInPosts = [...(window.BAR_POSTS || []), ...(includeFiction ? window.BAR_FICTION || [] : [])];
   return collapsePairedNotes([...builtInPosts, ...normalizedNotes()]).sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    (a, b) => new Date(b.sortAt || b.publishedAt).getTime() - new Date(a.sortAt || a.publishedAt).getTime(),
   );
 }
 
@@ -81,7 +81,7 @@ function postCard(post, heading = "h2") {
 
 function allNotes() {
   return collapsePairedNotes(normalizedNotes()).sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    (a, b) => new Date(b.sortAt || b.publishedAt).getTime() - new Date(a.sortAt || a.publishedAt).getTime(),
   );
 }
 
