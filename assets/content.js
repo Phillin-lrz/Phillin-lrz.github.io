@@ -2,6 +2,14 @@ window.BAR_TAGS = ["生活日志", "一些思绪", "种草安利", "吧台札记
 
 window.BAR_POSTS = [
   {
+    id: "untitled-20261127",
+    title: "无题",
+    tag: "一些思绪",
+    publishedAt: "2026-11-27",
+    summary: "夜里听王菲的《新房客》，窗外的灯、未关的页面与旧日的声音交替浮现。今天的美好是真的，那些尚未处理的事情也仍然在那里。",
+    url: "article-untitled-20261127.html",
+  },
+  {
     id: "21-20261121",
     title: "21",
     tag: "一些思绪",
